@@ -1,0 +1,323 @@
+---
+layout: nil
+is_index: true
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>OtherScreen API Documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="assets/css/docs.css" rel="stylesheet">
+    <link href="assets/js/google-code-prettify/prettify.css" rel="stylesheet">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="assets/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
+    <!-- include Google Analytics here -->
+  </head>
+
+  <body data-spy="scroll" data-target=".subnav" data-offset="50">
+
+
+  <!-- Navbar
+    ================================================== -->
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <span class="brand"><a href="./index.html">OtherScreen</a> <span class="version">1.0</span></span>
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+              <li class="active">
+                <a href="./tutorial.html">API Tutorial</a>
+              </li>              
+              <li class="">
+                <a href="./reference.html">API Reference</a>
+              </li>
+              <li class="">
+                <a href="./websockets.html">WebSockets</a>
+              </li>
+              <li class="">
+                <a href="./changelog.html">History</a>
+              </li>
+              <li class="">
+                <a href="./roadmap.html">Roadmap</a>
+              </li>
+              <li class="">
+                <a href="./contact.html">Contact</a>
+              </li>
+
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+
+<!-- Masthead
+================================================== -->
+<header class="jumbotron subhead" id="overview">
+    <h1>API Documentation</h1>
+    <p class="lead">OtherScreen represents the most open platform for fun, real-time, interactive Social TV apps on the web and mobile devices.</p>
+    <!-- Instrument this in analytics -->
+    <div class="subnav">
+      <ul class="nav nav-pills">
+        <li><a href="#tutorial">Tutorial</a></li>
+        <li><a href="#reference">Reference</a></li>
+        <li><a href="#websockets">WebSockets</a></li>
+        <li><a href="#history">History</a></li>
+        <li><a href="#roadmap">Roadmap</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+
+</header>
+
+<!-- API Tutorial
+================================================== -->
+<section id="tutorial">
+  <div class="page-header">
+    <h1>API Tutorial  <small>for walkthroughs and general information</small></h1>
+  </div>
+  <div class="row">
+    <div class="span4">
+      <h2>Not Just an API</h2>
+      <p>OtherScreen uses the WebSockets technology from HTML 5 under the hood.  This means you not only have an HTTP API to learn and implement, but also have a set of WebSocket channels to manage, and messages to react to.</p>
+      <p>Since there are a lot of concepts in our API, we try to break them down for you by examining common use cases so that you can understand what you need to do.</p>
+    </div><!-- /.span -->
+    <div class="span4">
+      <h2>Use Cases</h2>
+      <p>Some of the use cases we cover specifically:</p>
+      <ul>
+        <li>Completing preroll.</li>
+        <li>Answering each type of question</li>
+        <li>Updating and managing scoreboards</li>
+        <li>Chatting</li>
+        <li>Social Networking interactivity</li>
+      </ul>
+    </div><!-- /.span -->
+    <div class="span4">
+      <h2>Reader's Notes</h2>
+      <p>Our API will be making forward progress as we add new concepts to our domain.  We'll also be keeping this documentation up to date automatically as we continue development.</p>
+      <p>For more information about how to read our documentation the best, you can visit our <a href="./notes.html">Reader's Notes</a></p>
+    </div><!-- /.span -->
+  </div><!-- /.row -->
+</section>
+
+<!-- API Reference
+================================================== -->
+<section id="reference">
+  <div class="page-header">
+    <h1>API Reference  <small>when you know exactly what you're looking for</small></h1>
+  </div>
+  <div class="row">
+    <div class="span4">
+      <h2>Authentication API's</h2>
+      <p>We can't let you play if we don't know who you are!</p>
+      <ul>
+        <li>Creating an account</li>
+        <li>Authentication with username/password</li>
+        <li>Authentication with Facebook</li>
+        <li>Authentication with Twitter</li>
+      </ul>      
+    </div><!-- /.span -->    
+    <div class="span4">
+      <h2>Player API's</h2>
+      <p>Most clients will be implementing our Player API's to allow people to play OtherScreen-powered events.  Elements of our API are enumerated below.</p>
+      <ul>
+        <li>API Overview</li>
+        <li>Glossary</li>
+      <li>Authentication</li>
+      <li>Live Events</li>
+      <li>Event Cards</li>
+      <li>Groups</li>
+      <li>Questions</li>
+      <li>Users</li>
+      </ul>
+    </div><!-- /.span -->
+    <div class="span4">
+      <h2>DJ API's</h2>
+      <p>Should you wish to implement your own interface for asking questions within the system, we are providing the DJ interface API publicly for the first time.</p>
+      <ul>
+        <li>Live Event Management</li>
+        <li>Announcements</li>
+        <li>Props</li>
+        <li>Polls</li>
+        <li>Trivia</li>
+      </ul>
+    </div><!-- /.span -->
+  </div><!-- /.row -->
+</section>
+
+<section id="websockets">
+  <div class="page-header">
+    <h1>WebSockets reference  <small>all WebSocket related information</small></h1>
+  </div>
+  <div class="row">
+    <div class="span4">
+      <h2>Getting Started</h2>
+      <p>The application will not work without full WebSockets integration.  This section will help you cover the basics of establishing the right kind of connections.</p>
+      <ul>
+        <li>Authenticating with OtherScreen and Pusher</li>
+        <li>Channel Subscriptions</li>
+        <li>Channel management</li>
+      </ul>      
+    </div><!-- /.span -->    
+    <div class="span4">
+      <h2>General Notifications</h2>
+      <p>Received on the user channel, you must respond to these messages at any time after authentication.</p>
+      <ul>
+        <li>"Notifications"</li>
+      </ul>
+    </div><!-- /.span -->
+    <div class="span4">
+      <h2>Game Notifications</h2>
+      <p>While the client has an active subscription to a live event, you may receive the following messages at any time.</p>
+      <h3>Interactive notifications</h3>
+      <ul>
+        <li>Poll</li>
+        <li>Prop</li>
+        <li>Trivia</li>
+        <li>Multiple Choice</li>
+        <li>List</li>
+        <li>Range</li>
+        <li>Keyboard</li>
+        <li>Keypad</li>
+      </ul>
+      <h3>Informational/procedural notifications</h3>
+      <ul>
+        <li>Question Scored</li>
+        <li>Event chat</li>
+        <li>Group chat</li>
+        <li>Announcements</li>
+        <li>Reset selections</li>
+      </ul>
+    </div><!-- /.span -->
+  </div><!-- /.row -->
+</section>
+
+<section id="history">
+  <div class="page-header">
+    <h1>History  <small>for additional context or previous API versions</small></h1>
+  </div>
+  <div class="row">
+    <div class="span4">
+      <h2>Backward compatability</h2>
+      <p>We know how hard you work to implement your client.  We commit to you that once you have completed a working client, our activities will not break your code.  We do maintain the right to deprecate extremely old versions of the API that are at least two breaking changes behind, but will communicate with both you and the users of your client to make the appropriate upgrades before that happens.</p>
+      <p>Learn more about how we acheive <a href="backward-compatibility.html">backward compatibility</a>.</p>
+    </div><!-- /.span -->
+    <div class="span4">
+      <h2>Previous versions</h2>
+      <ul>
+        <li><a href="./0.9/index.html">0.9</a></li>
+      </ul>      
+    </div><!-- /.span -->    
+  </div><!-- /.row -->
+</section>
+
+<section id="roadmap">
+  <div class="page-header">
+    <h1>Roadmap  <small>what's next in OtherScreen services</small></h1>
+  </div>
+  <div class="row">
+    <div class="span4">
+      <h2>Coming soon</h2>
+      <p>Right now, this documentation itself is one of the primary deliverables on the roadmap!</p>
+    </div><!-- /.span -->    
+  </div><!-- /.row -->
+</section>
+
+<section id="contact">
+  <div class="page-header">
+    <h1>API Reference  <small>when you know exactly what you're looking for</small></h1>
+  </div>
+  <div class="row">
+    <div class="span4">
+      <h2>Authentication API's</h2>
+      <p>We can't let you play if we don't know who you are!</p>
+      <ul>
+        <li>Creating an account</li>
+        <li>Authentication with username/password</li>
+        <li>Authentication with Facebook</li>
+        <li>Authentication with Twitter</li>
+      </ul>      
+    </div><!-- /.span -->    
+    <div class="span4">
+      <h2>Player API's</h2>
+      <p>Most clients will be implementing our Player API's to allow people to play OtherScreen-powered events.  Elements of our API are enumerated below.</p>
+      <ul>
+        <li>API Overview</li>
+        <li>Glossary</li>
+      <li>Authentication</li>
+      <li>Live Events</li>
+      <li>Event Cards</li>
+      <li>Groups</li>
+      <li>Questions</li>
+      <li>Users</li>
+      </ul>
+    </div><!-- /.span -->
+    <div class="span4">
+      <h2>DJ API's</h2>
+      <p>Some of the use cases we cover specifically:</p>
+      <ul>
+        <li>Arriving to an event early and completing preroll.</li>
+        <li>Answering each type of question</li>
+        <li>Updating and managing scoreboards</li>
+        <li>Chatting</li>
+        <li>Social Networking interactivity</li>
+      </ul>
+    </div><!-- /.span -->
+  </div><!-- /.row -->
+</section>
+
+
+     <!-- Footer
+      ================================================== -->
+      <footer class="footer">
+        <p class="pull-right"><a href="#">Back to top</a></p>
+        <p>API site happily using <a href="http://twitter.github.com/bootstrap/index.html">Twitter Bootstrap</a>.</p>
+        <p>Documentation licensed under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</p>
+      </footer>
+
+    </div><!-- /container -->
+
+
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/google-code-prettify/prettify.js"></script>
+    <script src="assets/js/bootstrap-transition.js"></script>
+    <script src="assets/js/bootstrap-alert.js"></script>
+    <script src="assets/js/bootstrap-modal.js"></script>
+    <script src="assets/js/bootstrap-dropdown.js"></script>
+    <script src="assets/js/bootstrap-scrollspy.js"></script>
+    <script src="assets/js/bootstrap-tab.js"></script>
+    <script src="assets/js/bootstrap-tooltip.js"></script>
+    <script src="assets/js/bootstrap-popover.js"></script>
+    <script src="assets/js/bootstrap-button.js"></script>
+    <script src="assets/js/bootstrap-collapse.js"></script>
+    <script src="assets/js/bootstrap-carousel.js"></script>
+    <script src="assets/js/bootstrap-typeahead.js"></script>
+    <script src="assets/js/application.js"></script>
+
+  </body>
+</html>
+
