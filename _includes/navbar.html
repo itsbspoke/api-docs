@@ -1,26 +1,26 @@
     <div class="navbar navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container">
-          <span class="brand"><a href="./index.html">OtherScreen</a> <span class="version">1.0</span></span>
+          <span class="brand"><a href="{{ site.baseurl }}/index.html">OtherScreen</a> <span class="version">1.0</span></span>
           <div class="nav-collapse collapse">
             <ul class="nav">
-              <li class="active">
-                <a href="./tutorial.html">API Tutorial</a>
+              <li class="{% if page.section == 'tutorial' %}active{% endif %}">
+                <a href="{{ site.baseurl }}/tutorial.html">API Tutorial</a>
               </li>              
-              <li class="">
-                <a href="./reference.html">API Reference</a>
+              <li class="{% if page.section == 'reference' %}active{% endif %}">
+                <a href="{{ site.baseurl }}/reference.html">API Reference</a>
               </li>
-              <li class="">
-                <a href="./websockets.html">WebSockets</a>
+              <li class="{% if page.section == 'websockets' %}active{% endif %}">
+                <a href="{{ site.baseurl }}/websockets.html">WebSockets</a>
               </li>
-              <li class="">
-                <a href="./changelog.html">History</a>
+              <li class="{% if page.section == 'changelog' %}active{% endif %}">
+                <a href="{{ site.baseurl }}/changelog.html">History</a>
               </li>
-              <li class="">
-                <a href="./roadmap.html">Roadmap</a>
+              <li class="{% if page.section == 'roadmap' %}active{% endif %}">
+                <a href="{{ site.baseurl }}/roadmap.html">Roadmap</a>
               </li>
-              <li class="">
-                <a href="./contact.html">Contact</a>
+              <li class="{% if page.section == 'contact' %}active{% endif %}">
+                <a href="{{ site.baseurl }}/contact.html">Contact</a>
               </li>
 
             </ul>
