@@ -1,0 +1,208 @@
+---
+layout: default
+section: websockets
+---
+
+<header class="jumbotron subhead" id="overview">
+  <h1>WebSockets</h1>
+  <p class="lead">Establishing and using a real-time connection to OtherScreen.</p>
+  <div class="subnav">
+    <ul class="nav nav-pills">
+      <li><a href="#authentication">Authentication</a></li>
+      <li><a href="#subscriptions">Channel Subscriptions</a></li>
+      <li><a href="#management">Subscription Management</a></li>
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+          Interactive Events <b class="caret"></b>
+        </a>
+        <ul class="dropdown-menu">
+          <li><a href="#multiple-choice">Multiple Choice prompts</a></li>
+          <li><a href="#keyboard">Keyboard prompts</a></li>
+          <li><a href="#keypad">Keypad prompts</a></li>
+          <li><a href="#list">List prompts</a></li>
+          <li><a href="#range">Range prompts</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+          Informational Events <b class="caret"></b>
+        </a>
+        <ul class="dropdown-menu">
+          <li><a href="#scored">Question scored</a></li>
+          <li><a href="#event-message">Chat message</a></li>
+          <li><a href="#group-message">Group chat message</a></li>
+          <li><a href="#announcement">Announcement</a></li>
+          <li><a href="#reset-selections">Reset Selections</a></li>
+          <li><a href="#user-notification">User Notification</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</header>
+
+
+
+<!-- Button Groups
+================================================== -->
+<section id="authentication">
+  <div class="page-header">
+    <h1>Pusher authentication <small>establishing a real-time link to OtherScreen</small></h1>
+  </div>
+  <div class="row">
+    <div class="span4">
+      <h3>Reason for existence</h3>
+      <p>Pusher requires authentication to ensure that we are sending events to persons who are authorized to receive them.</p>
+      <p>You'll be required to send this message once per channel that you'd like to subscribe to.</p>
+      <p><span class="label label-info">Related</span> See <a href="#subscriptions">Channel subscriptions</a> to help determine the list of channels to which you should subscribe.</p>
+    </div>
+    <div class="span4">
+      <h3>Invocation form</h3>
+      <p>POST /authentications/pusher</p>
+      <div class="">
+        <dl>
+          <dt>socket_id</dt>
+          <dd>You receive this from a connection_established callback from the Pusher service.
+          <dt>channel_name</dt>
+          <dd>the name of the channel you'd like to subscribe to <br/> (e.g. v1-presence-production-live-event-89)</dd>
+        </dl>
+      </div>
+    </div>
+    <div class="span4">
+      <h3>Status</h3>
+      <p>Complete</p>
+      <h3>HTTP Error Codes</h3>
+      <dl>
+        <dt>401</dt>
+        <dd>You must supply an authentication token header in your request.  See our <a href="../reference/authentication/index.html">Authentication APIs</a> for how to acquire and use this token.</dd>
+        <dt>403</dt>
+        <dd>You must supply a socket_id you received from Pusher after a successful connection is made.</dd>
+        <dt>403</dt>
+        <dd>You must supply a channel name.</dd>
+        <dt>404</dt>
+        <dd>You attempted to subscribe to a channel that doesn't exist.
+          <p><span class="label label-info">Planned</span> We will support this error code at or before v2.  Until then, make sure you have the right channel.</p>
+        </dd>
+        <dt>403</dt>
+          <dd>You cannot subscribe to this channel.
+          <p><span class="label label-info">Planned</span> We will support this error code at or before v2.  Until then, you can subscribe to any channel.</span></p>
+        </dd>
+      </dl>
+    </div>
+  </div>
+  <div class="row">
+    <div class="span12">
+      <h3>Example usage</h3>
+      <pre>
+> curl -i -H "Accept: application/vnd.otherscreen.com; version=1" -H "auth_token: ea71eb59a85972b9edecb4a14cbcde3eef19bd3242f5167b1d3e09560caba5a7" --data "channel_name=presence-development-live-event-89-v1&socket_id=2089.90137" http://localhost:5000/authentications/pusher
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+ETag: "334b79bfe48839e518e4a87562394de1"
+Cache-Control: max-age=0, private, must-revalidate
+X-UA-Compatible: IE=Edge
+Set-Cookie: _session_id=c4353ca7cfcc99ac560219e9125eea34; path=/; HttpOnly
+X-Runtime: 0.484089
+Connection: close
+Server: thin 1.3.1 codename Triple Espresso
+
+{"auth":"a549e4de9612e12ed0ff:02753975e6e87a77b01c1afd35b37234c868ece458f2c71877c2f5c83164d9d1","channel_data":"{\"user_id\":7,\"user_info\":{\"handle\":\"Jim Van Fleet\",\"user_name\":\"Jim Van Fleet\"}}"}
+      </pre>
+    </div>
+  </div>
+</section>
+
+
+<section id="subscriptions">
+  <div class="page-header">
+    <h1>Channel subscriptions <small>subscribing to the right channels</small></h1>
+  </div>
+  <div class="row">
+    <div class="span12">
+      <h3>How to subscribe</h3>
+      <p>Use the techniques below to create a channel name.  Use the channel name in the above call to subscribe to the channel.  The response you get back represents Step 6 in the <a href="http://pusher.com/docs/authenticating_users#authentication_process">Pusher documentation</a>.  Using the information that you get from auth, you'll have the ability to complete your channel subscription.</p>
+      <h3>Channel naming preamble and postlude</h3>
+      <p>All channel name schemes below begin and end with the same preamble and postlude and will not vary throughout your implementation.</p>
+      <p>The preamble is formed by concatenating "presence-" with the environment your implementation targets.  Unless you are instructed otherwise by OtherScreen staff, that value will be "production".  So all channel names below will begin with "presence-production-".</p>
+      <p>The postlude indicates which version of the API you are using.  At this time, that's "v1", so all channel names will end with "-v1" </p>
+      <h3>Receiving events</h3>
+      <p>After successfully subscribing to the channels described in this section, you will want to bind them to various event types from the bottom sections.  We'll enumerate them within the sections they may appear.</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="span4">
+      <h3>Live Event Channel</h3>
+      <p><span class="label label-info">Related</span> 
+        You should only subscribe to a single event channel at a time, after you 
+        <a href="../reference/live_events/index.html#check-in">check into a live event</a> successfully.
+        <span class="label label-info">Related</span> 
+        If you find the live event has mandatory preroll, you may not wish to subscribe to the WebSocket channel immediately.
+        See the <a href="../tutorials/preroll.html">Completing Preroll</a> tutorial for more information.
+      </p>
+      <h3>Channel name</h3>
+      <pre>live-event-#{eventID}</pre>
+      <p>So after including the preamble and postlude, an example would be:</p>
+      <pre>presence-production-live-event-421-v1</pre>
+    </div>
+    <div class="span4">
+      <h3>User Channel</h3>
+      <p><span class="label label-info">Related</span> 
+        You will need both the authentication token and your user ID from your <a href="../reference/authentication/index.html">Authentication API</a> 
+        of choice will supply a needed value to complete this subscription 
+      </p>
+      <h3>Channel name</h3>
+      <pre>user-#{userID}</pre>
+      <p>So after including the preamble and postlude, an example would be:</p>
+      <pre>presence-production-user-7001-v1</pre>
+    </div>
+    <div class="span4">
+      <h3>Group Channels</h3>
+      <p></p>
+      <p><span class="label label-info">Related</span> 
+        You should complete an authentication request once for each group returned by the <a href="../reference/groups/index.html#listing">Group Listing API</a>
+      </p>
+      <h3>Channel name</h3>
+      <p>The appropriate channel name has three components:</p>
+      <p>The elements are combined in this scheme:</p>
+      <pre>group-#{groupID}</pre>
+      <p>So after including the preamble and postlude, an example would be:</p>
+      <pre>presence-production-group-72-v1</pre>
+    </div>
+  </div>
+</section>
+
+<section id="management">
+  <div class="page-header">
+    <h1>Subscription Management <small>A note on staying subscribed.</small></h1>
+  </div>
+  <div class="row">
+    <div class="span4">
+      <h3>Mobile connections need special care.</h3>
+      <p>Please be aware that mobile connections can be quite fragile, and anything that ends or degrades the WebSocket connection will require re-connection to Pusher and reauthorization on all channels.</p>
+      <p>As a client implementor, you are encouraged to gain as much insight into the behavior on client devices as you can, whether that is through logging or allowing upload of connection logs to a location of your choice.</p>
+      <p>We also encourage you to create a "Reconnect" button that performs the reconnection and reauthorization process manually, while you work to ensure that it is never needed.</p>
+    </div>
+  </div>
+</section>
+
+<section id="multiple-choice">
+  <div class="page-header">
+    <h1>Multiple choice questions</h1>
+  </div>
+  <div class="row">
+    <div class="span4">
+      <h3>Message type</h3>
+      <p>MultipleChoice<p>
+      <h3>Channel</h3>
+      <p>Messages of this type will come from the live event channel.<p>
+      <h3>Expectations</h3>
+      <p>All questions should be displayed until the user has answered it.</p>
+    </div>
+    <div class="span8">
+      <h3>JSON form</h3>
+      <pre>
+      {"type":"MultipleChoicePrompt","data":{"id":2,"body":"Which of these best describes you?","demographic":false,"answers":[{"letter":"a","body":"Single"},{"letter":"b","body":"Married"}],"urls":{"path":"/multiple_choice_prompts/2","selections":"/multiple_choice_prompts/2/selections"},"info":"Just for fun.","type":"MultipleChoicePrompt"}}
+      </pre>
+      <p><span class="label label-warning">Warning</span> This JSON form is definitely not correct.  Don't use it.</p>
+    </div>
+
+  </div>
+</section>
