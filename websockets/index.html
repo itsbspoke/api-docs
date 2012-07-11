@@ -93,18 +93,18 @@ section: websockets
     <div class="span12">
       <h3>Example usage</h3>
       <pre>
-> curl -i -H "Accept: application/vnd.otherscreen.com; version=1" -H "auth_token: ea71eb59a85972b9edecb4a14cbcde3eef19bd3242f5167b1d3e09560caba5a7" --data "channel_name=presence-development-live-event-89-v1&socket_id=2089.90137" http://localhost:5000/authentications/pusher
+> curl -i -H "Accept: application/vnd.otherscreen.com; version=1" -H "HTTP_X_OTHERSCREEN_AUTH_TOKEN: ea71eb59a85972b9edecb4a14cbcde3eef19bd3242f5167b1d3e09560caba5a7" --data "channel_name=presence-development-live-event-89-v1&socket_id=2089.90137" http://localhost:5000/authentications/pusher
 HTTP/1.1 200 OK
 Content-Type: application/json; charset=utf-8
-ETag: "334b79bfe48839e518e4a87562394de1"
+ETag: "8c7d2bc886351fe6c00a59a9a9f5ab0e"
 Cache-Control: max-age=0, private, must-revalidate
 X-UA-Compatible: IE=Edge
-Set-Cookie: _session_id=c4353ca7cfcc99ac560219e9125eea34; path=/; HttpOnly
-X-Runtime: 0.484089
+Set-Cookie: _session_id=ffacc4978678e2308f9d1817aae127e2; path=/; HttpOnly
+X-Runtime: 0.550321
 Connection: close
 Server: thin 1.3.1 codename Triple Espresso
 
-{"auth":"a549e4de9612e12ed0ff:02753975e6e87a77b01c1afd35b37234c868ece458f2c71877c2f5c83164d9d1","channel_data":"{\"user_id\":7,\"user_info\":{\"handle\":\"Jim Van Fleet\",\"user_name\":\"Jim Van Fleet\"}}"}
+{"auth":"a549e4de9612e12ed0ff:83d49d4a0028b9800edb8bca2866c9f4554e021f81b9e67bcef145c1e0ae1933","channel_data":"{\"user_id\":7,\"user_info\":{\"handle\":\"Jim Van Fleet\",\"user_name\":\"Jim Van Fleet\"}}"}
       </pre>
     </div>
   </div>
@@ -194,12 +194,117 @@ Server: thin 1.3.1 codename Triple Espresso
       <h3>Channel</h3>
       <p>Messages of this type will come from the live event channel.<p>
       <h3>Expectations</h3>
+      <p>The choices should be presented in a way so that a mouse-click or tap should register which of the answers should be selected.  No more than four choices will be presented.</p>
       <p>All questions should be displayed until the user has answered it.</p>
     </div>
     <div class="span8">
       <h3>JSON form</h3>
       <pre>
-      {"type":"MultipleChoicePrompt","data":{"id":2,"body":"Which of these best describes you?","demographic":false,"answers":[{"letter":"a","body":"Single"},{"letter":"b","body":"Married"}],"urls":{"path":"/multiple_choice_prompts/2","selections":"/multiple_choice_prompts/2/selections"},"info":"Just for fun.","type":"MultipleChoicePrompt"}}
+{"type":"MultipleChoicePrompt","data":{"id":2,"body":"Which of these best describes you?","demographic":false,"answers":[{"letter":"a","body":"Single"},{"letter":"b","body":"Married"}],"urls":{"path":"/multiple_choice_prompts/2","selections":"/multiple_choice_prompts/2/selections"},"info":"Just for fun.","type":"MultipleChoicePrompt"}}
+      </pre>
+      <p><span class="label label-warning">Warning</span> This JSON form is definitely not correct.  Don't use it.</p>
+    </div>
+
+  </div>
+</section>
+
+<section id="keyboard">
+  <div class="page-header">
+    <h1>Keyboard questions <small>free-form short answer responses</small></h1>
+  </div>
+  <div class="row">
+    <div class="span4">
+      <h3>Message type</h3>
+      <p>Keyboard<p>
+      <h3>Channel</h3>
+      <p><span class="label label-info">Planned</span> Messages of this type will come from the live event channel in the future.<p>
+      <h3>Expectations</h3>
+      <p>You should indicate to the user that keyboard entry is expected.  Provide a text area in which to type and prompt the user with a keyboard interface, if appropriate.</p>
+      <p>This type of question will only be present in preroll while our API is at 1.0.</p>
+      <p>All questions should be displayed until the user has answered it.</p>
+    </div>
+    <div class="span8">
+      <h3>JSON form</h3>
+      <pre>
+{"type":"KeyboardPrompt","data":{"id":1,"body":"What are your first impressions of OtherScreen?","demographic":false,"urls":{"path":"/keyboard_prompts/1","selections":"/keyboard_prompts/1/selections"},"info":"Just for fun.","type":"KeyboardPrompt"}}
+      </pre>
+      <p><span class="label label-warning">Warning</span> This JSON form is definitely not correct.  Don't use it.</p>
+    </div>
+
+  </div>
+</section>
+
+<section id="keypad">
+  <div class="page-header">
+    <h1>Keypad questions <small>numeric responses</small></h1>
+  </div>
+  <div class="row">
+    <div class="span4">
+      <h3>Message type</h3>
+      <p>Keypad<p>
+      <h3>Channel</h3>
+      <p><span class="label label-info">Planned</span> Messages of this type will come from the live event channel in the future.<p>
+      <h3>Expectations</h3>
+      <p>You should indicate to the user that numeric entry is expected.  Provide a text field in which to type and prompt the user with a phone keypad interface, if appropriate.</p>
+      <p>This type of question will only be present in preroll while our API is at 1.0.</p>
+      <p>All questions should be displayed until the user has answered it.</p>
+    </div>
+    <div class="span8">
+      <h3>JSON form</h3>
+      <pre>
+{"type":"KeypadPrompt","data":{"id":1,"body":"How many people are in your household?","demographic":false,"urls":{"path":"/keypad_prompts/1","selections":"/keypad_prompts/1/selections"},"info":"Just for fun.","type":"KeypadPrompt"}}
+      </pre>
+      <p><span class="label label-warning">Warning</span> This JSON form is definitely not correct.  Don't use it.</p>
+    </div>
+
+  </div>
+</section>
+
+<section id="keypad">
+  <div class="page-header">
+    <h1>List questions <small>select from many responses</small></h1>
+  </div>
+  <div class="row">
+    <div class="span4">
+      <h3>Message type</h3>
+      <p>List<p>
+      <h3>Channel</h3>
+      <p><span class="label label-info">Planned</span> Messages of this type will come from the live event channel in the future.<p>
+      <h3>Expectations</h3>
+      <p>You should indicate to the user a selection from a list is expected, providing the expected interface for such a selection for your platform. If the user makes no selection, allow them to skip the question without sending a selection request to the service.</p>
+      <p>This type of question will only be present in preroll while our API is at 1.0.</p>
+      <p>All questions should be displayed until the user has answered it.</p>
+    </div>
+    <div class="span8">
+      <h3>JSON form</h3>
+      <pre>
+{"type":"ListPrompt","data":{"id":1,"body":"How old are you?","answers":["14-17","18-20","21-24","25-29","30-34","35-44","45-54","55-63","64+"],"demographic":false,"urls":{"path":"/list_prompts/1","selections":"/list_prompts/1/selections"},"info":"Just for fun.","type":"ListPrompt"}}
+      </pre>
+      <p><span class="label label-warning">Warning</span> This JSON form is definitely not correct.  Don't use it.</p>
+    </div>
+
+  </div>
+</section>
+
+<section id="range">
+  <div class="page-header">
+    <h1>Range questions <small>make a guided selection between two endpoints</small></h1>
+  </div>
+  <div class="row">
+    <div class="span4">
+      <h3>Message type</h3>
+      <p>Range<p>
+      <h3>Channel</h3>
+      <p><span class="label label-info">Planned</span> Messages of this type will come from the live event channel in the future.<p>
+      <h3>Expectations</h3>
+      <p>You should indicate to the user a selection between two endpoints is expected. A slider or dial may be a useful visual metaphor.</p>
+      <p>This type of question will only be present in preroll while our API is at 1.0.</p>
+      <p>All questions should be displayed until the user has answered it.</p>
+    </div>
+    <div class="span8">
+      <h3>JSON form</h3>
+      <pre>
+{"type":"ListPrompt","data":{"id":1,"body":"How old are you?","answers":["14-17","18-20","21-24","25-29","30-34","35-44","45-54","55-63","64+"],"demographic":false,"urls":{"path":"/list_prompts/1","selections":"/list_prompts/1/selections"},"info":"Just for fun.","type":"ListPrompt"}}
       </pre>
       <p><span class="label label-warning">Warning</span> This JSON form is definitely not correct.  Don't use it.</p>
     </div>
