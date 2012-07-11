@@ -311,3 +311,155 @@ Server: thin 1.3.1 codename Triple Espresso
 
   </div>
 </section>
+
+<section id="scored">
+  <div class="page-header">
+    <h1>Question scored <small>scoring notification</small></h1>
+  </div>
+  <div class="row">
+    <div class="span4">
+      <h3>Message type</h3>
+      <p>Scored<p>
+      <h3>Channel</h3>
+      <p>Messages of this type will come from the live event channel.<p>
+      <h3>Expectations</h3>
+      <p>After receiving this message, you should issue the <a href="../reference/live_events/index.html#check-in">Event Check-in API</a> call to update your score, statistics, and leaderboard.</p>
+      <p>If appropriate, the display of the user's answer to the question should change appearance to indicate whether they answered the question correctly.</p>
+    </div>
+    <div class="span8">
+      <h3>JSON form</h3>
+      <pre>
+{type: “prop”, id: 12649, correct: “a”, notification: “Body of proposition”, answer: “Text of correct answer”, commentary: “Also display this” }
+      </pre>
+      <p><span class="label label-warning">Warning</span> This JSON form is definitely not correct.  Don't use it.</p>
+    </div>
+
+  </div>
+</section>
+
+<section id="event-message">
+  <div class="page-header">
+    <h1>Chat message <small>users talking to each other</small></h1>
+  </div>
+  <div class="row">
+    <div class="span4">
+      <h3>Message type</h3>
+      <p>Message<p>
+      <h3>Channel</h3>
+      <p>Messages of this type will come from the live event channel.<p>
+      <h3>Expectations</h3>
+      <p>Upon first checking into an event, the client should issue the <a href="../reference/live_events/index.html#messages">Event Messages history API</a> call.  These messages should be appended to the results of that call.</p>
+      <p>Implementer can choose a functional maximum of messages to display..  New messages should be preferred to older messages in this scheme.</p>
+      <p>User chat should be displayed prominently, with special attention drawn to the user's own chats.  User chat should be displayed prominently without any user interaction upon event entry or completion of preroll as appropriate.</p>
+    </div>
+    <div class="span8">
+      <h3>JSON form</h3>
+      <pre>
+{"user_name":"Jim Van Fleet","body":"thin","user_id":7,"id":22105}
+      </pre>
+      <p><span class="label label-warning">Warning</span> This JSON form is definitely not correct.  Don't use it.</p>
+    </div>
+
+  </div>
+</section>
+
+<section id="group-message">
+  <div class="page-header">
+    <h1>Group chat message <small>private user chat</small></h1>
+  </div>
+  <div class="row">
+    <div class="span4">
+      <h3>Message type</h3>
+      <p>GroupMessage<p>
+      <h3>Channel</h3>
+      <p>Messages of this type will come from a group event channel.<p>
+      <h3>Expectations</h3>
+      <p>Upon completing the  <a href="../reference/groups/index.html#messages">Group listing API</a> call, the client should issue the <a href="../reference/groups/index.html#messages">Group Messages history API</a> call for each group in the list.  These messages should be appended to the results of those calls as appropriate.</p>
+      <p>Implementer should attempt to show user when new messages arrive for one of their groups, as group chat is expected to be secondary for most users.</p>
+    </div>
+    <div class="span8">
+      <h3>JSON form</h3>
+      <pre>
+{user_name:boorad, body:wat, user_id:423, group_id:23, id:1170}
+      </pre>
+      <p><span class="label label-warning">Warning</span> This JSON form is definitely not correct.  Don't use it.</p>
+    </div>
+
+  </div>
+</section>
+
+<section id="announcement">
+  <div class="page-header">
+    <h1>Announcement <small>messages addressing entire event audience</small></h1>
+  </div>
+  <div class="row">
+    <div class="span4">
+      <h3>Message type</h3>
+      <p>Announcement<p>
+      <h3>Channel</h3>
+      <p>Messages of this type will come from the live event channel.<p>
+      <h3>Expectations</h3>
+      <p>An announcement should be visible for 30 seconds, or until dismissed by the user. It should not replace any outstanding poll or prop from being presented in the client UI.  Announcements should queue to become visible if, for any reason, they are not visible during gameplay interactions like exploring other users or answering questions.</p>
+      <p>Announcements may be included in preroll.</p>
+    </div>
+    <div class="span8">
+      <h3>JSON form</h3>
+      <pre>
+{id: 5317, body: “Another announcement”, commentary: “with commentary”}
+      </pre>
+      <p><span class="label label-warning">Warning</span> This JSON form is definitely not correct.  Don't use it.</p>
+    </div>
+
+  </div>
+</section>
+
+<section id="reset-selections">
+  <div class="page-header">
+    <h1>Reset selections <small>helping DJ's correct mistakes</small></h1>
+  </div>
+  <div class="row">
+    <div class="span4">
+      <h3>Message type</h3>
+      <p>ResetSelections<p>
+      <h3>Channel</h3>
+      <p>Messages of this type will come from the live event channel.<p>
+      <h3>Expectations</h3>
+      <p>This message is sent when a scorable question has had its correct answer change.  Treat this like a scored message, with the exception that instead of updating the selection's correctness in place, the selection in question should be reloaded.</p>
+    </div>
+    <div class="span8">
+      <h3>JSON form</h3>
+      <pre>
+TBD
+      </pre>
+      <p><span class="label label-warning">Warning</span> This JSON form is definitely not correct.  Don't use it.</p>
+    </div>
+
+  </div>
+</section>
+
+<section id="user-notification">
+  <div class="page-header">
+    <h1>User notifications <small>messages especially for you</small></h1>
+  </div>
+  <div class="row">
+    <div class="span4">
+      <h3>Message type</h3>
+      <p>Notification<p>
+      <h3>Subtypes</h3>
+      <ul>
+        <li>Award</li>
+        <li>Group Invitation</li>
+      <h3>Channel</h3>
+      <p>Messages of this type will come from the user channel.<p>
+      <h3>Expectations</h3>
+    </div>
+    <div class="span8">
+      <h3>JSON form</h3>
+      <pre>
+TBD
+      </pre>
+      <p><span class="label label-warning">Warning</span> This JSON form is definitely not correct.  Don't use it.</p>
+    </div>
+
+  </div>
+</section>
