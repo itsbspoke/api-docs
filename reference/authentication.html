@@ -1,0 +1,143 @@
+---
+layout: default
+section: reference
+---
+
+<header class="jumbotron subhead" id="overview">
+  <h1>Authentication</h1>
+  <p class="lead">How to prove that you are who you say you are.</p>
+  <div class="subnav">
+    <ul class="nav nav-pills">
+      <li><a href="#email">Email / Password</a></li>
+      <li><a href="#facebook">Facebook</a></li>
+      <li><a href="#twitter">Twitter</a></li>
+    </ul>
+  </div>
+</header>
+
+
+
+<!-- Button Groups
+================================================== -->
+<section id="email">
+  <div class="page-header">
+    <h1>Email and password <small>for those who don't prefer social networks</small></h1>
+  </div>
+  <div class="row">
+    <div class="span4">
+      <h3>Reason for existence</h3>
+      <p>Some users will not want to use Facebook. For those users, we allow a username and password to be set. Hitting this API endpoint will retrieve a user token that can be used to authenticate all further requests from that user.</p>
+      <p><span class="label label-info">Related</span> We do not need the password to be encrypted.  We do not yet pretend that we are secure.</p>
+    </div>
+    <div class="span4">
+      <h3>Invocation form</h3>
+      <p>POST /authentications/email</p>
+      <div class="">
+        <dl>
+          <dt>email</dt>
+          <dd>Email address of the user</dd>
+          <dt>password</dt>
+          <dd>Supplied password</dd>
+        </dl>
+      </div>
+    </div>
+    <div class="span4">
+      <h3>Status</h3>
+      <p>Complete</p>
+      <h3>HTTP Error Codes</h3>
+      <dl>
+        <dt>404</dt>
+        <dd>No user with that email address was found, try another email.</dd>
+        <dt>401</dt>
+        <dd>Password was not correct</dd>
+      </dl>
+    </div>
+  </div>
+  <div class="row">
+    <div class="span12">
+      <h3>Example usage</h3>
+      <pre>
+> curl -i -H "Accept: application/vnd.otherscreen.com; version=1" --data "email=jim@jimvanfleet.com&password=password" http://localhost:5000/authentications/email
+
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+ETag: "e0ab0117aa71684a8280fea715f2fba0"
+Cache-Control: max-age=0, private, must-revalidate
+X-UA-Compatible: IE=Edge
+Set-Cookie: _session_id=ae8c64a9bcb1fad2ffb90856b73413c1; path=/; HttpOnly
+X-Runtime: 1.939288
+Connection: close
+Server: thin 1.3.1 codename Triple Espresso
+
+{"authentication_token":"ea71eb59a85972b9edecb4a14cbcde3eef19bd3242f5167b1d3e09560caba5a7","email":"jim@jimvanfleet.com","id":7}
+      </pre>
+    </div>
+  </div>
+</section>
+
+
+<section id="facebook">
+  <div class="page-header">
+    <h1>Facebook <small>using the appropriate SDK</small></h1>
+  </div>
+  <div class="row">
+    <div class="span4">
+      <h3>Reason for existence</h3>
+      <p>We encourage you to leverage the Facebook SDK to make creating an account and logging in as easy as possible 
+      <p><span class="label label-info">Related</span> The token we receive must be valid on its own-- this is not an OAuth endpoint, we expect a token we can use without alteration.</p>
+    </div>
+    <div class="span4">
+      <h3>Invocation form</h3>
+      <p>POST /authentications/facebook</p>
+      <div class="">
+        <dl>
+          <dt>token</dt>
+          <dd>Facebook token</dd>
+        </dl>
+      </div>
+    </div>
+    <div class="span4">
+      <h3>Status</h3>
+      <p>Complete</p>
+      <h3>HTTP Error Codes</h3>
+      <dl>
+        <dt>401</dt>
+        <dd>You did not supply a Facebook token, or the token did not work.</dd>
+      </dl>
+    </div>
+  </div>
+  <div class="row">
+    <div class="span12">
+      <h3>Example usage</h3>
+      <pre>
+> curl -i -H "Accept: application/vnd.otherscreen.com; version=1" --data "token=BAADnHnPO2toBAFVvDPO0gaZAPDJYOgMN7v7Bf9rILyGcqIRE86gThw6oZAsWgZBOaibm9azldCMA1esOdfPEoY8wgbQiVoBo7rhSuzHAEWLy2C6aRO1r6VLJ7PRlwsCfy3IjZCRYIK895GZCVglJQ" http://localhost:5000/authentications/facebook
+
+
+HTTP/1.1 401 Unauthorized
+Content-Type: application/json; charset=utf-8
+Cache-Control: no-cache
+X-UA-Compatible: IE=Edge
+Set-Cookie: _session_id=19c29eae491615a7e1315cfa011400b8; path=/; HttpOnly
+X-Runtime: 1.837067
+Connection: close
+Server: thin 1.3.1 codename Triple Espresso
+
+{"error":"The Facebook token you supplied was not valid."}
+      </pre>
+    </div>
+  </div>
+</section>
+
+<section id="twitter">
+  <div class="page-header">
+    <h1>Twitter <small>coming soon</small></h1>
+  </div>
+  <div class="row">
+    <div class="span4">
+      <h3>Not yet available</h3>
+      <p>We do not yet support logging in via Twitter using our API.</p>
+      <p><span class="label label-info">Planned</span> We will support this endpoint at or before v2.</p>
+
+    </div>
+  </div>
+</section>
