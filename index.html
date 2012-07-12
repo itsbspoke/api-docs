@@ -63,9 +63,9 @@ layout: default
       <p>We can't let you play if we don't know who you are!</p>
       <ul>
         <li>Creating an account</li>
-        <li><a href="reference/authentication/index.html#email">Authentication with username/password</a></li>
-        <li><a href="reference/authentication/index.html#facebook">Authentication with Facebook</a></li>
-        <li><a href="reference/authentication/index.html#twitter">Authentication with Twitter</a></li>
+        <li><a href="reference/authentication.html#email">Authentication with username/password</a></li>
+        <li><a href="reference/authentication.html#facebook">Authentication with Facebook</a></li>
+        <li><a href="reference/authentication.html#twitter">Authentication with Twitter</a></li>
       </ul>      
     </div><!-- /.span -->    
     <div class="span4">
@@ -74,11 +74,11 @@ layout: default
       <ul>
         <li>API Overview</li>
         <li>Glossary</li>
-        <li><a href="reference/authentication/index.html">Authentication</a></li>
-      <li><a href="reference/live-events/index.html">Live Events</a></li>
-      <li>Groups</li>
-      <li>Questions</li>
-      <li>Users</li>
+        <li><a href="reference/authentication.html">Authentication</a></li>
+        <li><a href="reference/live-events.html">Live Events</a></li>
+        <li><a href="reference/groups.html">Groups</a></li>
+        <li><a href="reference/questions.html">Questions</a></li>
+        <li><a href="reference/users.html">Users</a></li>
       </ul>
     </div><!-- /.span -->
     <div class="span4">
@@ -104,39 +104,32 @@ layout: default
       <h2>Getting Started</h2>
       <p>The application will not work without full WebSockets integration.  This section will help you cover the basics of establishing the right kind of connections.</p>
       <ul>
-        <li>Authenticating with OtherScreen and Pusher</li>
-        <li>Channel Subscriptions</li>
-        <li>Channel management</li>
+        <li><a href="websockets.html#authentication">Authenticating with OtherScreen and Pusher</a></li>
+        <li><a href="websockets.html#subscriptions">Channel Subscriptions</a></li>
+        <li><a href="websockets.html#management">Channel management</a></li>
       </ul>      
     </div><!-- /.span -->    
     <div class="span4">
-      <h2>General Notifications</h2>
-      <p>Received on the user channel, you must respond to these messages at any time after authentication.</p>
-      <ul>
-        <li>"Notifications"</li>
-      </ul>
-    </div><!-- /.span -->
-    <div class="span4">
       <h2>Game Notifications</h2>
       <p>While the client has an active subscription to a live event, you may receive the following messages at any time.</p>
-      <h3>Interactive notifications</h3>
+      <h3>Interactive events</h3>
       <ul>
-        <li>Poll</li>
-        <li>Prop</li>
-        <li>Trivia</li>
-        <li>Multiple Choice</li>
-        <li>List</li>
-        <li>Range</li>
-        <li>Keyboard</li>
-        <li>Keypad</li>
+        <li><a href="websockets.html#multiple-choice">Multiple Choice</a></li>
+        <li><a href="websockets.html#list">List</a></li>
+        <li><a href="websockets.html#range">Range</a></li>
+        <li><a href="websockets.html#keyboard">Keyboard</a></li>
+        <li><a href="websockets.html#keypad">Keypad</a></li>
       </ul>
-      <h3>Informational/procedural notifications</h3>
+    </div>
+    <div class="span4">
+      <h3>Informational events</h3>
       <ul>
-        <li>Question Scored</li>
-        <li>Event chat</li>
-        <li>Group chat</li>
-        <li>Announcements</li>
-        <li>Reset selections</li>
+        <li><a href="websockets.html#scored">Question Scored</a></li>
+        <li><a href="websockets.html#event-message">Event chat</a></li>
+        <li><a href="websockets.html#group-message">Group chat</a></li>
+        <li><a href="websockets.html#announcement">Announcements</a></li>
+        <li><a href="websockets.html#reset-selections">Reset selections</a></li>
+        <li><a href="websockets.html#user-notification">Notifications</a></li>
       </ul>
     </div><!-- /.span -->
   </div><!-- /.row -->
@@ -155,7 +148,7 @@ layout: default
     <div class="span4">
       <h2>Previous versions</h2>
       <ul>
-        <li><a href="./0.9/index.html">0.9</a></li>
+        <li><a href="./0.9html">0.9</a></li>
       </ul>      
     </div><!-- /.span -->    
   </div><!-- /.row -->
