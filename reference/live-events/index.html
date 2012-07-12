@@ -1,0 +1,1425 @@
+---
+layout: default
+section: reference
+---
+
+<header class="jumbotron subhead" id="overview">
+  <h1>Live Events</h1>
+  <p class="lead">The game room.</p>
+  <div class="subnav">
+    <ul class="nav nav-pills">
+      <li><a href="#listing">Listing</a></li>
+      <li><a href="#check-in">Check-in</a></li>
+      <li><a href="#messages">Chat history</a></li>
+      <li><a href="#write-message">Send a chat</a></li>
+      <li><a href="#tweet-chat">Tweet a chat</a></li>
+    </ul>
+  </div>
+</header>
+
+
+
+<!-- Button Groups
+================================================== -->
+<section id="listing">
+  <div class="page-header">
+    <h1>Listing <small>what games can I currently play?</small></h1>
+  </div>
+  <div class="row">
+    <div class="span4">
+      <h3>Reason for existence</h3>
+      <p>It returns a listing of live events that the client will have an opportunity to play.  After authenticating, this should be the first request that clients make.</p>
+      <p><span class="label label-info">Planned</span> We plan to make a version of this endpoint that does not require authentication in the future.</p>
+    </div>
+    <div class="span4">
+      <h3>Invocation form</h3>
+      <p>GET /live_events</p>
+    </div>
+    <div class="span4">
+      <h3>Status</h3>
+      <p>Complete</p>
+      <h3>HTTP Error Codes</h3>
+      <dl>
+        <dt>401</dt>
+        <dd>You must pass an authentication token.</dd>
+      </dl>
+    </div>
+  </div>
+  <div class="row">
+    <div class="span12">
+      <h3>Example usage</h3>
+      <pre>
+> curl -i -H "Accept: application/vnd.otherscreen.com; version=1" -H "HTTP_X_OTHERSCREEN_AUTH_TOKEN: ea71eb59a85972b9edecb4a14cbcde3eef19bd3242f5167b1d3e09560caba5a7" http://localhost:5000/live_events
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+ETag: "2762813bc3f2d9fe2b29730f96eb036e"
+Cache-Control: max-age=0, private, must-revalidate
+X-UA-Compatible: IE=Edge
+X-Runtime: 1.513294
+Connection: close
+Server: thin 1.3.1 codename Triple Espresso
+
+[
+ {
+  "concluded": false,
+  "demo": true,
+  "name": "June 19 Test event",
+  "tv_info": "",
+  "top_positive_streak": {
+   "user_name": "@gertig",
+   "value": 9,
+   "ties": false
+  },
+  "id": 371,
+  "event_date": "2012-06-20 13:55:00",
+  "top_negative_streak": {
+   "user_name": "@gertig",
+   "value": -3,
+   "ties": false
+  },
+  "points_rookie": {
+   "user_name": "N/A",
+   "value": 0
+  },
+  "in_progress": true,
+  "best_accuracy": {
+   "user_name": "@gertig",
+   "value": 76.900000000000006
+  },
+  "current_highest_positive_streak": {
+   "user_name": "Garth Moulton",
+   "value": 2
+  }
+ },
+ {
+  "concluded": false,
+  "demo": true,
+  "name": "7.3.12 QA",
+  "tv_info": "",
+  "top_positive_streak": {
+   "user_name": "N/A",
+   "value": 0,
+   "ties": false
+  },
+  "id": 428,
+  "event_date": "2012-07-03 13:13:00",
+  "top_negative_streak": {
+   "user_name": "N/A",
+   "value": 0,
+   "ties": false
+  },
+  "points_rookie": {
+   "user_name": "N/A",
+   "value": 0
+  },
+  "in_progress": true,
+  "best_accuracy": {
+   "user_name": "Min of 40 points",
+   "value": "0%"
+  },
+  "current_highest_positive_streak": {
+   "user_name": "No Positive Streaks",
+   "value": 0
+  }
+ },
+ {
+  "concluded": false,
+  "demo": false,
+  "name": "OtherScreen Daily - Tuesday July 3",
+  "tv_info": "OtherScreen",
+  "top_positive_streak": {
+   "user_name": "@MikeDavria",
+   "value": 2,
+   "ties": 2
+  },
+  "id": 424,
+  "event_date": "2012-07-03 19:00:00",
+  "top_negative_streak": {
+   "user_name": "Stitt Daddy",
+   "value": -3,
+   "ties": 1
+  },
+  "points_rookie": {
+   "user_name": "N/A",
+   "value": 0
+  },
+  "in_progress": true,
+  "best_accuracy": {
+   "user_name": "@MikeDavria",
+   "value": 50.0
+  },
+  "current_highest_positive_streak": {
+   "user_name": "No Positive Streaks",
+   "value": 0
+  }
+ },
+ {
+  "concluded": false,
+  "demo": false,
+  "name": "MLB: Home Run Derby",
+  "tv_info": "ESPN",
+  "top_positive_streak": {
+   "user_name": "@MikeDavria",
+   "value": 0,
+   "ties": false
+  },
+  "id": 426,
+  "event_date": "2012-07-09 20:00:00",
+  "top_negative_streak": {
+   "user_name": "@MikeDavria",
+   "value": 0,
+   "ties": false
+  },
+  "points_rookie": {
+   "user_name": "N/A",
+   "value": 0
+  },
+  "in_progress": true,
+  "best_accuracy": {
+   "user_name": "Min of 40 points",
+   "value": "0%"
+  },
+  "current_highest_positive_streak": {
+   "user_name": "No Positive Streaks",
+   "value": 0
+  }
+ },
+ {
+  "concluded": false,
+  "demo": false,
+  "name": "The Bachelorette",
+  "tv_info": "ABC",
+  "top_positive_streak": {
+   "user_name": "@MikeDavria",
+   "value": 0,
+   "ties": false
+  },
+  "id": 425,
+  "event_date": "2012-07-09 20:00:00",
+  "top_negative_streak": {
+   "user_name": "@MikeDavria",
+   "value": 0,
+   "ties": false
+  },
+  "points_rookie": {
+   "user_name": "N/A",
+   "value": 0
+  },
+  "in_progress": true,
+  "best_accuracy": {
+   "user_name": "Min of 40 points",
+   "value": "0%"
+  },
+  "current_highest_positive_streak": {
+   "user_name": "No Positive Streaks",
+   "value": 0
+  }
+ },
+ {
+  "concluded": false,
+  "demo": false,
+  "name": "MLB: All-Star Game",
+  "tv_info": "FOX",
+  "top_positive_streak": {
+   "user_name": "@MikeDavria",
+   "value": 0,
+   "ties": false
+  },
+  "id": 427,
+  "event_date": "2012-07-10 19:30:00",
+  "top_negative_streak": {
+   "user_name": "@MikeDavria",
+   "value": 0,
+   "ties": false
+  },
+  "points_rookie": {
+   "user_name": "N/A",
+   "value": 0
+  },
+  "in_progress": true,
+  "best_accuracy": {
+   "user_name": "Min of 40 points",
+   "value": "0%"
+  },
+  "current_highest_positive_streak": {
+   "user_name": "No Positive Streaks",
+   "value": 0
+  }
+ },
+ {
+  "concluded": false,
+  "demo": false,
+  "name": "Demographics Preroll",
+  "tv_info": null,
+  "top_positive_streak": {
+   "user_name": "testuser",
+   "value": 0,
+   "ties": false
+  },
+  "id": 433,
+  "event_date": "2012-07-11 16:01:53",
+  "top_negative_streak": {
+   "user_name": "testuser",
+   "value": 0,
+   "ties": false
+  },
+  "points_rookie": {
+   "user_name": "testuser",
+   "value": 0
+  },
+  "in_progress": true,
+  "best_accuracy": {
+   "user_name": "Min of 40 points",
+   "value": "0%"
+  },
+  "current_highest_positive_streak": {
+   "user_name": "No Positive Streaks",
+   "value": 0
+  }
+ },
+ {
+  "concluded": false,
+  "demo": false,
+  "name": "FOX News Edge",
+  "tv_info": "FOX Charlotte",
+  "top_positive_streak": {
+   "user_name": "@chrishalligan",
+   "value": 0,
+   "ties": 6
+  },
+  "id": 421,
+  "event_date": "2012-07-11 22:35:00",
+  "top_negative_streak": {
+   "user_name": "@chrishalligan",
+   "value": 0,
+   "ties": 16
+  },
+  "points_rookie": {
+   "user_name": "N/A",
+   "value": 0
+  },
+  "in_progress": true,
+  "best_accuracy": {
+   "user_name": "Min of 40 points",
+   "value": "0%"
+  },
+  "current_highest_positive_streak": {
+   "user_name": "Stitt Daddy",
+   "value": 1
+  }
+ }
+]
+
+      </pre>
+      <p><span class="label label-warning">Warning</span> This JSON form is definitely not correct.  Don't use it.</p>
+      <h3>Improvement areas:</h3>
+      <ul>
+        <li>Events must be segmented out into different collections to allow for some events to never be shown to clients based on their preference or customer arrangement</li>
+        <li>Some statistics for the event may be required, but not to the degree included here at this time.</li>
+        <li>Check in URL should be included.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="check-in">
+  <div class="page-header">
+    <h1>Check-In <small>basic event orientation and information</small></h1>
+  </div>
+  <div class="row">
+    <div class="span4">
+      <h3>Reason for existence</h3>
+      <p>A user must make this call to begin participating in an event, and then periodically as they continue participation in the event in question.</p>
+    </div>
+    <div class="span4">
+            <p>This call returns at least two and possibly three entities with useful information:</p>
+      <ul>
+        <li>The Event Card-- this is used when calculating and displaying a user's score and statistics for a particular event</li>
+        <li>The leaderboard-- this is an array of event cards ordered by their current competitive rank.  In this context, these event cards also contain information about the recency of their owner's participation, so that each user can be fully aware of who is currently engaged in gameplay and who is not.</li>
+        <li>Preroll-- in some cases, there may be some content available to display to the user, usually but not always before the start time of the event in question.  See <a href="../tutorials/preroll.html">Completing preroll</a> for more information.</li>
+      </ul>
+    </div>
+    <div class="span4">
+      <h3>Invocation form</h3>
+      <p>GET /live_events/<i>[id]</i></p>
+      <p>The [id] parameter should be one available from the listing call detailed above.</p>
+      <h3>Status</h3>
+      <p><span class="label label-warning">Warning</span> This JSON form is definitely not correct.  Don't use it.</p>
+      <h3>HTTP Error Codes</h3>
+      <dl>
+        <dt>401</dt>
+        <dd>You must pass an authentication token.</dd>
+        <dt>404</dt>
+        <dd>Make sure you are pulling the live event id from the listing API call.</dd>
+      </dl>
+    </div>
+  </div>
+  <div class="row">
+    <div class="span12">
+      <h3>Example usage</h3>
+      <pre>
+> curl -i -H "Accept: application/vnd.otherscreen.com; version=1" -H "HTTP_X_OTHERSCREEN_AUTH_TOKEN: ea71eb59a85972b9edecb4a14cbcde3eef19bd3242f5167b1d3e09560caba5a7" http://localhost:5000/live_events/371
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+ETag: "8b21d6b4fa271bd56ca87e2065f2ad5b"
+Cache-Control: max-age=0, private, must-revalidate
+X-UA-Compatible: IE=Edge
+X-Runtime: 2.077006
+Connection: close
+Server: thin 1.3.1 codename Triple Espresso
+
+{
+ "score": 0,
+ "max_streak": 0,
+ "preroll": [
+  {
+   "data": {
+    "id": 15800,
+    "commentary": "",
+    "body": "Pre rollin"
+   },
+   "type": "Announcement"
+  },
+  {
+   "data": {
+    "pushed_at": "09:28:52 PM",
+    "b": "b",
+    "unscorable": false,
+    "answers": [
+     {
+      "body": "a",
+      "letter": "a",
+      "correct": false
+     },
+     {
+      "body": "b",
+      "letter": "b",
+      "correct": false
+     }
+    ],
+    "path": "/live_events/371/props/47105",
+    "id": 47105,
+    "live_event_id": 371,
+    "a": "a",
+    "body": "prop",
+    "commentary": "",
+    "category": ""
+   },
+   "type": "Prop"
+  },
+  {
+   "data": {
+    "live_event_id": 371,
+    "a": "Verlander",
+    "b": "D'Avria",
+    "answers": [
+     {
+      "body": "Verlander",
+      "letter": "a",
+      "correct": true
+     },
+     {
+      "body": "D'Avria",
+      "letter": "b",
+      "correct": false
+     }
+    ],
+    "path": "/live_events/371/trivia/7691",
+    "id": 7691,
+    "body": "Who just threw a 100 MPH fastball in the 7th?",
+    "commentary": "",
+    "category": ""
+   },
+   "type": "Trivia"
+  },
+  {
+   "data": {
+    "a": "This one",
+    "b": "Other one",
+    "answers": [
+     {
+      "body": "This one",
+      "letter": "a"
+     },
+     {
+      "body": "Other one",
+      "letter": "b"
+     }
+    ],
+    "path": "/live_events/371/polls/5516",
+    "id": 5516,
+    "commentary": "",
+    "body": "What is the most fav",
+    "results": {
+     "answers": [
+      {
+       "letter": "a",
+       "body": "This one",
+       "formatted_percent": "75.0%",
+       "count": 3,
+       "percent": 0.75
+      },
+      {
+       "letter": "b",
+       "body": "Other one",
+       "formatted_percent": "25.0%",
+       "count": 1,
+       "percent": 0.25
+      }
+     ],
+     "type": "poll_result",
+     "commentary": "",
+     "body": "What is the most fav"
+    },
+    "responses": 4
+   },
+   "type": "Poll"
+  },
+  {
+   "data": {
+    "a": "Yess me",
+    "b": "Maybe me",
+    "answers": [
+     {
+      "body": "Yess me",
+      "letter": "a"
+     },
+     {
+      "body": "Maybe me",
+      "letter": "b"
+     }
+    ],
+    "path": "/live_events/371/polls/5517",
+    "id": 5517,
+    "commentary": "",
+    "body": "Another ONe",
+    "results": {
+     "answers": [
+      {
+       "letter": "a",
+       "body": "Yess me",
+       "formatted_percent": "50.0%",
+       "count": 2,
+       "percent": 0.5
+      },
+      {
+       "letter": "b",
+       "body": "Maybe me",
+       "formatted_percent": "50.0%",
+       "count": 2,
+       "percent": 0.5
+      }
+     ],
+     "type": "poll_result",
+     "commentary": "",
+     "body": "Another ONe"
+    },
+    "responses": 4
+   },
+   "type": "Poll"
+  },
+  {
+   "data": {
+    "live_event_id": 371,
+    "a": "Boooom",
+    "b": "Shot",
+    "answers": [
+     {
+      "body": "Boooom",
+      "letter": "a",
+      "correct": true
+     },
+     {
+      "body": "Shot",
+      "letter": "b",
+      "correct": false
+     }
+    ],
+    "path": "/live_events/371/trivia/7787",
+    "id": 7787,
+    "body": "Trivia in the house",
+    "commentary": "",
+    "category": ""
+   },
+   "type": "Trivia"
+  },
+  {
+   "data": {
+    "live_event_id": 371,
+    "a": "Nice move",
+    "b": "Nope",
+    "answers": [
+     {
+      "body": "Nice move",
+      "letter": "a",
+      "correct": true
+     },
+     {
+      "body": "Nope",
+      "letter": "b",
+      "correct": false
+     }
+    ],
+    "path": "/live_events/371/trivia/7788",
+    "id": 7788,
+    "body": "MOOORE Trivia",
+    "commentary": "",
+    "category": ""
+   },
+   "type": "Trivia"
+  },
+  {
+   "data": {
+    "live_event_id": 371,
+    "a": "Great thanks",
+    "b": "Noppers",
+    "answers": [
+     {
+      "body": "Great thanks",
+      "letter": "a",
+      "correct": true
+     },
+     {
+      "body": "Noppers",
+      "letter": "b",
+      "correct": false
+     }
+    ],
+    "path": "/live_events/371/trivia/7789",
+    "id": 7789,
+    "body": "Mooore Trivia",
+    "commentary": "",
+    "category": ""
+   },
+   "type": "Trivia"
+  },
+  {
+   "data": {
+    "id": 16019,
+    "commentary": "",
+    "body": "Last bit"
+   },
+   "type": "Announcement"
+  },
+  {
+   "data": {
+    "live_event_id": 371,
+    "a": "Yes",
+    "b": "no",
+    "answers": [
+     {
+      "body": "Yes",
+      "letter": "a",
+      "correct": true
+     },
+     {
+      "body": "no",
+      "letter": "b",
+      "correct": false
+     }
+    ],
+    "path": "/live_events/371/trivia/7790",
+    "id": 7790,
+    "body": "Last Trivia",
+    "commentary": "",
+    "category": ""
+   },
+   "type": "Trivia"
+  },
+  {
+   "data": {
+    "live_event_id": 371,
+    "a": "Yesssss",
+    "b": "no",
+    "answers": [
+     {
+      "body": "Yesssss",
+      "letter": "a",
+      "correct": true
+     },
+     {
+      "body": "no",
+      "letter": "b",
+      "correct": false
+     }
+    ],
+    "path": "/live_events/371/trivia/7791",
+    "id": 7791,
+    "body": "Even lastier",
+    "commentary": "",
+    "category": ""
+   },
+   "type": "Trivia"
+  },
+  {
+   "data": {
+    "live_event_id": 371,
+    "a": "Why dismiss and say done?",
+    "b": "No sure",
+    "answers": [
+     {
+      "body": "Why dismiss and say done?",
+      "letter": "a",
+      "correct": true
+     },
+     {
+      "body": "No sure",
+      "letter": "b",
+      "correct": false
+     }
+    ],
+    "path": "/live_events/371/trivia/7792",
+    "id": 7792,
+    "body": "The lastest of them all Trivia",
+    "commentary": "",
+    "category": ""
+   },
+   "type": "Trivia"
+  },
+  {
+   "data": {
+    "live_event_id": 371,
+    "a": "Okay",
+    "b": "No",
+    "answers": [
+     {
+      "body": "Okay",
+      "letter": "a",
+      "correct": true
+     },
+     {
+      "body": "No",
+      "letter": "b",
+      "correct": false
+     }
+    ],
+    "path": "/live_events/371/trivia/7793",
+    "id": 7793,
+    "body": "Get this question outa my face",
+    "commentary": "",
+    "category": ""
+   },
+   "type": "Trivia"
+  },
+  {
+   "data": {
+    "live_event_id": 371,
+    "a": "Get Correct",
+    "b": "No",
+    "answers": [
+     {
+      "body": "Get Correct",
+      "letter": "a",
+      "correct": true
+     },
+     {
+      "body": "No",
+      "letter": "b",
+      "correct": false
+     }
+    ],
+    "path": "/live_events/371/trivia/7794",
+    "id": 7794,
+    "body": "New 1",
+    "commentary": "",
+    "category": ""
+   },
+   "type": "Trivia"
+  },
+  {
+   "data": {
+    "live_event_id": 371,
+    "a": "Get Wrong",
+    "b": "Yes",
+    "answers": [
+     {
+      "body": "Get Wrong",
+      "letter": "a",
+      "correct": false
+     },
+     {
+      "body": "Yes",
+      "letter": "b",
+      "correct": true
+     }
+    ],
+    "path": "/live_events/371/trivia/7795",
+    "id": 7795,
+    "body": "Trivia 2",
+    "commentary": "",
+    "category": ""
+   },
+   "type": "Trivia"
+  },
+  {
+   "data": {
+    "live_event_id": 371,
+    "a": "Get Wrong",
+    "b": "Yes",
+    "answers": [
+     {
+      "body": "Get Wrong",
+      "letter": "a",
+      "correct": false
+     },
+     {
+      "body": "Yes",
+      "letter": "b",
+      "correct": true
+     }
+    ],
+    "path": "/live_events/371/trivia/7796",
+    "id": 7796,
+    "body": "This is something 3",
+    "commentary": "",
+    "category": ""
+   },
+   "type": "Trivia"
+  },
+  {
+   "data": {
+    "live_event_id": 371,
+    "a": "Pick Me",
+    "b": "No",
+    "answers": [
+     {
+      "body": "Pick Me",
+      "letter": "a",
+      "correct": true
+     },
+     {
+      "body": "No",
+      "letter": "b",
+      "correct": false
+     }
+    ],
+    "path": "/live_events/371/trivia/7797",
+    "id": 7797,
+    "body": "Get Correct",
+    "commentary": "",
+    "category": ""
+   },
+   "type": "Trivia"
+  }
+ ],
+ "preroll_interactable": true,
+ "accuracy": null,
+ "preroll_mandatory": true,
+ "user_id": 7,
+ "event_card": {
+  "max_streak": 0,
+  "id": 11642,
+  "segment_score": 0,
+  "score": 0,
+  "presence": {
+   "status": "away",
+   "active": false,
+   "away": false
+  },
+  "longest_positive_streak": 0,
+  "formatted_accuracy": "",
+  "mute": false,
+  "player_name": "Jim Van Fleet",
+  "streak": 0,
+  "user_id": 7,
+  "longest_negative_streak": 0,
+  "accuracy": null,
+  "debug": false,
+  "questions_answered": 0,
+  "first_for_user": false
+ },
+ "id": 11642,
+ "segment_score": 0,
+ "player_name": "Jim Van Fleet",
+ "formatted_accuracy": "",
+ "mute": false,
+ "streak": 0,
+ "debug": false,
+ "presence": {
+  "status": "away",
+  "active": false,
+  "away": false
+ },
+ "longest_positive_streak": 0,
+ "longest_negative_streak": 0,
+ "questions_answered": 0,
+ "first_for_user": false
+}
+
+      </pre>
+      <h3>Improvement areas:</h3>
+      <ul>
+        <li>Should include event card, live event, and preroll as top level concepts</li>
+        <li>Your event card should include all relevant statistics</li>
+        <li>Live event should include relevant stats and leaderboard event card array</li>
+        <li>Preroll should only be included if the client should execute it before entering play</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="message">
+  <div class="page-header">
+    <h1>Chat history <small>what has been said?</small></h1>
+  </div>
+  <div class="row">
+    <div class="span4">
+      <h3>Reason for existence</h3>
+      <p>Users who show up in the middle of the action should have some chance to review the context of conversations that may be happening.</p>
+    </div>
+    <div class="span4">
+      <h3>Invocation form</h3>
+      <p>GET /live_events/<i>[id]</i>/messages</p>
+      <p>The [id] parameter should be one available from the listing call detailed above.</p>
+    </div>
+    <div class="span4">
+      <h3>Status</h3>
+      <p>Complete</p>
+      <h3>HTTP Error Codes</h3>
+      <dl>
+        <dt>401</dt>
+        <dd>You must pass an authentication token.</dd>
+        <dt>404</dt>
+        <dd>Make sure you are pulling the live event id from the listing API call.</dd>
+      </dl>
+    </div>
+  </div>
+  <div class="row">
+    <div class="span12">
+      <h3>Example usage</h3>
+      <pre>
+> curl -i -H "Accept: application/vnd.otherscreen.com; version=1" -H "HTTP_X_OTHERSCREEN_AUTH_TOKEN: ea71eb59a85972b9edecb4a14cbcde3eef19bd3242f5167b1d3e09560caba5a7" http://localhost:5000/live_events/371/messages
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+ETag: "2762813bc3f2d9fe2b29730f96eb036e"
+Cache-Control: max-age=0, private, must-revalidate
+X-UA-Compatible: IE=Edge
+X-Runtime: 1.513294
+Connection: close
+Server: thin 1.3.1 codename Triple Espresso
+
+[
+ {
+  "body": "I'm in and chatting 2:02pm",
+  "user_name": "Garth Moulton",
+  "type": "event",
+  "id": 115413,
+  "user_id": 3,
+  "muted_by_dj": false
+ },
+ {
+  "body": "202a",
+  "user_name": "@chrishalligan",
+  "type": "event",
+  "id": 115414,
+  "user_id": 2,
+  "muted_by_dj": false
+ },
+ {
+  "body": "203a",
+  "user_name": "@chrishalligan",
+  "type": "event",
+  "id": 115415,
+  "user_id": 2,
+  "muted_by_dj": false
+ },
+ {
+  "body": "203b",
+  "user_name": "@chrishalligan",
+  "type": "event",
+  "id": 115416,
+  "user_id": 2,
+  "muted_by_dj": false
+ },
+ {
+  "body": "203c",
+  "user_name": "@chrishalligan",
+  "type": "event",
+  "id": 115417,
+  "user_id": 2,
+  "muted_by_dj": false
+ },
+ {
+  "body": " 203c",
+  "user_name": "Garth Moulton",
+  "type": "event",
+  "id": 115418,
+  "user_id": 3,
+  "muted_by_dj": false
+ },
+ {
+  "body": "204",
+  "user_name": "@chrishalligan",
+  "type": "event",
+  "id": 115419,
+  "user_id": 2,
+  "muted_by_dj": false
+ },
+ {
+  "body": "204a",
+  "user_name": "@chrishalligan",
+  "type": "event",
+  "id": 115420,
+  "user_id": 2,
+  "muted_by_dj": false
+ },
+ {
+  "body": "204b",
+  "user_name": "@chrishalligan",
+  "type": "event",
+  "id": 115421,
+  "user_id": 2,
+  "muted_by_dj": false
+ },
+ {
+  "body": "204c",
+  "user_name": "@chrishalligan",
+  "type": "event",
+  "id": 115422,
+  "user_id": 2,
+  "muted_by_dj": false
+ },
+ {
+  "body": "204d",
+  "user_name": "@chrishalligan",
+  "type": "event",
+  "id": 115423,
+  "user_id": 2,
+  "muted_by_dj": false
+ },
+ {
+  "body": "204",
+  "user_name": "Garth Moulton",
+  "type": "event",
+  "id": 115424,
+  "user_id": 3,
+  "muted_by_dj": false
+ },
+ {
+  "body": "205",
+  "user_name": "@chrishalligan",
+  "type": "event",
+  "id": 115425,
+  "user_id": 2,
+  "muted_by_dj": false
+ },
+ {
+  "body": "205a",
+  "user_name": "@chrishalligan",
+  "type": "event",
+  "id": 115426,
+  "user_id": 2,
+  "muted_by_dj": false
+ },
+ {
+  "body": "205",
+  "user_name": "Garth Moulton",
+  "type": "event",
+  "id": 115427,
+  "user_id": 3,
+  "muted_by_dj": false
+ },
+ {
+  "body": "I'm here. ",
+  "user_name": "John Grist",
+  "type": "event",
+  "id": 115428,
+  "user_id": 2577,
+  "muted_by_dj": false
+ },
+ {
+  "body": "Til 2:30",
+  "user_name": "John Grist",
+  "type": "event",
+  "id": 115429,
+  "user_id": 2577,
+  "muted_by_dj": false
+ },
+ {
+  "body": "are you on an iphone or an ipad?",
+  "user_name": "@chrishalligan",
+  "type": "event",
+  "id": 115430,
+  "user_id": 2,
+  "muted_by_dj": false
+ },
+ {
+  "body": "I am on iPhone app. ",
+  "user_name": "John Grist",
+  "type": "event",
+  "id": 115431,
+  "user_id": 2577,
+  "muted_by_dj": false
+ },
+ {
+  "body": "did you have any crashes when you logged in?",
+  "user_name": "@chrishalligan",
+  "type": "event",
+  "id": 115432,
+  "user_id": 2,
+  "muted_by_dj": false
+ },
+ {
+  "body": "Whoops meant nc",
+  "user_name": "John Grist",
+  "type": "event",
+  "id": 115433,
+  "user_id": 2577,
+  "muted_by_dj": false
+ },
+ {
+  "body": "Not yet. ",
+  "user_name": "John Grist",
+  "type": "event",
+  "id": 115434,
+  "user_id": 2577,
+  "muted_by_dj": false
+ },
+ {
+  "body": "gave it to you :)",
+  "user_name": "@chrishalligan",
+  "type": "event",
+  "id": 115435,
+  "user_id": 2,
+  "muted_by_dj": false
+ },
+ {
+  "body": "Yeah. Thanks. ",
+  "user_name": "John Grist",
+  "type": "event",
+  "id": 115436,
+  "user_id": 2577,
+  "muted_by_dj": false
+ },
+ {
+  "body": "logging out and logging in again is a good thing",
+  "user_name": "@chrishalligan",
+  "type": "event",
+  "id": 115437,
+  "user_id": 2,
+  "muted_by_dj": false
+ },
+ {
+  "body": "so is leaving, sending a text or making a call and then coming back",
+  "user_name": "@chrishalligan",
+  "type": "event",
+  "id": 115438,
+  "user_id": 2,
+  "muted_by_dj": false
+ },
+ {
+  "body": "Yes. I'm in nc not sc like I said. Sorry. ",
+  "user_name": "John Grist",
+  "type": "event",
+  "id": 115439,
+  "user_id": 2577,
+  "muted_by_dj": false
+ },
+ {
+  "body": "are you in the same environment you were in last night when you had all the crashes?",
+  "user_name": "@chrishalligan",
+  "type": "event",
+  "id": 115440,
+  "user_id": 2,
+  "muted_by_dj": false
+ },
+ {
+  "body": "No. I'm out on 3G now. Was at home with wifi last night. ",
+  "user_name": "John Grist",
+  "type": "event",
+  "id": 115441,
+  "user_id": 2577,
+  "muted_by_dj": false
+ },
+ {
+  "body": "ok",
+  "user_name": "@chrishalligan",
+  "type": "event",
+  "id": 115442,
+  "user_id": 2,
+  "muted_by_dj": false
+ },
+ {
+  "body": "Hey John",
+  "user_name": "@gertig",
+  "type": "event",
+  "id": 115443,
+  "user_id": 1,
+  "muted_by_dj": false
+ },
+ {
+  "body": "Back. Had to drive. ",
+  "user_name": "John Grist",
+  "type": "event",
+  "id": 115463,
+  "user_id": 2577,
+  "muted_by_dj": false
+ },
+ {
+  "body": "Sorry but I will attend the rest of the test events tonight and the nba finales game tonight too",
+  "user_name": "John Grist",
+  "type": "event",
+  "id": 115468,
+  "user_id": 2577,
+  "muted_by_dj": false
+ },
+ {
+  "body": "Hi ag",
+  "user_name": "@chrishalligan",
+  "type": "event",
+  "id": 115476,
+  "user_id": 2,
+  "muted_by_dj": false
+ },
+ {
+  "body": "Hey",
+  "user_name": "@gertig",
+  "type": "event",
+  "id": 116593,
+  "user_id": 1,
+  "muted_by_dj": false
+ },
+ {
+  "body": "Hey",
+  "user_name": "@gertig",
+  "type": "event",
+  "id": 116594,
+  "user_id": 1,
+  "muted_by_dj": false
+ },
+ {
+  "body": "Chat",
+  "user_name": "@gertig",
+  "type": "event",
+  "id": 116595,
+  "user_id": 1,
+  "muted_by_dj": false
+ },
+ {
+  "body": "Whyyyy",
+  "user_name": "@gertig",
+  "type": "event",
+  "id": 116596,
+  "user_id": 1,
+  "muted_by_dj": false
+ },
+ {
+  "body": "Boom",
+  "user_name": "@gertig",
+  "type": "event",
+  "id": 116600,
+  "user_id": 1,
+  "muted_by_dj": false
+ },
+ {
+  "body": "Ha",
+  "user_name": "@gertig",
+  "type": "event",
+  "id": 116601,
+  "user_id": 1,
+  "muted_by_dj": false
+ },
+ {
+  "body": "Weird ",
+  "user_name": "@gertig",
+  "type": "event",
+  "id": 116602,
+  "user_id": 1,
+  "muted_by_dj": false
+ },
+ {
+  "body": "I'm back",
+  "user_name": "@gertig",
+  "type": "event",
+  "id": 116603,
+  "user_id": 1,
+  "muted_by_dj": false
+ },
+ {
+  "body": "Whyyyy",
+  "user_name": "@gertig",
+  "type": "event",
+  "id": 116604,
+  "user_id": 1,
+  "muted_by_dj": false
+ },
+ {
+  "body": "Dang",
+  "user_name": "@gertig",
+  "type": "event",
+  "id": 116605,
+  "user_id": 1,
+  "muted_by_dj": false
+ },
+ {
+  "body": "Dang",
+  "user_name": "@gertig",
+  "type": "event",
+  "id": 116606,
+  "user_id": 1,
+  "muted_by_dj": false
+ },
+ {
+  "body": "Again",
+  "user_name": "@gertig",
+  "type": "event",
+  "id": 116607,
+  "user_id": 1,
+  "muted_by_dj": false
+ },
+ {
+  "body": "10:03 on June 27",
+  "user_name": "Garth Moulton",
+  "type": "event",
+  "id": 118597,
+  "user_id": 3,
+  "muted_by_dj": false
+ },
+ {
+  "body": "Hey Garth ",
+  "user_name": "@gertig",
+  "type": "event",
+  "id": 118598,
+  "user_id": 1,
+  "muted_by_dj": false
+ },
+ {
+  "body": "-",
+  "user_name": "Garth Moulton",
+  "type": "event",
+  "id": 118599,
+  "user_id": 3,
+  "muted_by_dj": false
+ },
+ {
+  "body": "What's up",
+  "user_name": "@gertig",
+  "type": "event",
+  "id": 118600,
+  "user_id": 1,
+  "muted_by_dj": false
+ }
+]
+
+
+      </pre>
+      <p><span class="label label-warning">Warning</span> This JSON form is definitely not correct.  Don't use it.</p>
+      <h3>Improvement areas:</h3>
+      <ul>
+        <li>Messages that were muted by the DJ should not be included in this listing, but are currently.</li>
+        <li>The chat message itself should include a root element.</li>
+        <li>Chats should include the avatar</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="message">
+  <div class="page-header">
+    <h1>Send a chat</h1>
+  </div>
+  <div class="row">
+    <div class="span4">
+      <h3>Reason for existence</h3>
+      <p>Humans like talking to each other. This helps complete the human experience of playing our game.</p>
+    </div>
+    <div class="span4">
+      <h3>Invocation form</h3>
+      <p>POST /live_events/<i>[id]</i>/messages</p>
+      <p>The [id] parameter should be one available from the listing call detailed above.</p>
+      <div class="">
+        <dl>
+          <dt>body</dt>
+          <dd>The body of the chat.  Limited to 255 characters</dd>
+        </dl>
+      </div>
+    </div>
+    <div class="span4">
+      <h3>Status</h3>
+      <p>Complete</p>
+      <h3>HTTP Error Codes</h3>
+      <dl>
+        <dt>400</dt>
+        <dd>Make sure you are passing in a message body less than 256 characters</dd>
+        <dt>401</dt>
+        <dd>You must pass an authentication token.</dd>
+        <dt>404</dt>
+        <dd>Make sure you are pulling the live event id from the listing API call.</dd>
+      </dl>
+    </div>
+  </div>
+  <div class="row">
+    <div class="span12">
+      <h3>Example usage</h3>
+      <pre>
+> curl -i -H "Accept: application/vnd.otherscreen.com; version=1" -H "HTTP_X_OTHERSCREEN_AUTH_TOKEN: ea71eb59a85972b9edecb4a14cbcde3eef19bd3242f5167b1d3e09560caba5a7" http://localhost:5000/live_events/371/messages
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+ETag: "2762813bc3f2d9fe2b29730f96eb036e"
+Cache-Control: max-age=0, private, must-revalidate
+X-UA-Compatible: IE=Edge
+X-Runtime: 1.513294
+Connection: close
+Server: thin 1.3.1 codename Triple Espresso
+
+{
+ "body": "Test message",
+ "user_name": "Jim Van Fleet",
+ "type": "event",
+ "id": 123005,
+ "user_id": 7,
+ "muted_by_dj": false
+}
+
+      </pre>
+      <p><span class="label label-warning">Warning</span> This JSON form is definitely not correct.  Don't use it.</p>
+      <h3>Improvement areas:</h3>
+      <ul>
+        <li>The chat message itself should include a root element.</li>
+        <li>Chats should include the avatar</li>
+        <li>Should include the tweet URL</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="tweet">
+  <div class="page-header">
+    <h1>Tweet a chat</h1>
+  </div>
+  <div class="row">
+    <div class="span4">
+      <h3>Reason for existence</h3>
+      <p>Allows a user to share OtherScreen content with their friends and followers on Twitter.</p>
+    </div>
+    <div class="span4">
+      <h3>Invocation form</h3>
+      <p>POST /live_events/<i>[live_event_id]</i>/messages/<i>[id]</i>/tweet</p>
+      <p>This URL should be available in the chat</p>
+      <p>The [live_event_id] parameter should match the one from the live event listing.</p>
+      <p>The [id] parameter should be one available from the chat itself, from the history or a WebSocket event.</p>
+    </div>
+    <div class="span4">
+      <h3>Status</h3>
+      <p>Planned</p>
+      <h3>HTTP Error Codes</h3>
+      <dl>
+        <dt>400</dt>
+        <dd>Make sure you are passing in a message body less than 256 characters</dd>
+        <dt>401</dt>
+        <dd>You must pass an authentication token.</dd>
+        <dt>404</dt>
+        <dd>Make sure you are pulling the live event id from the listing API call.</dd>
+      </dl>
+    </div>
+  </div>
+  <div class="row">
+    <div class="span12">
+      <h3>Example usage</h3>
+      <pre>
+
+      </pre>
+      <p><span class="label label-warning">Warning</span> This JSON form is definitely not correct.  Don't use it.</p>
+    </div>
+  </div>
+</section>

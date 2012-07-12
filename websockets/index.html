@@ -132,7 +132,7 @@ Server: thin 1.3.1 codename Triple Espresso
       <h3>Live Event Channel</h3>
       <p><span class="label label-info">Related</span> 
         You should only subscribe to a single event channel at a time, after you 
-        <a href="../reference/live_events/index.html#check-in">check into a live event</a> successfully.
+        <a href="../reference/live-events/index.html#check-in">check into a live event</a> successfully.
         <span class="label label-info">Related</span> 
         If you find the live event has mandatory preroll, you may not wish to subscribe to the WebSocket channel immediately.
         See the <a href="../tutorials/preroll.html">Completing Preroll</a> tutorial for more information.
@@ -323,7 +323,7 @@ Server: thin 1.3.1 codename Triple Espresso
       <h3>Channel</h3>
       <p>Messages of this type will come from the live event channel.<p>
       <h3>Expectations</h3>
-      <p>After receiving this message, you should issue the <a href="../reference/live_events/index.html#check-in">Event Check-in API</a> call to update your score, statistics, and leaderboard.</p>
+      <p>After receiving this message, you should issue the <a href="../reference/live-events/index.html#check-in">Event Check-in API</a> call to update your score, statistics, and leaderboard.</p>
       <p>If appropriate, the display of the user's answer to the question should change appearance to indicate whether they answered the question correctly.</p>
     </div>
     <div class="span8">
@@ -348,7 +348,7 @@ Server: thin 1.3.1 codename Triple Espresso
       <h3>Channel</h3>
       <p>Messages of this type will come from the live event channel.<p>
       <h3>Expectations</h3>
-      <p>Upon first checking into an event, the client should issue the <a href="../reference/live_events/index.html#messages">Event Messages history API</a> call.  These messages should be appended to the results of that call.</p>
+      <p>Upon first checking into an event, the client should issue the <a href="../reference/live-events/index.html#messages">Event Messages history API</a> call.  These messages should be appended to the results of that call.</p>
       <p>Implementer can choose a functional maximum of messages to display..  New messages should be preferred to older messages in this scheme.</p>
       <p>User chat should be displayed prominently, with special attention drawn to the user's own chats.  User chat should be displayed prominently without any user interaction upon event entry or completion of preroll as appropriate.</p>
     </div>
