@@ -11,10 +11,7 @@ layout: default
       <ul class="nav nav-pills">
         <li><a href="#tutorial">Tutorial</a></li>
         <li><a href="#reference">Reference</a></li>
-        <li><a href="#websockets">WebSockets</a></li>
-        <li><a href="#history">History</a></li>
-        <li><a href="#roadmap">Roadmap</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#more">More Information</a></li>
       </ul>
     </div>
 
@@ -28,25 +25,24 @@ layout: default
   </div>
   <div class="row">
     <div class="span4">
-      <h2>Not Just an API</h2>
-      <p>OtherScreen uses the WebSockets technology from HTML 5 under the hood.  This means you not only have an HTTP API to learn and implement, but also have a set of WebSocket channels to manage, and messages to react to.</p>
-      <p>Since there are a lot of concepts in our API, we try to break them down for you by examining common use cases so that you can understand what you need to do.</p>
-    </div><!-- /.span -->
-    <div class="span4">
-      <h2>Use Cases</h2>
-      <p>Some of the use cases we cover specifically:</p>
-      <ul>
-        <li>Completing preroll.</li>
-        <li>Answering each type of question</li>
-        <li>Updating and managing scoreboards</li>
-        <li>Chatting</li>
-        <li>Social Networking interactivity</li>
-      </ul>
-    </div><!-- /.span -->
-    <div class="span4">
-      <h2>Reader's Notes</h2>
-      <p>Our API will be making forward progress as we add new concepts to our domain.  We'll also be keeping this documentation up to date automatically as we continue development.</p>
+      <h2>Welcome to OtherScreen!</h2>
+      <p>OtherScreen is a social TV platform for delivering companion content to live events.  We can cover everything from live events like lectures and presentations to live television or radio broadcasts.</p>
+      <p>We want you to have a great experience working with our API, so we've prepared a <a href="./tutorials/getting-started.html">Getting Started</a> guide that will introduce you to the different concepts that you'll need to understand and implement to have a working OtherScreen client.</p>
       <p>For more information about how to read our documentation the best, you can visit our <a href="./notes.html">Reader's Notes</a></p>
+      <p>Thanks very much for working with us, and have fun OtherScreening!</p>
+    </div><!-- /.span -->
+    <div class="span4">
+      <h2>Use Case tutorials</h2>
+      <p>Here is a quick reference to the use cases we walk you through.  If your code can complete everything in these walkthroughs, you have a 100% compliant client!</p>
+      <ul>
+        <li><a href="./tutorials/getting-started.html">Getting started</a></li>
+        <li><a href="./tutorials/chat.html">Chatting</a></li>
+        <li><a href="./tutorials/gameplay.html">Basic Gameplay</a></li>
+        <li><a href="./tutorials/preroll.html">Completing preroll</a></li>
+        <li><a href="./tutorials/group-play.html">Basic group play</a></li>
+        <li><a href="./tutorials/group-management.html">Starting and managing a group</a></li>
+        <li><a href="./tutorials/user-notifications.html">User notifications</a></li>
+      </ul>
     </div><!-- /.span -->
   </div><!-- /.row -->
 </section>
@@ -59,121 +55,63 @@ layout: default
   </div>
   <div class="row">
     <div class="span4">
-      <h2>Authentication API's</h2>
-      <p>We can't let you play if we don't know who you are!</p>
+      <h2>Models and Data</h2>
+      <p>This section of the documentation contains direct links to the JSON objects you'll be receiving from API calls and WebSocket messages.</p>
+      <p>Also, OtherScreen leverages WebSockets, a part of the HTML 5 spec, to deliver real-time interactivity with the product.  We have separate documentation for those event messages.</p>
       <ul>
-        <li>Creating an account</li>
-        <li><a href="reference/authentication.html#email">Authentication with username/password</a></li>
-        <li><a href="reference/authentication.html#facebook">Authentication with Facebook</a></li>
-        <li><a href="reference/authentication.html#twitter">Authentication with Twitter</a></li>
+        <li><a href="./reference/data/index.html">Glossary</a>-- a single-page reference for our model data</li>
+        <li><a href="./reference/data/user.html">User model</a></li>
+        <li><a href="./reference/data/live-event.html">Live Event related models</a></li>
+        <li><a href="./reference/data/group.html">Group models</a></li>
+        <li><a href="./reference/data/question.html">Question models</a></li>
+      </ul>
+    </div><!-- /.span -->
+
+    <div class="span4">
+      <h2>API's</h2>
+      <p>The HTTP portion of our specification is described below.  These document the calls you'll need to make to participate in gameplay.</p>
+      <ul>
+        <li><a href="./reference/api/index.html">Quick Reference</a>-- a single-page reference for our API endpoints</li>
+        <li><a href="./reference/api/authentication.html">Authentication</a></li>
+        <li><a href="./reference/api/live-events.html">Live Events</a></li>
+        <li><a href="./reference/api/groups.html">Groups</a></li>
+        <li><a href="./reference/api/questions.html">Questions</a></li>
+        <li><a href="./reference/api/users.html">Users</a></li>
+        <li><a href="./reference/api/dj.html">DJ API's</a>-- an optional set of API endpoints to allow producing an event, as well as playing.</li>
       </ul>      
     </div><!-- /.span -->    
     <div class="span4">
-      <h2>Player API's</h2>
-      <p>Most clients will be implementing our Player API's to allow people to play OtherScreen-powered events.  Elements of our API are enumerated below.</p>
-      <ul>
-        <li>API Overview</li>
-        <li><a href="reference/glossary.html">Glossary</a></li>
-        <li><a href="reference/authentication.html">Authentication</a></li>
-        <li><a href="reference/live-events.html">Live Events</a></li>
-        <li><a href="reference/groups.html">Groups</a></li>
-        <li><a href="reference/questions.html">Questions</a></li>
-        <li><a href="reference/users.html">Users</a></li>
-      </ul>
-    </div><!-- /.span -->
-    <div class="span4">
-      <h2>DJ API's</h2>
-      <p>Should you wish to implement your own interface for asking questions within the system, we are providing the DJ interface API publicly for the first time.</p>
-      <ul>
-        <li>Live Event Management</li>
-        <li>Announcements</li>
-        <li>Props</li>
-        <li>Polls</li>
-        <li>Trivia</li>
-      </ul>
+      <h2>WebSocket reference</h2>
+      <p>WebSockets integration is crucial for delivery of an acceptable OtherScreen experience.</p>
+      <p>Our <a href="./websockets.html">WebSockets documentation</a> contains all the information you'll 
+      need to <a href="./websockets.html#authentication">authenticate</a>, and
+      <a href="./websockets.html#subscriptions">subscribe</a> to WebSockets, as well as
+      <a href="./websockets.html#management">tips on managing connections</a>.</p>
+      <p>A list of all WebSocket event types and what data to expect inside them is also available there.</p>
+
     </div><!-- /.span -->
   </div><!-- /.row -->
 </section>
 
-<section id="websockets">
+<section id="more">
   <div class="page-header">
-    <h1>WebSockets reference  <small>all WebSocket related information</small></h1>
+    <h1>More information</h1>
   </div>
   <div class="row">
     <div class="span4">
-      <h2>Getting Started</h2>
-      <p>The application will not work without full WebSockets integration.  This section will help you cover the basics of establishing the right kind of connections.</p>
-      <ul>
-        <li><a href="websockets.html#authentication">Authenticating with OtherScreen and Pusher</a></li>
-        <li><a href="websockets.html#subscriptions">Channel Subscriptions</a></li>
-        <li><a href="websockets.html#management">Channel management</a></li>
-      </ul>      
-    </div><!-- /.span -->    
-    <div class="span4">
-      <h2>Game Notifications</h2>
-      <p>While the client has an active subscription to a live event, you may receive the following messages at any time.</p>
-      <h3>Interactive events</h3>
-      <ul>
-        <li><a href="websockets.html#multiple-choice">Multiple Choice</a></li>
-        <li><a href="websockets.html#list">List</a></li>
-        <li><a href="websockets.html#range">Range</a></li>
-        <li><a href="websockets.html#keyboard">Keyboard</a></li>
-        <li><a href="websockets.html#keypad">Keypad</a></li>
-      </ul>
-    </div>
-    <div class="span4">
-      <h3>Informational events</h3>
-      <ul>
-        <li><a href="websockets.html#scored">Question Scored</a></li>
-        <li><a href="websockets.html#event-message">Event chat</a></li>
-        <li><a href="websockets.html#group-message">Group chat</a></li>
-        <li><a href="websockets.html#announcement">Announcements</a></li>
-        <li><a href="websockets.html#reset-selections">Reset selections</a></li>
-        <li><a href="websockets.html#user-notification">Notifications</a></li>
-      </ul>
-    </div><!-- /.span -->
-  </div><!-- /.row -->
-</section>
-
-<section id="history">
-  <div class="page-header">
-    <h1>History  <small>for additional context or previous API versions</small></h1>
-  </div>
-  <div class="row">
-    <div class="span4">
-      <h2>Backward compatability</h2>
-      <p>We know how hard you work to implement your client.  We commit to you that once you have completed a working client, our activities will not break your code.  We do maintain the right to deprecate extremely old versions of the API that are at least two breaking changes behind, but will communicate with both you and the users of your client to make the appropriate upgrades before that happens.</p>
-      <p>Learn more about how we acheive <a href="backward-compatibility.html">backward compatibility</a>.</p>
-    </div><!-- /.span -->
-    <div class="span4">
-      <h2>Previous versions</h2>
-      <ul>
-        <li><a href="./0.9html">0.9</a></li>
-      </ul>      
-    </div><!-- /.span -->    
-  </div><!-- /.row -->
-</section>
-
-<section id="roadmap">
-  <div class="page-header">
-    <h1>Roadmap  <small>what's next in OtherScreen services</small></h1>
-  </div>
-  <div class="row">
-    <div class="span4">
-      <h2>Coming soon</h2>
+      <h2>Roadmap  <small>What to expect</small></h2>
       <p>Right now, this documentation itself is one of the primary deliverables on the roadmap!</p>
-    </div><!-- /.span -->    
-  </div><!-- /.row -->
-</section>
+    </div><!-- /.span -->
 
-<section id="contact">
-  <div class="page-header">
-    <h1>Contact Us  <small>when you know exactly what you're looking for</small></h1>
-  </div>
-  <div class="row">
     <div class="span4">
-      <h2>Via Twitter</h2>
-      <p>We'd love to talk to you if you are viewing our page.</p>
+      <h2>History <small> looking back on API's past</small></h2>
+      <h3>Backward compatability</h3>
+      <p>We know how hard you work to implement your client.  We commit to you that once you have completed a working client, our activities will not break your code.  We do maintain the right to deprecate extremely old versions of the API that are at least two breaking changes behind, but will communicate with both you and the users of your client to make the appropriate upgrades before that happens.</p>
+      <p>Learn more about how we acheive <a href="backward-compatibility.html">backward compatibility</a>.  Backward compatibility was not offered in our <a href="http://otherscreen.github.com/gotcup">0.9</a> API.</p>
+    </div><!-- /.span -->
+    <div class="span4">
+      <h2>Contact Us <small>All feedback is welcome!</small></h2>
+      <p>We'd love to talk to you if you are viewing our page.  Twitter will give you the quickest response.</p>
       <ul>
         <li><a href="http://twitter.com/gertig">@gertig</a></li>
         <li><a href="http://twitter.com/bigfleet">@bigfleet</a></li>
@@ -181,3 +119,4 @@ layout: default
     </div><!-- /.span -->    
   </div><!-- /.row -->
 </section>
+

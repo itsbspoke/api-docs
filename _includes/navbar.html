@@ -5,24 +5,17 @@
           <div class="nav-collapse collapse">
             <ul class="nav">
               <li class="{% if page.section == 'tutorial' %}active{% endif %}">
-                <a href="{{ site.baseurl }}/tutorial.html">API Tutorial</a>
+                <a href="{{ site.baseurl }}/tutorials/index.html">Tutorials</a>
               </li>              
-              <li class="{% if page.section == 'reference' %}active{% endif %}">
-                <a href="{{ site.baseurl }}/reference.html">API Reference</a>
+              <li class="{% if page.section == 'reference/data' %}active{% endif %}">
+                <a href="{{ site.baseurl }}/reference/data/index.html">Reference: Models</a>
+              </li>
+              <li class="{% if page.section == 'reference/api' %}active{% endif %}">
+                <a href="{{ site.baseurl }}/reference/api/index.html">Reference: API</a>
               </li>
               <li class="{% if page.section == 'websockets' %}active{% endif %}">
-                <a href="{{ site.baseurl }}/websockets/index.html">WebSockets</a>
+                <a href="{{ site.baseurl }}/websockets.html">WebSockets</a>
               </li>
-              <li class="{% if page.section == 'changelog' %}active{% endif %}">
-                <a href="{{ site.baseurl }}/changelog.html">History</a>
-              </li>
-              <li class="{% if page.section == 'roadmap' %}active{% endif %}">
-                <a href="{{ site.baseurl }}/roadmap.html">Roadmap</a>
-              </li>
-              <li class="{% if page.section == 'contact' %}active{% endif %}">
-                <a href="{{ site.baseurl }}/contact.html">Contact</a>
-              </li>
-
             </ul>
           </div>
         </div>
