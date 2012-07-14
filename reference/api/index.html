@@ -1,217 +1,276 @@
 ---
 layout: default
+section: ./api
 ---
-<!-- Masthead
-================================================== -->
+
 <header class="jumbotron subhead" id="overview">
     <h1>API Reference</h1>
-    <p class="lead">OtherScreen represents the most open platform for fun, real-time, interactive Social TV apps on the web and mobile devices.</p>
-    <!-- Instrument this in analytics -->
-    <div class="subnav">
-      <ul class="nav nav-pills">
-        <li><a href="#tutorial">Authentication</a></li>
-        <li><a href="#reference">Live Events</a></li>
-        <li><a href="#websockets">Groups</a></li>
-        <li><a href="#history">Questions</a></li>
-        <li><a href="#roadmap">Users</a></li>
-      </ul>
-    </div>
-
+    <p class="lead">All API endpoints in the OtherScreen application.</p>
 </header>
 
-<!-- API Tutorial
-================================================== -->
-<section id="authentication">
+<section id="todo">
   <div class="page-header">
-    <h1>API Tutorial  <small>for walkthroughs and general information</small></h1>
+    <h1>To-Do List  <small>to consider API documentation and attendant services complete.</small></h1>
   </div>
   <div class="row">
-    <div class="span4">
-      <h2>Not Just an API</h2>
-      <p>OtherScreen uses the WebSockets technology from HTML 5 under the hood.  This means you not only have an HTTP API to learn and implement, but also have a set of WebSocket channels to manage, and messages to react to.</p>
-      <p>Since there are a lot of concepts in our API, we try to break them down for you by examining common use cases so that you can understand what you need to do.</p>
-    </div><!-- /.span -->
-    <div class="span4">
-      <h2>Use Cases</h2>
-      <p>Some of the use cases we cover specifically:</p>
-      <ul>
-        <li>Completing preroll.</li>
-        <li>Answering each type of question</li>
-        <li>Updating and managing scoreboards</li>
-        <li>Chatting</li>
-        <li>Social Networking interactivity</li>
-      </ul>
-    </div><!-- /.span -->
-    <div class="span4">
-      <h2>Reader's Notes</h2>
-      <p>Our API will be making forward progress as we add new concepts to our domain.  We'll also be keeping this documentation up to date automatically as we continue development.</p>
-      <p>For more information about how to read our documentation the best, you can visit our <a href="./notes.html">Reader's Notes</a></p>
+    <div class="span12">
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th>API Call</th>
+            <th>Documentation stub</th>
+            <th>Implementation stub</th>
+            <th>JSON finalized</th>
+            <th>Implementation finalized/tested</th>
+            <th>Documentation complete</th>
+            <th>Added to glossary</th>
+          </tr>
+         </thead>
+         <tbody>
+           <tr>
+             <td><a href="./authentication.html#email">Login with email/password</a></td>
+            <td>✔</td>
+            <td>✔</td>
+            <td>✘</td>
+            <td>✘</td>
+            <td>✘</td>
+            <td>✘</td>
+           </tr>
+           <tr>
+            <td><a href="./authentication.html#facebook">Login with Facebook</a></td>
+            <td>✔</td>
+            <td>✔</td>
+            <td>✘</td>
+            <td>✘</td>
+            <td>✘</td>
+            <td>✘</td>
+           </tr>
+           <tr>
+            <td><a href="./live-events.html#listing">Live Event Listing</a></td>
+            <td>✔</td>
+            <td>✔</td>
+            <td>✘</td>
+            <td>✘</td>
+            <td>✘</td>
+            <td>✘</td>
+           </tr>
+           <tr>
+            <td><a href="./live-events.html#check-in">Live Event Check-in</a></td>
+            <td>✔</td>
+            <td>✔</td>
+            <td>✘</td>
+            <td>✘</td>
+            <td>✘</td>
+            <td>✘</td>
+           </tr>
+           <tr>
+            <td><a href="./live-events.html#event-card">Event Participation</a></td>
+            <td>✔</td>
+            <td>✔</td>
+            <td>✘</td>
+            <td>✘</td>
+            <td>✘</td>
+            <td>✘</td>
+           </tr>
+           <tr>
+            <td><a href="./live-events.html#messages">Live Event chat history</a></td>
+            <td>✔</td>
+            <td>✔</td>
+            <td>✘</td>
+            <td>✘</td>
+            <td>✘</td>
+            <td>✘</td>
+           </tr>
+           <tr>
+            <td><a href="./live-events.html#write-message">Send a Live Event chat</a></td>
+            <td>✔</td>
+            <td>✔</td>
+            <td>✘</td>
+            <td>✘</td>
+            <td>✘</td>
+            <td>✘</td>
+           </tr>
+           <tr>
+            <td><a href="./groups.html#listing">Group listing</a></td>
+            <td>✔</td>
+            <td>✔</td>
+            <td>✘</td>
+            <td>✘</td>
+            <td>✘</td>
+            <td>✘</td>
+           </tr>
+           <tr>
+            <td><a href="./groups.html#messages">Group chat history</a></td>
+            <td>✔</td>
+            <td>✔</td>
+            <td>✘</td>
+            <td>✘</td>
+            <td>✘</td>
+            <td>✘</td>
+           </tr>
+           <tr>
+            <td><a href="./groups.html#messages">Send a group chat</a></td>
+            <td>✔</td>
+            <td>✔</td>
+            <td>✘</td>
+            <td>✘</td>
+            <td>✘</td>
+            <td>✘</td>
+           </tr>
+           <tr>
+            <td><a href="./groups.html#leaderboard">Group event leaderboard</a></td>
+            <td>✔</td>
+            <td>✔</td>
+            <td>✘</td>
+            <td>✘</td>
+            <td>✘</td>
+            <td>✘</td>
+           </tr>
+           <tr>
+            <td><a href="./groups.html#create">Start a group</a></td>
+            <td>✔</td>
+            <td>✔</td>
+            <td>✘</td>
+            <td>✘</td>
+            <td>✘</td>
+            <td>✘</td>
+           </tr>
+           <tr>
+            <td><a href="./groups.html#invite">Invite user to a group</a></td>
+            <td>✔</td>
+            <td>✔</td>
+            <td>✘</td>
+            <td>✘</td>
+            <td>✘</td>
+            <td>✘</td>
+           </tr>
+           <tr>
+            <td><a href="./groups.html#prospect">Prospect for new group members</a></td>
+            <td>✔</td>
+            <td>✔</td>
+            <td>✘</td>
+            <td>✘</td>
+            <td>✘</td>
+            <td>✘</td>
+           </tr>
+           <tr>
+            <td><a href="./groups.html#accept-invite">Accept a group invitation</a></td>
+            <td>✔</td>
+            <td>✔</td>
+            <td>✘</td>
+            <td>✘</td>
+            <td>✘</td>
+            <td>✘</td>
+           </tr>
+           <tr>
+            <td><a href="./groups.html#ignore-invite">Ignore a group invitation</a></td>
+            <td>✔</td>
+            <td>✔</td>
+            <td>✘</td>
+            <td>✘</td>
+            <td>✘</td>
+            <td>✘</td>
+           </tr>
+           <tr>
+            <td><a href="./questions.html#multiple-choice">Answer a multiple choice question</a></td>
+            <td>✘</td>
+            <td>✔</td>
+            <td>✘</td>
+            <td>✘</td>
+            <td>✘</td>
+            <td>✘</td>
+           </tr>
+           <tr>
+            <td><a href="./questions.html#text">Answer a question that is not multiple choice</a></td>
+            <td>✘</td>
+            <td>✔</td>
+            <td>✘</td>
+            <td>✘</td>
+            <td>✘</td>
+            <td>✘</td>
+           </tr>
+           <tr>
+            <td><a href="./users.html#profile">User profile</a></td>
+            <td>✘</td>
+            <td>✔</td>
+            <td>✘</td>
+            <td>✘</td>
+            <td>✘</td>
+            <td>✘</td>
+           </tr>
+           <tr>
+            <td><a href="./users.html#email-invite">Invite a new user via email</a></td>
+            <td>✘</td>
+            <td>✔</td>
+            <td>✘</td>
+            <td>✘</td>
+            <td>✘</td>
+            <td>✘</td>
+           </tr>         
+         </tbody>
+      </table>
     </div><!-- /.span -->
   </div><!-- /.row -->
 </section>
 
-<!-- API Reference
-================================================== -->
-<section id="reference">
+<section id="coming-soon">
   <div class="page-header">
-    <h1>API Reference  <small>when you know exactly what you're looking for</small></h1>
+    <h1>Coming soon  <small>endpoints that will not be a part of 1.0.</small></h1>
   </div>
   <div class="row">
-    <div class="span4">
-      <h2>Authentication API's</h2>
-      <p>We can't let you play if we don't know who you are!</p>
-      <ul>
-        <li>Creating an account</li>
-        <li>Authentication with username/password</li>
-        <li>Authentication with Facebook</li>
-        <li>Authentication with Twitter</li>
-      </ul>      
-    </div><!-- /.span -->    
-    <div class="span4">
-      <h2>Player API's</h2>
-      <p>Most clients will be implementing our Player API's to allow people to play OtherScreen-powered events.  Elements of our API are enumerated below.</p>
-      <ul>
-        <li>API Overview</li>
-        <li>Glossary</li>
-      <li>Authentication</li>
-      <li>Live Events</li>
-      <li>Event Cards</li>
-      <li>Groups</li>
-      <li>Questions</li>
-      <li>Users</li>
-      </ul>
-    </div><!-- /.span -->
-    <div class="span4">
-      <h2>DJ API's</h2>
-      <p>Should you wish to implement your own interface for asking questions within the system, we are providing the DJ interface API publicly for the first time.</p>
-      <ul>
-        <li>Live Event Management</li>
-        <li>Announcements</li>
-        <li>Props</li>
-        <li>Polls</li>
-        <li>Trivia</li>
-      </ul>
+    <div class="span12">
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th>API Call</th>
+            <th>Documentation stub</th>
+            <th>Implementation stub</th>
+            <th>JSON finalized</th>
+            <th>Implementation finalized/tested</th>
+            <th>Documentation complete</th>
+            <th>Added to glossary</th>
+          </tr>
+         </thead>
+         <tbody>
+           <tr>
+             <td><a href="./authentication.html#twitter">Login with Twitter</a></td>
+            <td>✔</td>
+            <td>✘</td>
+            <td>✘</td>
+            <td>✘</td>
+            <td>✘</td>
+            <td>✘</td>
+           </tr>
+           <tr>
+             <td><a href="./live-events.html#tweet-chat">Tweet a chat</a></td>
+            <td>✔</td>
+            <td>✘</td>
+            <td>✘</td>
+            <td>✘</td>
+            <td>✘</td>
+            <td>✘</td>
+           </tr>
+           <tr>
+            <td><a href="./users.html#facebook-invite">Invite a new user via Facebook</a></td>
+            <td>✘</td>
+            <td>✔</td>
+            <td>✘</td>
+            <td>✘</td>
+            <td>✘</td>
+            <td>✘</td>
+           </tr>
+           <tr>
+            <td><a href="./users.html#twitter-invite">Invite a new user via Twitter</a></td>
+            <td>✘</td>
+            <td>✔</td>
+            <td>✘</td>
+            <td>✘</td>
+            <td>✘</td>
+            <td>✘</td>
+           </tr>  
+         </tbody>
+      </table>
     </div><!-- /.span -->
   </div><!-- /.row -->
-</section>
 
-<section id="websockets">
-  <div class="page-header">
-    <h1>WebSockets reference  <small>all WebSocket related information</small></h1>
-  </div>
-  <div class="row">
-    <div class="span4">
-      <h2>Getting Started</h2>
-      <p>The application will not work without full WebSockets integration.  This section will help you cover the basics of establishing the right kind of connections.</p>
-      <ul>
-        <li>Authenticating with OtherScreen and Pusher</li>
-        <li>Channel Subscriptions</li>
-        <li>Channel management</li>
-      </ul>      
-    </div><!-- /.span -->    
-    <div class="span4">
-      <h2>General Notifications</h2>
-      <p>Received on the user channel, you must respond to these messages at any time after authentication.</p>
-      <ul>
-        <li>"Notifications"</li>
-      </ul>
-    </div><!-- /.span -->
-    <div class="span4">
-      <h2>Game Notifications</h2>
-      <p>While the client has an active subscription to a live event, you may receive the following messages at any time.</p>
-      <h3>Interactive notifications</h3>
-      <ul>
-        <li>Poll</li>
-        <li>Prop</li>
-        <li>Trivia</li>
-        <li>Multiple Choice</li>
-        <li>List</li>
-        <li>Range</li>
-        <li>Keyboard</li>
-        <li>Keypad</li>
-      </ul>
-      <h3>Informational/procedural notifications</h3>
-      <ul>
-        <li>Question Scored</li>
-        <li>Event chat</li>
-        <li>Group chat</li>
-        <li>Announcements</li>
-        <li>Reset selections</li>
-      </ul>
-    </div><!-- /.span -->
-  </div><!-- /.row -->
-</section>
-
-<section id="history">
-  <div class="page-header">
-    <h1>History  <small>for additional context or previous API versions</small></h1>
-  </div>
-  <div class="row">
-    <div class="span4">
-      <h2>Backward compatability</h2>
-      <p>We know how hard you work to implement your client.  We commit to you that once you have completed a working client, our activities will not break your code.  We do maintain the right to deprecate extremely old versions of the API that are at least two breaking changes behind, but will communicate with both you and the users of your client to make the appropriate upgrades before that happens.</p>
-      <p>Learn more about how we acheive <a href="backward-compatibility.html">backward compatibility</a>.</p>
-    </div><!-- /.span -->
-    <div class="span4">
-      <h2>Previous versions</h2>
-      <ul>
-        <li><a href="./0.9/index.html">0.9</a></li>
-      </ul>      
-    </div><!-- /.span -->    
-  </div><!-- /.row -->
-</section>
-
-<section id="roadmap">
-  <div class="page-header">
-    <h1>Roadmap  <small>what's next in OtherScreen services</small></h1>
-  </div>
-  <div class="row">
-    <div class="span4">
-      <h2>Coming soon</h2>
-      <p>Right now, this documentation itself is one of the primary deliverables on the roadmap!</p>
-    </div><!-- /.span -->    
-  </div><!-- /.row -->
-</section>
-
-<section id="contact">
-  <div class="page-header">
-    <h1>API Reference  <small>when you know exactly what you're looking for</small></h1>
-  </div>
-  <div class="row">
-    <div class="span4">
-      <h2>Authentication API's</h2>
-      <p>We can't let you play if we don't know who you are!</p>
-      <ul>
-        <li>Creating an account</li>
-        <li>Authentication with username/password</li>
-        <li>Authentication with Facebook</li>
-        <li>Authentication with Twitter</li>
-      </ul>      
-    </div><!-- /.span -->    
-    <div class="span4">
-      <h2>Player API's</h2>
-      <p>Most clients will be implementing our Player API's to allow people to play OtherScreen-powered events.  Elements of our API are enumerated below.</p>
-      <ul>
-        <li>API Overview</li>
-        <li>Glossary</li>
-      <li>Authentication</li>
-      <li>Live Events</li>
-      <li>Event Cards</li>
-      <li>Groups</li>
-      <li>Questions</li>
-      <li>Users</li>
-      </ul>
-    </div><!-- /.span -->
-    <div class="span4">
-      <h2>DJ API's</h2>
-      <p>Some of the use cases we cover specifically:</p>
-      <ul>
-        <li>Arriving to an event early and completing preroll.</li>
-        <li>Answering each type of question</li>
-        <li>Updating and managing scoreboards</li>
-        <li>Chatting</li>
-        <li>Social Networking interactivity</li>
-      </ul>
-    </div><!-- /.span -->
-  </div><!-- /.row -->
 </section>
