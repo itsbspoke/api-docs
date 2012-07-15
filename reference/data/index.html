@@ -1,52 +1,22 @@
 ---
 layout: fluid
-section: reference
+div: reference
 ---
 
 <div class="container-fluid">
   <div class="row-fluid">
     <div class="span2">
-      <!--Sidebar content-->
-      <ul class="nav nav-list">
-        <li>
-        <a href="#user">User</a>
-        </li>
-        <li class="nav-header">
-        Live Events
-        </li>
-        <li><a href="#live-event">Live event</a></li>
-        <li><a href="#event-message">Event chat</a></li>
-        <li><a href="#event-card">Event card</a></li>
-        <li><a href="#announcement">Announcement</a></li>
-        <li><a href="#poll-result">Poll Result</a></li>
-        <li><a href="#command">Command</a></li>
-        <li class="nav-header">
-        Groups
-        </li>
-        <li><a href="#group">Group</a></li>
-        <li><a href="#membership">Membership</a></li>
-        <li><a href="#group-chat">Group chat</a></li> 
-        <li><a href="#group-invitation">Group invitation</a></li>
-        <li class="nav-header">
-        Questions
-        </li>
-        <li><a href="#multiple-choice">Multiple choice</a></li>
-        <li><a href="#keyboard">Keyboard</a></li>
-        <li><a href="#keypad">Keypad</a></li>
-        <li><a href="#range">Range</a></li>
-        <li><a href="#list">List</a></li>
-      </ul>
-
+      {% include data-sidebar.html %}
     </div>
     <div class="span10">
       <header class="jumbotron subhead" id="overview">
-        <h1>Glossary</h1>
+        <h2>Glossary</h2>
         <p class="lead">Data forms used in the application, including their purpose and what you can do with them.</p>
       </header>
 
-      <section id="user">
+      <div id="user">
         <div class="page-header">
-          <h1>Live event <small>an OtherScreener.</small></h1>
+          <h2>User <small>an OtherScreener.</small></h2>
         </div>
         <div class="row">
           <div class="span4">
@@ -58,10 +28,10 @@ JSON goes here
             </pre>
           </div>
         </div>
-      </section>
-      <section id="live-event">
+      </div>
+      <div id="live-event">
         <div class="page-header">
-          <h1>Live Event  <small>a chance to play.</small></h1>
+          <h2>Live Event  <small>a chance to play.</small></h2>
         </div>
         <div class="row">
           <div class="span4">
@@ -73,7 +43,218 @@ JSON goes here
             </pre>
           </div>
         </div>
-      </section>
+      </div>
+
+      <div id="live-event">
+        <div class="page-header">
+          <h2>Event chat  <small>a public message during an event.</small></h2>
+        </div>
+        <div class="row">
+          <div class="span4">
+            <p>A message from a user during gameplay.</p>
+          </div>
+          <div class="span8">
+            <pre>
+JSON goes here
+            </pre>
+          </div>
+        </div>
+      </div>
+      <div id="event-card">
+        <div class="page-header">
+          <h2>Event card  <small>a user's participation in an event.</small></h2>
+        </div>
+        <div class="row">
+          <div class="span4">
+            <p>A user's statistics and selections from participating in a particular event.</p>
+          </div>
+          <div class="span8">
+            <pre>
+JSON goes here
+            </pre>
+          </div>
+        </div>
+      </div>
+      <div id="announcement">
+        <div class="page-header">
+          <h2>Announcement  <small>broadcast comment from the DJ.</small></h2>
+        </div>
+        <div class="row">
+          <div class="span4">
+            <p>Each event has a host that we call the DJ.  This is a notice from that host for the current players.</p>
+          </div>
+          <div class="span8">
+            <pre>
+JSON goes here
+            </pre>
+          </div>
+        </div>
+      </div>
+      <div id="poll-result">
+        <div class="page-header">
+          <h2>Poll Result  <small>collated responses to a poll.</small></h2>
+        </div>
+        <div class="row">
+          <div class="span4">
+            <p>Crowd indications of popularity of opinions to an opinion question.</p>
+          </div>
+          <div class="span8">
+            <pre>
+JSON goes here
+            </pre>
+          </div>
+        </div>
+      </div>
+      <div id="command">
+        <div class="page-header">
+          <h2>Command  <small>something we think you should do.</small></h2>
+        </div>
+        <div class="row">
+          <div class="span4">
+            <p>Take it easy, we'll only ask you to reload your event card for the selections and stats.</p>
+          </div>
+          <div class="span8">
+            <pre>
+JSON goes here
+            </pre>
+          </div>
+        </div>
+      </div>
+      <div id="group">
+        <div class="page-header">
+          <h2>Group <small>a private club.</small></h2>
+        </div>
+        <div class="row">
+          <div class="span4">
+            <p>A private collection of players with a leaderboard and chat room.</p>
+          </div>
+          <div class="span8">
+            <pre>
+JSON goes here
+            </pre>
+          </div>
+        </div>
+      </div>
+      <div id="membership">
+        <div class="page-header">
+          <h2>Membership  <small>user's participation in a group.</small></h2>
+        </div>
+        <div class="row">
+          <div class="span4">
+            <p>Group owners, members, and invited persons have records.  They can also be ignored.</p>
+          </div>
+          <div class="span8">
+            <pre>
+JSON goes here
+            </pre>
+          </div>
+        </div>
+      </div>
+      <div id="group-chat">
+        <div class="page-header">
+          <h2>Group Chat  <small>a private chat message.</small></h2>
+        </div>
+        <div class="row">
+          <div class="span4">
+            <p>Private group messages sent and received will all be of this form.</p>
+          </div>
+          <div class="span8">
+            <pre>
+JSON goes here
+            </pre>
+          </div>
+        </div>
+      </div>
+      <div id="group-invitation">
+        <div class="page-header">
+          <h2>Group Invitation  <small>a chance to join a group.</small></h2>
+        </div>
+        <div class="row">
+          <div class="span4">
+            <p>If you are invited to a group during a live event when you are present, you'll receive this notification.</p>
+          </div>
+          <div class="span8">
+            <pre>
+JSON goes here
+            </pre>
+          </div>
+        </div>
+      </div>
+      <div id="multiple-choice">
+        <div class="page-header">
+          <h2>Multiple Choice Question  <small>pick your answer.</small></h2>
+        </div>
+        <div class="row">
+          <div class="span4">
+            <p>Select an answer a-d.</p>
+          </div>
+          <div class="span8">
+            <pre>
+JSON goes here
+            </pre>
+          </div>
+        </div>
+      </div>
+      <div id="keyboard">
+        <div class="page-header">
+          <h2>Keyboard Question  <small>short answer.</small></h2>
+        </div>
+        <div class="row">
+          <div class="span4">
+            <p>Free-form text responses.</p>
+          </div>
+          <div class="span8">
+            <pre>
+JSON goes here
+            </pre>
+          </div>
+        </div>
+      </div>
+      <div id="keypad">
+        <div class="page-header">
+          <h2>Keypad  Question <small>numeric answers.</small></h2>
+        </div>
+        <div class="row">
+          <div class="span4">
+            <p>Questions of this type allow for loosely bound, freely input numeric responses.</p>
+          </div>
+          <div class="span8">
+            <pre>
+JSON goes here
+            </pre>
+          </div>
+        </div>
+      </div>
+      <div id="range">
+        <div class="page-header">
+          <h2>Range Question  <small>free choice within bounds.</small></h2>
+        </div>
+        <div class="row">
+          <div class="span4">
+            <p>For ratings on a scale from 1-10 to guessing attendance to the nearest 100.</p>
+          </div>
+          <div class="span8">
+            <pre>
+JSON goes here
+            </pre>
+          </div>
+        </div>
+      </div>
+      <div id="list">
+        <div class="page-header">
+          <h2>List Question  <small>pick an answer.</small></h2>
+        </div>
+        <div class="row">
+          <div class="span4">
+            <p>Some questions have more than four possible answers.</p>
+          </div>
+          <div class="span8">
+            <pre>
+JSON goes here
+            </pre>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
