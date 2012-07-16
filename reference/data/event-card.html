@@ -17,6 +17,87 @@ entry: event-card
 
 
 <section id="summary">
+  <div class="page-header">
+  <h2>Detail form  <small>all the information we'll give you.</small></h2>
+  </div>
+  <div class="row">
+    <div class="span8">
+      <h3>JSON</h3>
+<pre class="prettyprint">
+{
+ "event_card": {
+  "presence": {
+   "status": "away",
+   "active": null,
+   "away": true
+  },
+  "id": 60,
+  "rookie": true,
+  "statistics": {
+   "max_streak": 7,
+   "segment_score": 0,
+   "score": 290,
+   "longest_negative_streak": 0,
+   "accuracy": "56.9%",
+   "streak": -1,
+   "longest_positive_streak": 0,
+   "questions_answered": 51
+  },
+  "user": {
+   "avatar_url": null,
+   "id": 5,
+   "name": "Clay Halligan",
+   "level": 1,
+  }
+ }
+}
+
+</pre>
+    <h3>Available via</h3>
+    <p>Using the <a href="../api/live-events.html#check-in">Live Event check-in</a> API endpoint inside the leaderboard.</p>
+    <h3>Questions</h3>
+    <p>Should we also send an unformatted percentage for accuracy?</p>
+    <p>Do we have all the statistics we need?  This should be 'last call' for statistics, new ones will need to wait for 1.0.1 or similar.</p>
+    </div>
+
+    <div class="span4">
+      <h3>Summary</h3>
+      <p>This form will be embedded in Live Event check-in's as leaderboard information.</p>
+      <h3>Data Usage</h3>
+      <dl>
+        <dt>id</dt>
+        <dd>Used for unique identification of the event card.  May not be used.</dd>
+        <dt>rookie</dt>
+        <dd>True if this is the first time the user has participated in an OtherScreen event.</dd>
+      </dl>
+      <h4>Presence</h4>
+      <dl>
+        <dt>status</dt>
+        <dt>active</dt>
+        <dt>away</dt>
+      </dl>
+      <h4>Statistics</h4>
+      <dl>
+        <dt>max_streak</dt>
+        <dd>The largest number of consecutive answers to receive the same score.  Positive numbers indicate correct answers.</dd>
+        <dt>segment_score</dt>
+        <dd>Portion of the user's score occuring during the current event segment.</dd>
+        <dt>score</dt>
+        <dd>User's overall point total.  Currently 10 points per correct answer.</dd>
+        <dt>longest_negative_streak</dt>
+        <dd>Largest number of questions answered incorrectly in a row during the event</dd>
+        <dt>longest_positive_streak</dt>
+        <dd>Largest number of questions answered correctly in a row during the event</dd>
+        <dt>accuracy</dt>
+        <dd>Formatted string indicating percentage of answers given correctly.</dd>
+        <dt>questions_answered</dt>
+        <dd>Number of scorable questions answered during the event</dd>  
+      </dl>
+      </p>
+      <h3>References</h3>
+      <p>The <a href="./user.html#summary">User summary</a> form are contained within this model.</p>
+    </div>
+  </div>
 </section>
 <section id="detail">
   <div class="page-header">
@@ -65,8 +146,6 @@ entry: event-card
 </pre>
     <h3>Available via</h3>
     <p>Using the <a href="../api/live-events.html#event-card">Event participation</a> API endpoint.</p>
-    <h3>References</h3>
-    <p><a href="./user.html#summary">User summary</a> and <a href="./live-event.html">Live event summary</a> forms are contained within this model.</p>
     <h3>Questions</h3>
     <p>Are clients better served by partitioning server-side into the three types (pending,scored,unscorable), or in the same collection?</p>
     <p>Should statistics and presence be nested?  What's the meaning of three different presence status indicators?</p>
@@ -79,12 +158,6 @@ entry: event-card
          This allows you to study the details of your performance, and of your individual answers.</p>
       <h3>Data Usage</h3>
       <p>Check above section if the data element you are looking for is not present here.</p>
-      <h4>Presence</h4>
-      <dl>
-        <dt>status</dt>
-        <dt>active</dt>
-        <dt>away</dt>
-      </dl>
       <h4>Selections</h4>
       <dl>
         <dt>pending</dt>
@@ -94,7 +167,8 @@ entry: event-card
         <dt>unscorable</dt>
         <dd>Answers to unscorable questions, or scorable questions that have been marked as unscorable due to DJ error.</dd>
       </dl>
-      <p>
+      <h3>References</h3>
+      <p><a href="./user.html#summary">User summary</a>, <a href="./live-event.html">Live event summary</a> and <a href="./selection.html">Selection</a> forms are contained within this model.</p>
     </div>
   </div>
 </section>
