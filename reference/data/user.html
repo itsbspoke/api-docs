@@ -1,0 +1,57 @@
+---
+layout: default
+section: reference/data
+entry: user
+---
+<header class="jumbotron subhead" id="overview">
+    <h1>User Model</h1>
+    <p class="lead">Data concerning OtherScreen players, staff, customers, and administrators.</p>
+    <!-- Instrument this in analytics -->
+    <div class="subnav">
+      <ul class="nav nav-pills">
+        <li><a href="#summary">Summary</a></li>
+        <li><a href="#detail">Detail</a></li>
+        <li><a href="#authentication">Authentication</a></li>
+      </ul>
+    </div>
+</header>
+
+
+<section id="summary">
+</section>
+<section id="detail">
+</section>
+<section id="authentication">
+  <div class="page-header">
+  <h1>Authentication form  <small>used only when logging in</small></h1>
+  </div>
+  <div class="row">
+    <div class="span8">
+      <h2>JSON</h2>
+<pre class="prettyprint">
+{
+ "user": {
+  "authentication_token": "ea71eb59a85972b9edecb4a14cbcde3eef19bd3242f5167b1d3e09560caba5a7",
+  "email": "jim@jimvanfleet.com",
+  "id": 7
+ }
+}
+</pre>
+    <h2>Available via</h2>
+    <p>Using the <a href="../api/authentication.html">Authentication API's</a></p>
+    </div>
+    <div class="span4">
+      <h2>Summary</h2>
+      <p>This form contains unique user information gained only by logging in.</p>
+      <h2>Data Usage</h2>
+      <dl>
+        <dt>authentication_token</dt>
+        <dd>Use this in future request headers to identify yourself.</dd>
+        <dt>email</dt>
+        <dd>Passed back purely for reference, so that the user knows which account they are playing under.</dd>
+        <dt>id</dt>
+        <dd>May be referred to as user_id in this documentation, this number is used occasionally throughout the rest of the API.</dd>
+      </dl>
+    </div>
+  </div>
+</section>
