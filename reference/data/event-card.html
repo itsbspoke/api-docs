@@ -1,0 +1,100 @@
+---
+layout: default
+section: reference/data
+entry: event-card
+---
+<header class="jumbotron subhead" id="overview">
+    <h1>Event Card Model</h1>
+    <p class="lead">Every player gets an event card to track their stats during the event.</p>
+    <!-- Instrument this in analytics -->
+    <div class="subnav">
+      <ul class="nav nav-pills">
+        <li><a href="#summary">Summary</a></li>
+        <li><a href="#detail">Detail</a></li>
+      </ul>
+    </div>
+</header>
+
+
+<section id="summary">
+</section>
+<section id="detail">
+  <div class="page-header">
+  <h2>Detail form  <small>all the information we'll give you.</small></h2>
+  </div>
+  <div class="row">
+    <div class="span8">
+      <h3>JSON</h3>
+<pre class="prettyprint">
+{
+ "event_card": {
+  "presence": {
+   "status": "away",
+   "active": null,
+   "away": true
+  },
+  "id": 60,
+  "rookie": true,
+  "statistics": {
+   "max_streak": 7,
+   "segment_score": 0,
+   "score": 290,
+   "longest_negative_streak": 0,
+   "accuracy": "56.9%",
+   "streak": -1,
+   "longest_positive_streak": 0,
+   "questions_answered": 51
+  },
+  "selections": {
+   "pending": [],
+   "unscorable": [],
+   "scored": []
+  },
+  "user": {
+   "avatar_url": null,
+   "id": 5,
+   "name": "Clay Halligan",
+   "level": 1,
+  },
+  "live_event": {
+   "id": 17
+  }
+ }
+}
+
+</pre>
+    <h3>Available via</h3>
+    <p>Using the <a href="../api/live-events.html#event-card">Event participation</a> API endpoint.</p>
+    <h3>References</h3>
+    <p><a href="./user.html#summary">User summary</a> and <a href="./live-event.html">Live event summary</a> forms are contained within this model.</p>
+    <h3>Questions</h3>
+    <p>Are clients better served by partitioning server-side into the three types (pending,scored,unscorable), or in the same collection?</p>
+    <p>Should statistics and presence be nested?  What's the meaning of three different presence status indicators?</p>
+    <p>Do we have all the statistics we need?  This should be 'last call' for statistics, new ones will need to wait for 1.0.1 or similar.</p>
+    </div>
+
+    <div class="span4">
+      <h3>Summary</h3>
+      <p>This form will most commonly be used to request your own event card during play.  
+         This allows you to study the details of your performance, and of your individual answers.</p>
+      <h3>Data Usage</h3>
+      <p>Check above section if the data element you are looking for is not present here.</p>
+      <h4>Presence</h4>
+      <dl>
+        <dt>status</dt>
+        <dt>active</dt>
+        <dt>away</dt>
+      </dl>
+      <h4>Selections</h4>
+      <dl>
+        <dt>pending</dt>
+        <dd>Answers to scorable questions for which the correct answer is not yet available.</dd>
+        <dt>scored</dt>
+        <dd>Answers to scorable questions that have been reflected in the card's score and statistics.</dd>
+        <dt>unscorable</dt>
+        <dd>Answers to unscorable questions, or scorable questions that have been marked as unscorable due to DJ error.</dd>
+      </dl>
+      <p>
+    </div>
+  </div>
+</section>

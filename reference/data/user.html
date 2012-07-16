@@ -18,8 +18,88 @@ entry: user
 
 
 <section id="summary">
+  <div class="page-header">
+  <h1>Summary form  <small>basic user information</small></h1>
+  </div>
+  <div class="row">
+    <div class="span8">
+      <h2>JSON</h2>
+<pre class="prettyprint">
+{
+ "user": {
+   "avatar_url": null,
+   "id": 5,
+   "name": "Clay Halligan",
+   "level": 1,
+ }
+}
+</pre>
+    <h2>Available via</h2>
+    <p>Embedded in many other data models.  <a href="./event-card.html">Event Card</a></p>
+    <h2>References</h2>
+    <p>None.</p>
+    <h2>Questions</h2>
+    <p>Should XP be included here?  Anything else?</p>
+    <p>Probably needs URLs</p>
+    <p>Are we going to get thumbnail and full URL's for avatars?  Should we include size?</p>
+    </div>
+    <div class="span4">
+      <h2>Summary</h2>
+      <p>This form is widely used in a variety of places.  Be prepared to use it in many scenarios.</p>
+      <h2>Data Usage</h2>
+      <dl>
+        <dt>id</dt>
+        <dd>User id's uniquely identify a user numerically.  This can be used in other API requests, (e.g. <a href="../api/groups.html#invite">Group invitation</a>.</dd>
+        <dt>avatar_url</dt>
+        <dd>An image chosen by the user to represent them during their gameplay.</dd>
+        <dt>name</dt>
+        <dd>How the user should be referred to during gameplay.  May or may not be their real name.</dd>
+      </dl>
+    </div>
+  </div>
 </section>
 <section id="detail">
+  <div class="page-header">
+  <h1>Detail form  <small>all user information</small></h1>
+  </div>
+  <div class="row">
+    <div class="span8">
+      <h2>JSON</h2>
+<pre class="prettyprint">
+{
+ "user": {
+  "name": "Clay Halligan",
+  "avatar_url": null,
+  "xp": 25,
+  "id": 5,
+  "level": 1,
+  "urls": []
+ }
+}
+
+</pre>
+    <h2>Available via</h2>
+    <p><a href="../api/users.html#profile">User profile</a> endpoint</p>
+    <h2>References</h2>
+    <p>None.</p>
+    <h2>Questions</h2>
+    <p>Needs URLs-- doesn't feel close to complete</p>
+    <p>Are we going to get thumbnail and full URL's for avatars?  Should we include size?</p>
+    </div>
+    <div class="span4">
+      <h2>Summary</h2>
+      <p>This form is widely used in a variety of places.  Be prepared to use it in many scenarios.</p>
+      <h2>Data Usage</h2>
+      <dl>
+        <dt>id</dt>
+        <dd>User id's uniquely identify a user numerically.  This can be used in other API requests, (e.g. <a href="../api/groups.html#invite">Group invitation</a>.</dd>
+        <dt>avatar_url</dt>
+        <dd>An image chosen by the user to represent them during their gameplay.</dd>
+        <dt>name</dt>
+        <dd>How the user should be referred to during gameplay.  May or may not be their real name.</dd>
+      </dl>
+    </div>
+  </div>
 </section>
 <section id="authentication">
   <div class="page-header">
@@ -39,6 +119,10 @@ entry: user
 </pre>
     <h2>Available via</h2>
     <p>Using the <a href="../api/authentication.html">Authentication API's</a></p>
+    <h2>References</h2>
+    <p>None.</p>
+    <h2>Questions</h2>
+    <p>None outstanding.</p>
     </div>
     <div class="span4">
       <h2>Summary</h2>
