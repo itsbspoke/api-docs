@@ -1,0 +1,51 @@
+---
+layout: default
+section: reference/data
+entry: announcement
+---
+<header class="jumbotron subhead" id="overview">
+    <h1>Announcement Model</h1>
+    <p class="lead">A timely message from an event host (aka the DJ).</p>
+</header>
+
+
+<section id="summary">
+  <div class="row">
+    <div class="span8">
+      <h3>JSON</h3>
+<pre class="prettyprint">
+  {
+   "announcement": {
+    "id": 1314,
+    "commentary": "",
+    "body": "Today's starting pitchers are both old!"
+   }
+  }
+</pre>    
+    <h3>Available via</h3>
+    <p><a href="../api/live-events.html#check-in">Live Event check-in</a> API calls in the preroll array.
+       <a href="../../websockets.html#announcement">Announcement</a> WebSockets event.</p>
+       
+    <h3>Questions</h3>
+    <p>None.</p>
+    </div>
+
+    <div class="span4">
+      <h3>Summary</h3>
+      <h3>Data Usage</h3>
+      <dl>
+        <dt>id</dt>
+        <dd>Used for unique identification of the announcement.</dd>
+        <dt>body</dt>
+        <dd>Body of the host announcement-- the primary text.</dd>
+        <dt>commentary</dt>
+        <dd>Commentary on the host announcement.  Can be italicized or smaller, to taste.</dd>
+      </dl>
+      </p>
+      <h3>References</h3>
+      <p>None.</p>
+    </div>
+  </div>
+</section>
+
+
