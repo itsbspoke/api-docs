@@ -1,5 +1,57 @@
 ---
 layout: default
+section: reference/data
+entry: group-message
 ---
+<header class="jumbotron subhead" id="overview">
+    <h1>Group Message Model</h1>
+    <p class="lead">Private chats</p>
+</header>
 
-<h2>To be written</h2>
+
+<section id="summary">
+  <div class="row">
+    <div class="span8">
+      <h3>JSON</h3>
+<pre class="prettyprint">
+ {
+  "group_message": {
+   "id": 2477,
+   "user": {
+    "avatar_url": null,
+    "id": 5,
+    "name": "Clay Halligan",
+    "level": 1
+   },
+   "body": "yup. sup fleet",
+   "group": {
+    "id": 47,
+    "name": "OtherScreen Family"
+   }
+  }
+ }
+</pre>
+    <h3>Available via</h3>
+    <p>The <a href="../api/group-messages.html#listing">Group chat history</a> and <a href="../api/group-messages.html#write-message">Send a private chat</a> API endpoints.
+    The <a href="../../websockets.html#group-message">Group Chat message</a> WebSocket event will be the primary source.</p>
+       
+    <h3>Questions</h3>
+    <p>None.</p>
+    </div>
+
+    <div class="span4">
+      <h3>Summary</h3>
+      <h3>Data Usage</h3>
+      <dl>
+        <dt>id</dt>
+        <dd>Used for unique identification of the chat message.  Currently not be used.</dd>
+        <dt>body</dt>
+        <dd>Body of the chat message, should receive primary display.</dd>
+      </dl>
+      </p>
+      <h3>References</h3>
+      <p>The <a href="./user.html#summary">User summary</a> and <a href="./group.html#summary">Group summary</a> forms are contained within this model.</p>
+    </div>
+  </div>
+</section>
+
