@@ -1,0 +1,59 @@
+---
+layout: default
+section: reference/data
+entry: membership
+---
+<header class="jumbotron subhead" id="overview">
+    <h1>Membership Model</h1>
+    <p class="lead">A record of group inclusion</p>
+</header>
+
+
+<section id="summary">
+  <div class="row">
+    <div class="span8">
+      <h3>JSON</h3>
+<pre class="prettyprint">
+{
+ "membership": {
+  "status": "pending",
+  "id": 668,
+  "group": {
+   "id": 131,
+   "name": "Test Group"
+  },
+  "user": {
+   "avatar_url": null,
+   "id": 2,
+   "name": "@chrishalligan",
+   "level": 1
+  }
+ }
+}
+</pre>    
+    <h3>Available via</h3>
+    <p><a href="../api/groups.html#invite">Invite member to group</a>, <a href="../api/groups.html#listing">Group Listing</a> API calls.
+       <a href="../../websockets.html#user-notification">User notification</a> WebSockets event.</p>
+       
+    <h3>Questions</h3>
+    <p>None.</p>
+    </div>
+
+    <div class="span4">
+      <h3>Summary</h3>
+      <h3>Data Usage</h3>
+      <dl>
+        <dt>id</dt>
+        <dd>Used for unique identification of the membership.  
+        Required to <a href="../api/groups.html#accept-invite">accept</a> or <a href="../api/groups.html#ignore-invite">ignore</a> an invitation.</dd>
+        <dt>status</dt>
+        <dd>Literal strings: accepted, owned, ignored, pending.  Ignored invitations should not be displayed.  
+        Pending invitations should be presented for action.  Active and owned memberships should be reflected in gameplay.</dd>
+      </dl>
+      </p>
+      <h3>References</h3>
+      <p>The <a href="./user.html#summary">User summary</a> and <a href="./group.html#summary">Group summary</a> form are contained within this model.</p>
+    </div>
+  </div>
+</section>
+

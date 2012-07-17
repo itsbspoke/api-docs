@@ -1,5 +1,117 @@
 ---
 layout: default
+section: reference/data
+entry: live-event
 ---
 
-<h2>To be written</h2>
+<header class="jumbotron subhead" id="overview">
+    <h1>Live Event Model</h1>
+    <p class="lead">If you're playing OtherScreen, it's in the context of a live event.</p>
+    <!-- Instrument this in analytics -->
+    <div class="subnav">
+      <ul class="nav nav-pills">
+        <li><a href="#summary">Summary</a></li>
+        <li><a href="#detail">Detail</a></li>
+      </ul>
+    </div>
+</header>
+
+<section id="summary">
+  <div class="page-header">
+  <h1>Summary form  <small>basic event information</small></h1>
+  </div>
+  <div class="row">
+    <div class="span8">
+      <h2>JSON</h2>
+<pre class="prettyprint">
+ {
+  "live_event": {
+   "event_date": "2012-07-18 22:35:00",
+   "id": 445,
+   "in_progress": false,
+   "concluded": false,
+   "name": "FOX News Edge",
+   "tv_info": "FOX Charlotte",
+   "demo": false
+  }
+ }
+</pre>    <h2>Available via</h2>
+    <p><a href="../api/live-event.html#listing">Live Event listing</a> endpoint, embedded in <a href="./event-card#detail.html">Event Card detail</a></p>
+    <h2>References</h2>
+    <p>None.</p>
+    <h2>Questions</h2>
+    <p>Do we need both in progress and concluded?  (Might need to see all the fullness of the API before deciding.</p>
+    <p>Probably needs URLs, e.g. check-in</p>
+    <p>For in progress events, should any part of the leaderboard (or selected special event cards) be available?</p>
+    <p>Do we need to start shipping UTC?</p>
+    <p>Should we add segment name?</p>
+    </div>
+    <div class="span4">
+      <h2>Summary</h2>
+      <h2>Data Usage</h2>
+      <dl>
+        <dt>id</dt>
+        <dd>Live event id's uniquely identify an event numerically.  This can be used in other API requests, (e.g. <a href="../api/live-events.html#check-in">Live Event Check-In</a>, one of the most important API calls we expose.</dd>
+        <dt>event_date</dt>
+        <dd>Start time of the event (US Eastern Time currently)</dd>
+        <dt>in_progress</dt>
+        <dd>Is the competition currently underway?</dd>
+        <dt>concluded</dt>
+        <dd>Has a winner been declared?</dd>
+        <dt>name</dt>
+        <dd>The display name for the event</dd>
+        <dt>tv_info</dt>
+        <dd>The network or broadcast entity where a player can find the source material for gameplay</dd>
+        <dt>demo</dt>
+        <dd>Demo events are only visible to beta testers; this flag indicates the events are for testing purposes.</dd>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<section id="detail">
+  <div class="page-header">
+  <h1>Detail form  <small>full event information</small></h1>
+  </div>
+  <div class="row">
+    <div class="span8">
+      <h2>JSON</h2>
+<pre class="prettyprint">
+ {
+"live_event": {
+  "event_date": "2012-07-12 14:25:00",
+  "id": 442,
+  "in_progress": true,
+  "leaderboards": {
+   "full": [],
+   "period": []
+  },
+  "concluded": false,
+  "name": "Demo Preroll #2",
+  "tv_info": "",
+  "demo": true
+ } }
+</pre>    <h2>Available via</h2>
+    <p><a href="../api/live-event.html#check-in">Live Event check-in</a> endpoint</p>
+    <h2>References</h2>
+    <p>The leaderboard contains many <a href="./event-card#summary">Event Card summaries</a></p>
+    <h2>Questions</h2>
+    <p>Probably needs URLs, e.g. check-in</p>
+    <p>For in progress events, should any part of the leaderboard (or selected special event cards) be available?</p>
+    <p>Do we need to start shipping UTC?</p>
+    <p>Should we add segment name?</p>
+    </div>
+    <div class="span4">
+      <h2>Summary</h2>
+      <p>This is where you'll find the leaderboards for an event, both segment and full game</p>
+      <h2>Data Usage</h2>
+      <h3>Leaderboards</h3>
+      <dl>
+        <dt>full</dt>
+        <dd>An array of event cards in full game rank.  Please respect ordering.</dd>
+        <dt>segment</dt>
+        <dd>An array of event cards in segment rank.  Please respect ordering.</dd>
+      </dl>
+    </div>
+  </div>
+</section>

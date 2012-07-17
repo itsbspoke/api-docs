@@ -1,0 +1,106 @@
+---
+layout: default
+section: reference/data
+entry: group
+---
+<header class="jumbotron subhead" id="overview">
+    <h1>Group Model</h1>
+    <p class="lead">Private chat and competition</p>
+    <!-- Instrument this in analytics -->
+    <div class="subnav">
+      <ul class="nav nav-pills">
+        <li><a href="#summary">Summary</a></li>
+        <li><a href="#detail">Detail</a></li>
+      </ul>
+    </div>
+</header>
+
+
+<section id="summary">
+  <div class="page-header">
+    <h2>Summary form </h2>
+  </div>
+  <div class="row">
+    <div class="span8">
+      <h3>JSON</h3>
+<pre class="prettyprint">
+{
+"group": {
+   "id": 131,
+   "name": "Test Group"
+  }
+}
+</pre>
+    <h3>Available via</h3>
+    <p>Referenced primarily by the  <a href="./membership.html">Membership</a> model.</p>
+    <h3>Questions</h3>
+    <p>None.</p>
+    </div>
+
+    <div class="span4">
+      <h3>Summary</h3>
+      <h3>Data Usage</h3>
+      <dl>
+        <dt>id</dt>
+        <dd>Used for unique identification of the group.  May not be used.</dd>
+        <dt>name</dt>
+        <dd>How the group should appear in the display.</dd>
+      </dl>
+      <h3>References</h3>
+      <p>None.</p>
+    </div>
+  </div>
+</section>
+
+<section id="detail">
+<section id="summary">
+  <div class="page-header">
+  <h2>Detail form  <small>all the information we'll give you.</small></h2>
+  </div>
+  <div class="row">
+    <div class="span8">
+      <h3>JSON</h3>
+<pre class="prettyprint">
+{
+"group": {
+   "owner": {
+    "user": {
+     "avatar_url": null,
+     "id": 7,
+     "name": "Jim Van Fleet",
+     "level": 1
+    }
+   },
+   "id": 131,
+   "membership": {
+    "status": "owned",
+    "id": 666,
+    "group": {
+     "id": 131,
+     "name": "Test Group"
+    },
+    "user": {
+     "avatar_url": null,
+     "id": 7,
+     "name": "Jim Van Fleet",
+     "level": 1
+    }
+   },
+   "name": "Test Group"
+  }
+}
+</pre>
+    <h3>Available via</h3>
+    <p><a href="../api/groups.html#listing">Group listing</a> API.</p>
+    <h3>Questions</h3>
+    <p>None.</p>
+    </div>
+
+    <div class="span4">
+      <h3>Summary</h3>
+      <h3>Data Usage</h3>
+      <p>Only the id and name aren't references to other models.</p>
+      <h3>References</h3>
+      <p><a href="./user.html#summary">User summary</a> and <a href="./membership.html">Membership</a> models are referenced here.</p>
+    </div>
+  </div></section>
