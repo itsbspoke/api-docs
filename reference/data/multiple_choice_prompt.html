@@ -23,11 +23,11 @@ entry: multiple-choice-prompt
     "commentary": null,
     "choices": [
      {
-      "submit": "a",
+      "answer": "a",
       "display": "Married"
      },
      {
-      "submit": "b",
+      "answer": "b",
       "display": "Single"
      }
     ],
@@ -64,7 +64,7 @@ entry: multiple-choice-prompt
       </dl>
       <h4>Choices</h4>
       <dl>
-        <dt>submit</dt>
+        <dt>answer</dt>
         <dd>If the user selects this choice, send this answer when <a href="../api/questions.html#multiple-choice">Answering a multiple-choice question</a>.
         <dt>display</dt>
         <dd>Use this text to display to the user.</dd>
@@ -72,7 +72,7 @@ entry: multiple-choice-prompt
       <h4>URLs</h4>
       <dl>
         <dt>answer</dt>
-        <dd>Submit to this path to <a href="../api/questions.html#multiple-choice">answer this question</a>.</dd>
+        <dd>POST to this path to <a href="../api/questions.html#multiple-choice">answer this question</a>.</dd>
         <dt>results</dt>
         <dd>Issue a GET request to this path to get an answer breakdown</dd>
       </dl>
