@@ -8,9 +8,9 @@ section: reference
   <p class="lead">How to prove that you are who you say you are.</p>
   <div class="subnav">
     <ul class="nav nav-pills">
+      <li><a href="#create">Create an account</a></li>
       <li><a href="#email">Email / Password</a></li>
       <li><a href="#facebook">Facebook</a></li>
-      <li><a href="#twitter">Twitter</a></li>
     </ul>
   </div>
 </header>
@@ -19,6 +19,61 @@ section: reference
 
 <!-- Button Groups
 ================================================== -->
+<section id="create">
+  <div class="page-header">
+    <h1>Create an account <small>get started playing!</small></h1>
+  </div>
+  <div class="row">
+    <div class="span4">
+      <h3>Reason for existence</h3>
+      <p>Some users will not want to use Facebook. For those users, we allow a username and password to be set. Hitting this API endpoint will create a user token that can be used to authenticate all further requests from that user.</p>
+      <p><span class="label label-info">Related</span> Please use the SSL endpoint to make this request.  That will encrypt your user's password.  We do not yet enforce this requirement.</p>
+    </div>
+    <div class="span4">
+      <h3>Invocation form</h3>
+      <p>POST /users</p>
+      <div class="">
+        <dl>
+          <dt>email</dt>
+          <dd>Email address of the user</dd>
+          <dt>handle</dt>
+          <dd>The name that will appear in the chat room</dd>
+          <dt>password</dt>
+          <dd>Supplied password</dd>
+        </dl>
+      </div>
+    </div>
+    <div class="span4">
+      <h3>Status</h3>
+      <p>Complete</p>
+      <h3>HTTP Error Codes</h3>
+      <dl>
+        <dt>400</dt>
+        <dd>All data are required, and required to be of proper form.</dd>
+      </dl>
+    </div>
+  </div>
+  <div class="row">
+    <div class="span12">
+      <h3>Example usage</h3>
+      <pre>
+>curl -i -H "Accept: application/vnd.otherscreen.com; version=1" --data "email=bigfleet@me2.com&password=password&handle=bigfleet" http://localhost:5000/users
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+ETag: "b46c49e9cec6d10eeeb9d86b5ade77c5"
+Cache-Control: max-age=0, private, must-revalidate
+X-UA-Compatible: IE=Edge
+Set-Cookie: _session_id=576d9c30b8bb36cd20e7d3db55a5f751; path=/; HttpOnly
+X-Runtime: 1.475534
+Connection: close
+Server: thin 1.3.1 codename Triple Espresso
+
+{"user":{"id":3243,"authentication_token":"b92ced57783528f744a2e9f34855423253669097ef7e5d28968b60b06fa8c2ed","email":"bigfleet@me2.com"}}
+      </pre>
+    </div>
+  </div>
+</section>
+
 <section id="email">
   <div class="page-header">
     <h1>Email and password <small>for those who don't prefer social networks</small></h1>
@@ -124,20 +179,6 @@ Server: thin 1.3.1 codename Triple Espresso
 
 {"error":"The Facebook token you supplied was not valid."}
       </pre>
-    </div>
-  </div>
-</section>
-
-<section id="twitter">
-  <div class="page-header">
-    <h1>Twitter <small>coming soon</small></h1>
-  </div>
-  <div class="row">
-    <div class="span4">
-      <h3>Not yet available</h3>
-      <p>We do not yet support logging in via Twitter using our API.</p>
-      <p><span class="label label-info">Planned</span> We will support this endpoint at or before v2.</p>
-
     </div>
   </div>
 </section>

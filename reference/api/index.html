@@ -10,185 +10,114 @@ section: reference/api
 
 <section id="todo">
   <div class="page-header">
-    <h1>To-Do List  <small>to consider API documentation and attendant services complete.</small></h1>
+    <h1>Available API calls  <small>these services are complete and supported.</small></h1>
   </div>
   <div class="row">
     <div class="span12">
       <table class="table table-bordered table-striped">
         <thead>
           <tr>
-            <th>API Call</th>
-            <th>Documentation stub</th>
-            <th>Implementation stub</th>
-            <th>JSON finalized</th>
-            <th>Implementation finalized/tested</th>
-            <th>Documentation complete</th>
-            <th>Added to glossary</th>
+            <th>Call</th>
+            <th>HTTP</th>
+            <th>Status</th>
           </tr>
          </thead>
          <tbody>
            <tr>
-             <td><a href="./authentication.html#email">Login with email/password</a></td>
-            <td>✔</td>
-            <td>✔</td>
-            <td>Draft</td>
-            <td>✘</td>
-            <td>✘</td>
-            <td>✘</td>
+            <td><a href="./authentication.html#create">Create an account</a></td>
+            <td><code>POST /users</code></td>
+            <td><span class="label label-warning">Draft</span></td>
+           </tr>
+           <tr>
+            <td><a href="./authentication.html#email">Login with email/password</a></td>
+            <td><code>POST /authentications/email</code></td>
+            <td><span class="label label-warning">Draft</span></td>
            </tr>
            <tr>
             <td><a href="./authentication.html#facebook">Login with Facebook</a></td>
-            <td>✔</td>
-            <td>✔</td>
-            <td>Draft</td>
-            <td>✘</td>
-            <td>✘</td>
-            <td>✘</td>
+            <td><code>POST /authentications/facebook</code></td>
+            <td><span class="label label-warning">Draft</span></td>
            </tr>
            <tr>
             <td><a href="./live-events.html#listing">Live Event Listing</a></td>
-            <td>✔</td>
-            <td>✔</td>
-            <td>Draft</td>
-            <td>✘</td>
-            <td>✘</td>
-            <td>✘</td>
+            <td><code>GET /live_events</code></td>
+            <td><span class="label label-warning">Draft</span></td>
            </tr>
            <tr>
             <td><a href="./live-events.html#check-in">Live Event Check-in</a></td>
-            <td>✔</td>
-            <td>✔</td>
-            <td>draft</td>
-            <td>✘</td>
-            <td>✘</td>
-            <td>✘</td>
+            <td><code>GET /live_events/<i>[id]</i></code></td>
+            <td><span class="label label-warning">Draft</span></td>
            </tr>
            <tr>
             <td><a href="./live-events.html#event-card">Event Participation</a></td>
-            <td>✔</td>
-            <td>✔</td>
-            <td>Draft</td>
-            <td>✘</td>
-            <td>✘</td>
-            <td>✘</td>
+            <td><code>GET /event_cards/<i>[id]</i></code></td>
+            <td><span class="label label-warning">Draft</span></td>
            </tr>
            <tr>
             <td><a href="./live-events.html#messages">Live Event chat history</a></td>
-            <td>✔</td>
-            <td>✔</td>
-            <td>✔</td>
-            <td>✘</td>
-            <td>✘</td>
-            <td>✘</td>
+            <td><code>GET /live_events/<i>[id]</i>/messages</code></td>
+            <td><span class="label label-warning">Draft</span></td>
            </tr>
            <tr>
             <td><a href="./live-events.html#write-message">Send a Live Event chat</a></td>
-            <td>✔</td>
-            <td>✔</td>
-            <td>✔</td>
-            <td>✘</td>
-            <td>✘</td>
-            <td>✘</td>
+            <td><code>POST /live_events/<i>[id]</i>/messages</code></td>
+            <td><span class="label label-warning">Draft</span></td>
            </tr>
            <tr>
             <td><a href="./groups.html#listing">Group listing</a></td>
-            <td>✔</td>
-            <td>✔</td>
-            <td>Draft</td>
-            <td>✘</td>
-            <td>✘</td>
-            <td>✘</td>
-           </tr>
+            <td><code>GET /groups/<i>[id]</i></code></td>
+            <td><span class="label label-warning">Draft</span></td>
+          </tr>
            <tr>
             <td><a href="./groups.html#messages">Group chat history</a></td>
-            <td>✔</td>
-            <td>✔</td>
-            <td>✔</td>
-            <td>✘</td>
-            <td>✘</td>
-            <td>✘</td>
+            <td><code>GET /groups/<i>[id]</i>/messages</code></td>
+            <td><span class="label label-warning">Draft</span></td>
            </tr>
            <tr>
             <td><a href="./groups.html#messages">Send a group chat</a></td>
-            <td>✔</td>
-            <td>✔</td>
-            <td>✔</td>
-            <td>✘</td>
-            <td>✘</td>
-            <td>✘</td>
-           </tr>
+            <td><code>POST /groups/<i>[id]</i>/messages</code></td>
+            <td><span class="label label-warning">Draft</span></td>
+          </tr>
            <tr>
             <td><a href="./groups.html#create">Start a group</a></td>
-            <td>✔</td>
-            <td>✔</td>
-            <td>✔</td>
-            <td>✘</td>
-            <td>✘</td>
-            <td>✘</td>
+            <td><code>POST /groups</code></td>
+            <td><span class="label label-warning">Draft</span></td>
            </tr>
            <tr>
             <td><a href="./groups.html#invite">Invite user to a group</a></td>
-            <td>✔</td>
-            <td>✔</td>
-            <td>✔</td>
-            <td>✘</td>
-            <td>✘</td>
-            <td>✘</td>
+            <td><code>POST /groups/<i>[id]</i>/memberships</code></td>
+            <td><span class="label label-warning">Draft</span></td>
            </tr>
 
            <tr>
             <td><a href="./groups.html#accept-invite">Accept a group invitation</a></td>
-            <td>✔</td>
-            <td>✔</td>
-            <td>✔</td>
-            <td>✘</td>
-            <td>✘</td>
-            <td>✘</td>
+            <td><code>POST /groups/<i>[group_id]</i>/memberships/<i>[id]</i></code></td>
+            <td><span class="label label-warning">Draft</span></td>
            </tr>
            <tr>
             <td><a href="./groups.html#ignore-invite">Ignore a group invitation</a></td>
-            <td>✔</td>
-            <td>✔</td>
-            <td>✔</td>
-            <td>✘</td>
-            <td>✘</td>
-            <td>✘</td>
+            <td><code>POST /groups/<i>[group_id]</i>/memberships/<i>[id]</i></code></td>
+            <td><span class="label label-warning">Draft</span></td>
            </tr>
            <tr>
             <td><a href="./questions.html#multiple-choice">Answer a multiple choice question</a></td>
-            <td>✘</td>
-            <td>✔</td>
-            <td>✘</td>
-            <td>✘</td>
-            <td>✘</td>
-            <td>✘</td>
+            <td>Varies</td>
+            <td><span class="label label-warning">Draft</span></td>
            </tr>
            <tr>
             <td><a href="./questions.html#text">Answer a question that is not multiple choice</a></td>
-            <td>✘</td>
-            <td>✔</td>
-            <td>✘</td>
-            <td>✘</td>
-            <td>✘</td>
-            <td>✘</td>
+            <td>Varies</td>
+            <td><span class="label label-warning">Draft</span></td>
            </tr>
            <tr>
             <td><a href="./users.html#profile">User profile</a></td>
-            <td>✘</td>
-            <td>✔</td>
-            <td>Draft</td>
-            <td>✘</td>
-            <td>✘</td>
-            <td>✘</td>
+           <td><code>GET /users/<i>[id]</i></code></td>
+            <td><span class="label label-warning">Draft</span></td>
            </tr>
            <tr>
             <td><a href="./users.html#email-invite">Invite a new user via email</a></td>
-            <td>✘</td>
-            <td>✔</td>
-            <td>✘</td>
-            <td>✘</td>
-            <td>✘</td>
-            <td>✘</td>
+            <td>TBD</td>
+            <td><span class="label label-important">Unstarted</span></td>
            </tr>         
          </tbody>
       </table>
@@ -206,68 +135,45 @@ section: reference/api
         <thead>
           <tr>
             <th>API Call</th>
-            <th>Documentation stub</th>
-            <th>Implementation stub</th>
-            <th>JSON finalized</th>
-            <th>Implementation finalized/tested</th>
-            <th>Documentation complete</th>
-            <th>Added to glossary</th>
+            <th>Description</th>
+            <th>API series</th>
           </tr>
          </thead>
          <tbody>
            <tr>
-             <td><a href="./authentication.html#twitter">Login with Twitter</a></td>
-            <td>✔</td>
-            <td>✘</td>
-            <td>✘</td>
-            <td>✘</td>
-            <td>✘</td>
-            <td>✘</td>
+            <td>Login with Twitter</td>
+            <td>Provide friendly integration with Twitter auth</td>
+            <td>v2</td>
            </tr>
            <tr>
              <td><a href="./live-events.html#tweet-chat">Tweet a chat</a></td>
-            <td>✔</td>
-            <td>✘</td>
-            <td>✘</td>
-            <td>✘</td>
-            <td>✘</td>
-            <td>✘</td>
+            <td>Share one of our chats with your Twitter network.</dd>
+            <td>v1</td>
            </tr>
            <tr>
-            <td><a href="./users.html#facebook-invite">Invite a new user via Facebook</a></td>
-            <td>✘</td>
-            <td>✔</td>
-            <td>✘</td>
-            <td>✘</td>
-            <td>✘</td>
-            <td>✘</td>
+            <td>Invite via Facebook</td>
+            <td>Invite one of your Facebook friends to play OtherScreen (via Facebook).</dd>
+            <td>v1</td>
            </tr>
            <tr>
-            <td><a href="./users.html#twitter-invite">Invite a new user via Twitter</a></td>
-            <td>✘</td>
-            <td>✔</td>
-            <td>✘</td>
-            <td>✘</td>
-            <td>✘</td>
-            <td>✘</td>
+            <td>Invite via Twitter</td>
+            <td>Invite one (or all) of your Twitter friends to play OtherScreen (via Twitter).</dd>
+            <td>v1</td>
            </tr>
            <tr>
             <td><a href="./groups.html#leaderboard">Group event leaderboard</a></td>
-            <td>✔</td>
-            <td>✔</td>
-            <td>✘</td>
-            <td>✘</td>
-            <td>✘</td>
-            <td>✘</td>
+            <td>Play and win within a group.</dd>
+            <td>v1</td>
            </tr>
            <tr>
             <td><a href="./groups.html#prospect">Prospect for new group members</a></td>
-            <td>✔</td>
-            <td>✔</td>
-            <td>✘</td>
-            <td>✘</td>
-            <td>✘</td>
-            <td>✘</td>
+            <td>Find other users to invite to your group.</dd>
+            <td>v1</td>
+           </tr>
+           <tr>
+            <td>Friend an OtherScreen user</td>
+            <td>Keep up with another OtherScreener.</dd>
+            <td>v1</td>
            </tr>
          </tbody>
       </table>
