@@ -42,7 +42,7 @@ section: reference
 ================================================== -->
 <section id="listing">
   <div class="page-header">
-    <h1>Listing <small>What groups am I in?  What groups can I join?</small></h1>
+    <h1>Group Listing <small>What groups am I in?  What groups can I join?</small></h1>
   </div>
   <div class="row">
     <div class="span4">
@@ -52,6 +52,8 @@ section: reference
     <div class="span4">
       <h3>Invocation form</h3>
       <p>GET /groups</p>
+      <h3>Returns</h3>
+      <p>An array of <a href="../data/group.html#detail">Group detail</a> models.</p>
     </div>
     <div class="span4">
       <h3>Status</h3>
@@ -76,237 +78,459 @@ X-UA-Compatible: IE=Edge
 X-Runtime: 0.675554
 Connection: close
 Server: thin 1.3.1 codename Triple Espresso
-
-{
- "owned": [
-  {
-   "group_name": "Nasty As They Wanna Be",
-   "id": 315,
-   "group_id": 23,
-   "group": {
-    "owner_id": 7,
-    "unread_chats": 0,
-    "id": 23,
-    "name": "Nasty As They Wanna Be",
-    "status": "owned",
-    "owner_name": "Jim Van Fleet"
+[
+ {
+  "group": {
+   "owner": {
+    "user": {
+     "avatar_url": null,
+     "id": 1,
+     "name": "@gertig",
+     "level": 1
+    }
    },
-   "group_owner_id": 7,
-   "user_name": "Jim Van Fleet",
-   "group_owner_name": "Jim Van Fleet",
-   "type": "group",
-   "status": "owned"
-  },
-  {
-   "group_name": "OtherScreen Family",
-   "id": 324,
-   "group_id": 47,
-   "group": {
-    "owner_id": 7,
-    "unread_chats": 0,
-    "id": 47,
-    "name": "OtherScreen Family",
-    "status": "owned",
-    "owner_name": "Jim Van Fleet"
+   "id": 36,
+   "membership": {
+    "status": "active",
+    "id": 230,
+    "group": {
+     "id": 36,
+     "name": "testgroup"
+    },
+    "user": {
+     "avatar_url": null,
+     "id": 7,
+     "name": "Jim Van Fleet",
+     "level": 1
+    }
    },
-   "group_owner_id": 7,
-   "user_name": "Jim Van Fleet",
-   "group_owner_name": "Jim Van Fleet",
-   "type": "group",
-   "status": "owned"
-  },
-  {
-   "group_name": "TG2",
-   "id": 354,
-   "group_id": 40,
-   "group": {
-    "owner_id": 7,
-    "unread_chats": 0,
-    "id": 40,
-    "name": "TG2",
-    "status": "owned",
-    "owner_name": "Jim Van Fleet"
-   },
-   "group_owner_id": 7,
-   "user_name": "Jim Van Fleet",
-   "group_owner_name": "Jim Van Fleet",
-   "type": "group",
-   "status": "owned"
-  },
-  {
-   "group_name": "OtherScreen",
-   "id": 357,
-   "group_id": 1,
-   "group": {
-    "owner_id": 7,
-    "unread_chats": 0,
-    "id": 1,
-    "name": "OtherScreen",
-    "status": "owned",
-    "owner_name": "Jim Van Fleet"
-   },
-   "group_owner_id": 7,
-   "user_name": "Jim Van Fleet",
-   "group_owner_name": "Jim Van Fleet",
-   "type": "group",
-   "status": "owned"
-  },
-  {
-   "group_name": "OtherScreen Devs",
-   "id": 360,
-   "group_id": 31,
-   "group": {
-    "owner_id": 7,
-    "unread_chats": 0,
-    "id": 31,
-    "name": "OtherScreen Devs",
-    "status": "owned",
-    "owner_name": "Jim Van Fleet"
-   },
-   "group_owner_id": 7,
-   "user_name": "Jim Van Fleet",
-   "group_owner_name": "Jim Van Fleet",
-   "type": "group",
-   "status": "owned"
-  },
-  {
-   "group_name": "TG2",
-   "id": 361,
-   "group_id": 41,
-   "group": {
-    "owner_id": 7,
-    "unread_chats": 0,
-    "id": 41,
-    "name": "TG2",
-    "status": "owned",
-    "owner_name": "Jim Van Fleet"
-   },
-   "group_owner_id": 7,
-   "user_name": "Jim Van Fleet",
-   "group_owner_name": "Jim Van Fleet",
-   "type": "group",
-   "status": "owned"
-  },
-  {
-   "group_name": "The Taco",
-   "id": 415,
-   "group_id": 59,
-   "group": {
-    "owner_id": 7,
-    "unread_chats": 0,
-    "id": 59,
-    "name": "The Taco",
-    "status": "owned",
-    "owner_name": "Jim Van Fleet"
-   },
-   "group_owner_id": 7,
-   "user_name": "Jim Van Fleet",
-   "group_owner_name": "Jim Van Fleet",
-   "type": "group",
-   "status": "owned"
-  },
-  {
-   "group_name": "Work Montage",
-   "id": 433,
-   "group_id": 65,
-   "group": {
-    "owner_id": 7,
-    "unread_chats": 0,
-    "id": 65,
-    "name": "Work Montage",
-    "status": "owned",
-    "owner_name": "Jim Van Fleet"
-   },
-   "group_owner_id": 7,
-   "user_name": "Jim Van Fleet",
-   "group_owner_name": "Jim Van Fleet",
-   "type": "group",
-   "status": "owned"
-  },
-  {
-   "group_name": "Rubies",
-   "id": 446,
-   "group_id": 69,
-   "group": {
-    "owner_id": 7,
-    "unread_chats": 0,
-    "id": 69,
-    "name": "Rubies",
-    "status": "owned",
-    "owner_name": "Jim Van Fleet"
-   },
-   "group_owner_id": 7,
-   "user_name": "Jim Van Fleet",
-   "group_owner_name": "Jim Van Fleet",
-   "type": "group",
-   "status": "owned"
+   "name": "testgroup"
   }
- ],
- "pending": [],
- "active": [
-  {
-   "group_name": "testgroup",
-   "id": 230,
-   "group_id": 36,
-   "group": {
-    "owner_id": 1,
-    "unread_chats": 0,
-    "id": 36,
-    "name": "testgroup",
-    "status": "active",
-    "owner_name": "@gertig"
+ },
+ {
+  "group": {
+   "owner": {
+    "user": {
+     "avatar_url": null,
+     "id": 7,
+     "name": "Jim Van Fleet",
+     "level": 1
+    }
    },
-   "group_owner_id": 1,
-   "user_name": "Jim Van Fleet",
-   "group_owner_name": "@gertig",
-   "type": "group",
-   "status": "active"
-  },
-  {
-   "group_name": "Red Carpet",
-   "id": 494,
-   "group_id": 83,
-   "group": {
-    "owner_id": 1520,
-    "unread_chats": 0,
-    "id": 83,
-    "name": "Red Carpet",
-    "status": "active",
-    "owner_name": "Ben Ullman"
+   "id": 23,
+   "membership": {
+    "status": "owned",
+    "id": 315,
+    "group": {
+     "id": 23,
+     "name": "Nasty As They Wanna Be"
+    },
+    "user": {
+     "avatar_url": null,
+     "id": 7,
+     "name": "Jim Van Fleet",
+     "level": 1
+    }
    },
-   "group_owner_id": 1520,
-   "user_name": "Jim Van Fleet",
-   "group_owner_name": "Ben Ullman",
-   "type": "group",
-   "status": "active"
-  },
-  {
-   "group_name": "DJ Chat",
-   "id": 561,
-   "group_id": 99,
-   "group": {
-    "owner_id": 279,
-    "unread_chats": 0,
-    "id": 99,
-    "name": "DJ Chat",
-    "status": "active",
-    "owner_name": "@MikeDavria"
-   },
-   "group_owner_id": 279,
-   "user_name": "Jim Van Fleet",
-   "group_owner_name": "@MikeDavria",
-   "type": "group",
-   "status": "active"
+   "name": "Nasty As They Wanna Be"
   }
- ]
-}
+ },
+ {
+  "group": {
+   "owner": {
+    "user": {
+     "avatar_url": null,
+     "id": 7,
+     "name": "Jim Van Fleet",
+     "level": 1
+    }
+   },
+   "id": 47,
+   "membership": {
+    "status": "owned",
+    "id": 324,
+    "group": {
+     "id": 47,
+     "name": "OtherScreen Family"
+    },
+    "user": {
+     "avatar_url": null,
+     "id": 7,
+     "name": "Jim Van Fleet",
+     "level": 1
+    }
+   },
+   "name": "OtherScreen Family"
+  }
+ },
+ {
+  "group": {
+   "owner": {
+    "user": {
+     "avatar_url": null,
+     "id": 7,
+     "name": "Jim Van Fleet",
+     "level": 1
+    }
+   },
+   "id": 40,
+   "membership": {
+    "status": "owned",
+    "id": 354,
+    "group": {
+     "id": 40,
+     "name": "TG2"
+    },
+    "user": {
+     "avatar_url": null,
+     "id": 7,
+     "name": "Jim Van Fleet",
+     "level": 1
+    }
+   },
+   "name": "TG2"
+  }
+ },
+ {
+  "group": {
+   "owner": {
+    "user": {
+     "avatar_url": null,
+     "id": 7,
+     "name": "Jim Van Fleet",
+     "level": 1
+    }
+   },
+   "id": 1,
+   "membership": {
+    "status": "owned",
+    "id": 357,
+    "group": {
+     "id": 1,
+     "name": "OtherScreen"
+    },
+    "user": {
+     "avatar_url": null,
+     "id": 7,
+     "name": "Jim Van Fleet",
+     "level": 1
+    }
+   },
+   "name": "OtherScreen"
+  }
+ },
+ {
+  "group": {
+   "owner": {
+    "user": {
+     "avatar_url": null,
+     "id": 7,
+     "name": "Jim Van Fleet",
+     "level": 1
+    }
+   },
+   "id": 31,
+   "membership": {
+    "status": "owned",
+    "id": 360,
+    "group": {
+     "id": 31,
+     "name": "OtherScreen Devs"
+    },
+    "user": {
+     "avatar_url": null,
+     "id": 7,
+     "name": "Jim Van Fleet",
+     "level": 1
+    }
+   },
+   "name": "OtherScreen Devs"
+  }
+ },
+ {
+  "group": {
+   "owner": {
+    "user": {
+     "avatar_url": null,
+     "id": 7,
+     "name": "Jim Van Fleet",
+     "level": 1
+    }
+   },
+   "id": 41,
+   "membership": {
+    "status": "owned",
+    "id": 361,
+    "group": {
+     "id": 41,
+     "name": "TG2"
+    },
+    "user": {
+     "avatar_url": null,
+     "id": 7,
+     "name": "Jim Van Fleet",
+     "level": 1
+    }
+   },
+   "name": "TG2"
+  }
+ },
+ {
+  "group": {
+   "owner": {
+    "user": {
+     "avatar_url": null,
+     "id": 7,
+     "name": "Jim Van Fleet",
+     "level": 1
+    }
+   },
+   "id": 59,
+   "membership": {
+    "status": "owned",
+    "id": 415,
+    "group": {
+     "id": 59,
+     "name": "The Taco"
+    },
+    "user": {
+     "avatar_url": null,
+     "id": 7,
+     "name": "Jim Van Fleet",
+     "level": 1
+    }
+   },
+   "name": "The Taco"
+  }
+ },
+ {
+  "group": {
+   "owner": {
+    "user": {
+     "avatar_url": null,
+     "id": 7,
+     "name": "Jim Van Fleet",
+     "level": 1
+    }
+   },
+   "id": 65,
+   "membership": {
+    "status": "owned",
+    "id": 433,
+    "group": {
+     "id": 65,
+     "name": "Work Montage"
+    },
+    "user": {
+     "avatar_url": null,
+     "id": 7,
+     "name": "Jim Van Fleet",
+     "level": 1
+    }
+   },
+   "name": "Work Montage"
+  }
+ },
+ {
+  "group": {
+   "owner": {
+    "user": {
+     "avatar_url": null,
+     "id": 7,
+     "name": "Jim Van Fleet",
+     "level": 1
+    }
+   },
+   "id": 69,
+   "membership": {
+    "status": "owned",
+    "id": 446,
+    "group": {
+     "id": 69,
+     "name": "Rubies"
+    },
+    "user": {
+     "avatar_url": null,
+     "id": 7,
+     "name": "Jim Van Fleet",
+     "level": 1
+    }
+   },
+   "name": "Rubies"
+  }
+ },
+ {
+  "group": {
+   "owner": {
+    "user": {
+     "avatar_url": null,
+     "id": 1520,
+     "name": "Ben Ullman",
+     "level": 1
+    }
+   },
+   "id": 83,
+   "membership": {
+    "status": "active",
+    "id": 494,
+    "group": {
+     "id": 83,
+     "name": "Red Carpet"
+    },
+    "user": {
+     "avatar_url": null,
+     "id": 7,
+     "name": "Jim Van Fleet",
+     "level": 1
+    }
+   },
+   "name": "Red Carpet"
+  }
+ },
+ {
+  "group": {
+   "owner": {
+    "user": {
+     "avatar_url": null,
+     "id": 7,
+     "name": "Jim Van Fleet",
+     "level": 1
+    }
+   },
+   "id": 128,
+   "membership": {
+    "status": "owned",
+    "id": 663,
+    "group": {
+     "id": 128,
+     "name": "Test Group"
+    },
+    "user": {
+     "avatar_url": null,
+     "id": 7,
+     "name": "Jim Van Fleet",
+     "level": 1
+    }
+   },
+   "name": "Test Group"
+  }
+ },
+ {
+  "group": {
+   "owner": {
+    "user": {
+     "avatar_url": null,
+     "id": 7,
+     "name": "Jim Van Fleet",
+     "level": 1
+    }
+   },
+   "id": 129,
+   "membership": {
+    "status": "owned",
+    "id": 664,
+    "group": {
+     "id": 129,
+     "name": "Test Group"
+    },
+    "user": {
+     "avatar_url": null,
+     "id": 7,
+     "name": "Jim Van Fleet",
+     "level": 1
+    }
+   },
+   "name": "Test Group"
+  }
+ },
+ {
+  "group": {
+   "owner": {
+    "user": {
+     "avatar_url": null,
+     "id": 7,
+     "name": "Jim Van Fleet",
+     "level": 1
+    }
+   },
+   "id": 130,
+   "membership": {
+    "status": "owned",
+    "id": 665,
+    "group": {
+     "id": 130,
+     "name": "Test Group"
+    },
+    "user": {
+     "avatar_url": null,
+     "id": 7,
+     "name": "Jim Van Fleet",
+     "level": 1
+    }
+   },
+   "name": "Test Group"
+  }
+ },
+ {
+  "group": {
+   "owner": {
+    "user": {
+     "avatar_url": null,
+     "id": 7,
+     "name": "Jim Van Fleet",
+     "level": 1
+    }
+   },
+   "id": 131,
+   "membership": {
+    "status": "owned",
+    "id": 666,
+    "group": {
+     "id": 131,
+     "name": "Test Group"
+    },
+    "user": {
+     "avatar_url": null,
+     "id": 7,
+     "name": "Jim Van Fleet",
+     "level": 1
+    }
+   },
+   "name": "Test Group"
+  }
+ },
+ {
+  "group": {
+   "owner": {
+    "user": {
+     "avatar_url": null,
+     "id": 279,
+     "name": "@MikeDavria",
+     "level": 1
+    }
+   },
+   "id": 99,
+   "membership": {
+    "status": "accepted",
+    "id": 561,
+    "group": {
+     "id": 99,
+     "name": "DJ Chat"
+    },
+    "user": {
+     "avatar_url": null,
+     "id": 7,
+     "name": "Jim Van Fleet",
+     "level": 1
+    }
+   },
+   "name": "DJ Chat"
+  }
+ }
+]
       </pre>
-      <p><span class="label label-warning">Warning</span> This JSON form is definitely not correct.  Don't use it.</p>
       <h3>Improvement areas:</h3>
-      <ul>
-        <li>Groups should be nested within the different categories</li>
-        <li>It may not be important to differentiate between active and owned groups at the top level.</li>
-      </ul>
+      <p>None planned.</p>
     </div>
   </div>
 </section>
@@ -324,6 +548,10 @@ Server: thin 1.3.1 codename Triple Espresso
       <h3>Invocation form</h3>
       <p>GET /groups/<i>[id]</i>/messages</p>
       <p>The [id] parameter should be one available from the listing call detailed above.</p>
+      <h3>Returns</h3>
+      <p>An array of <a href="../data/group-message.html">private chat messages</a>.
+   </div>
+   <div class="span4">
       <h3>Status</h3>
       <p><span class="label label-warning">Warning</span> This JSON form is definitely not correct.  Don't use it.</p>
       <h3>HTTP Error Codes</h3>
@@ -351,7 +579,488 @@ X-Runtime: 2.077006
 Connection: close
 Server: thin 1.3.1 codename Triple Espresso
 
-Not yet available.
+[
+ {
+  "group_message": {
+   "id": 5842,
+   "user": {
+    "avatar_url": null,
+    "id": 469,
+    "name": "Mollyod",
+    "level": 1
+   },
+   "body": "Hey OtherScreen wives!  What do you think about a girls night?  Dinner? Wine?  Ice skating?!",
+   "group": {
+    "id": 47,
+    "name": "OtherScreen Family"
+   }
+  }
+ },
+ {
+  "group_message": {
+   "id": 6804,
+   "user": {
+    "avatar_url": null,
+    "id": 279,
+    "name": "@MikeDavria",
+    "level": 1
+   },
+   "body": "Sarah: Why no Artist today?",
+   "group": {
+    "id": 47,
+    "name": "OtherScreen Family"
+   }
+  }
+ },
+ {
+  "group_message": {
+   "id": 6807,
+   "user": {
+    "avatar_url": null,
+    "id": 46,
+    "name": "Salhal",
+    "level": 1
+   },
+   "body": "I didn't. Chris said the cardinals were playing. Then set his alarm. He did the nixing. ",
+   "group": {
+    "id": 47,
+    "name": "OtherScreen Family"
+   }
+  }
+ },
+ {
+  "group_message": {
+   "id": 6808,
+   "user": {
+    "avatar_url": null,
+    "id": 2,
+    "name": "@chrishalligan",
+    "level": 1
+   },
+   "body": "Sarah nixed it. Shes a nixer. The Spanish call her El Nixo. ",
+   "group": {
+    "id": 47,
+    "name": "OtherScreen Family"
+   }
+  }
+ },
+ {
+  "group_message": {
+   "id": 6809,
+   "user": {
+    "avatar_url": null,
+    "id": 279,
+    "name": "@MikeDavria",
+    "level": 1
+   },
+   "body": "... walks away slowly ...",
+   "group": {
+    "id": 47,
+    "name": "OtherScreen Family"
+   }
+  }
+ },
+ {
+  "group_message": {
+   "id": 6810,
+   "user": {
+    "avatar_url": null,
+    "id": 46,
+    "name": "Salhal",
+    "level": 1
+   },
+   "body": "...knowing Sarah speaks the truth...",
+   "group": {
+    "id": 47,
+    "name": "OtherScreen Family"
+   }
+  }
+ },
+ {
+  "group_message": {
+   "id": 6811,
+   "user": {
+    "avatar_url": null,
+    "id": 469,
+    "name": "Mollyod",
+    "level": 1
+   },
+   "body": "Skip the Artist!  See Being Elmo!",
+   "group": {
+    "id": 47,
+    "name": "OtherScreen Family"
+   }
+  }
+ },
+ {
+  "group_message": {
+   "id": 6812,
+   "user": {
+    "avatar_url": null,
+    "id": 46,
+    "name": "Salhal",
+    "level": 1
+   },
+   "body": "What's that?",
+   "group": {
+    "id": 47,
+    "name": "OtherScreen Family"
+   }
+  }
+ },
+ {
+  "group_message": {
+   "id": 6813,
+   "user": {
+    "avatar_url": null,
+    "id": 2,
+    "name": "@chrishalligan",
+    "level": 1
+   },
+   "body": "EL NIXO",
+   "group": {
+    "id": 47,
+    "name": "OtherScreen Family"
+   }
+  }
+ },
+ {
+  "group_message": {
+   "id": 6814,
+   "user": {
+    "avatar_url": null,
+    "id": 279,
+    "name": "@MikeDavria",
+    "level": 1
+   },
+   "body": "Documentary on Netflix Instant about the guy who is the puppeteer for Elmo. ",
+   "group": {
+    "id": 47,
+    "name": "OtherScreen Family"
+   }
+  }
+ },
+ {
+  "group_message": {
+   "id": 6815,
+   "user": {
+    "avatar_url": null,
+    "id": 279,
+    "name": "@MikeDavria",
+    "level": 1
+   },
+   "body": "We watched it today. I saw the premiere of it last year actually and he was there and took questions as Elmo!",
+   "group": {
+    "id": 47,
+    "name": "OtherScreen Family"
+   }
+  }
+ },
+ {
+  "group_message": {
+   "id": 6816,
+   "user": {
+    "avatar_url": null,
+    "id": 46,
+    "name": "Salhal",
+    "level": 1
+   },
+   "body": "Sounds cool. ",
+   "group": {
+    "id": 47,
+    "name": "OtherScreen Family"
+   }
+  }
+ },
+ {
+  "group_message": {
+   "id": 6817,
+   "user": {
+    "avatar_url": null,
+    "id": 469,
+    "name": "Mollyod",
+    "level": 1
+   },
+   "body": "It's fun.  I'd watch it again.",
+   "group": {
+    "id": 47,
+    "name": "OtherScreen Family"
+   }
+  }
+ },
+ {
+  "group_message": {
+   "id": 6818,
+   "user": {
+    "avatar_url": null,
+    "id": 46,
+    "name": "Salhal",
+    "level": 1
+   },
+   "body": "I was catching up on Young and the Restless on tv.com. :)",
+   "group": {
+    "id": 47,
+    "name": "OtherScreen Family"
+   }
+  }
+ },
+ {
+  "group_message": {
+   "id": 6819,
+   "user": {
+    "avatar_url": null,
+    "id": 279,
+    "name": "@MikeDavria",
+    "level": 1
+   },
+   "body": "Chris: Have you downloaded 5.1 iPhone software yet? Does OtherScreen work on it? It was just released. My friend Matt is not getting questions and he updated to 5.1.",
+   "group": {
+    "id": 47,
+    "name": "OtherScreen Family"
+   }
+  }
+ },
+ {
+  "group_message": {
+   "id": 6820,
+   "user": {
+    "avatar_url": null,
+    "id": 2,
+    "name": "@chrishalligan",
+    "level": 1
+   },
+   "body": "I have not. Sarah is and is fine. ",
+   "group": {
+    "id": 47,
+    "name": "OtherScreen Family"
+   }
+  }
+ },
+ {
+  "group_message": {
+   "id": 6821,
+   "user": {
+    "avatar_url": null,
+    "id": 279,
+    "name": "@MikeDavria",
+    "level": 1
+   },
+   "body": "Damn. I thought it would have been that easy to diagnose.",
+   "group": {
+    "id": 47,
+    "name": "OtherScreen Family"
+   }
+  }
+ },
+ {
+  "group_message": {
+   "id": 6822,
+   "user": {
+    "avatar_url": null,
+    "id": 46,
+    "name": "Salhal",
+    "level": 1
+   },
+   "body": "I have. It's fine. My phone says I am up to date. ",
+   "group": {
+    "id": 47,
+    "name": "OtherScreen Family"
+   }
+  }
+ },
+ {
+  "group_message": {
+   "id": 6823,
+   "user": {
+    "avatar_url": null,
+    "id": 279,
+    "name": "@MikeDavria",
+    "level": 1
+   },
+   "body": "The two people who have issues are on an up-to-date iPhone and are playing on Chrome. That's the only two pieces of advice I can typically give: Update your iPhone or download Chrome.",
+   "group": {
+    "id": 47,
+    "name": "OtherScreen Family"
+   }
+  }
+ },
+ {
+  "group_message": {
+   "id": 7191,
+   "user": {
+    "avatar_url": null,
+    "id": 43,
+    "name": "Chris Halligan",
+    "level": 1
+   },
+   "body": "Period reminder",
+   "group": {
+    "id": 47,
+    "name": "OtherScreen Family"
+   }
+  }
+ },
+ {
+  "group_message": {
+   "id": 7192,
+   "user": {
+    "avatar_url": null,
+    "id": 7,
+    "name": "Jim Van Fleet",
+    "level": 1
+   },
+   "body": "ytmnd",
+   "group": {
+    "id": 47,
+    "name": "OtherScreen Family"
+   }
+  }
+ },
+ {
+  "group_message": {
+   "id": 7221,
+   "user": {
+    "avatar_url": null,
+    "id": 43,
+    "name": "Chris Halligan",
+    "level": 1
+   },
+   "body": "Garth - Did you get my text re Ivan?",
+   "group": {
+    "id": 47,
+    "name": "OtherScreen Family"
+   }
+  }
+ },
+ {
+  "group_message": {
+   "id": 7222,
+   "user": {
+    "avatar_url": null,
+    "id": 3,
+    "name": "Garth Moulton",
+    "level": 1
+   },
+   "body": "I'll check it now- phone ran out of batteery",
+   "group": {
+    "id": 47,
+    "name": "OtherScreen Family"
+   }
+  }
+ },
+ {
+  "group_message": {
+   "id": 7274,
+   "user": {
+    "avatar_url": null,
+    "id": 43,
+    "name": "Chris Halligan",
+    "level": 1
+   },
+   "body": "Total pts for winner: over 90?",
+   "group": {
+    "id": 47,
+    "name": "OtherScreen Family"
+   }
+  }
+ },
+ {
+  "group_message": {
+   "id": 7275,
+   "user": {
+    "avatar_url": null,
+    "id": 7,
+    "name": "Jim Van Fleet",
+    "level": 1
+   },
+   "body": "Gotta be",
+   "group": {
+    "id": 47,
+    "name": "OtherScreen Family"
+   }
+  }
+ },
+ {
+  "group_message": {
+   "id": 7276,
+   "user": {
+    "avatar_url": null,
+    "id": 43,
+    "name": "Chris Halligan",
+    "level": 1
+   },
+   "body": "As a prop, suggestion. ",
+   "group": {
+    "id": 47,
+    "name": "OtherScreen Family"
+   }
+  }
+ },
+ {
+  "group_message": {
+   "id": 7318,
+   "user": {
+    "avatar_url": null,
+    "id": 302,
+    "name": "Megan Van Fleet",
+    "level": 1
+   },
+   "body": "Chris, I'm playing now while Jim does housework!! I can fetch him if u need him!",
+   "group": {
+    "id": 47,
+    "name": "OtherScreen Family"
+   }
+  }
+ },
+ {
+  "group_message": {
+   "id": 12619,
+   "user": {
+    "avatar_url": null,
+    "id": 43,
+    "name": "Chris Halligan",
+    "level": 1
+   },
+   "body": "122",
+   "group": {
+    "id": 47,
+    "name": "OtherScreen Family"
+   }
+  }
+ },
+ {
+  "group_message": {
+   "id": 12932,
+   "user": {
+    "avatar_url": null,
+    "id": 621,
+    "name": "Grace Halligan",
+    "level": 1
+   },
+   "body": "Ohla!",
+   "group": {
+    "id": 47,
+    "name": "OtherScreen Family"
+   }
+  }
+ },
+ {
+  "group_message": {
+   "id": 13962,
+   "user": {
+    "avatar_url": null,
+    "id": 1,
+    "name": "@gertig",
+    "level": 1
+   },
+   "body": "Hollllla family",
+   "group": {
+    "id": 47,
+    "name": "OtherScreen Family"
+   }
+  }
+ }
+]
       </pre>
       <h3>Improvement areas:</h3>
       <ul>
@@ -380,11 +1089,12 @@ Not yet available.
           <dd>The body of the chat.  Limited to 255 characters</dd>
         </dl>
       </div>
-
+      <h3>Returns</h3>
+      <p>A <a href="../data/group-message.html">private chat message</a>.</p>
     </div>
     <div class="span4">
       <h3>Status</h3>
-      <p><span class="label label-warning">Warning</span> This JSON form is definitely not correct.  Don't use it.</p>
+      <p>Complete</p>
       <h3>HTTP Error Codes</h3>
       <dl>
         <dt>400</dt>
@@ -402,7 +1112,7 @@ Not yet available.
     <div class="span12">
       <h3>Example usage</h3>
       <pre>
-> curl -i -H "Accept: application/vnd.otherscreen.com; version=1" -H "HTTP_X_OTHERSCREEN_AUTH_TOKEN: ea71eb59a85972b9edecb4a14cbcde3eef19bd3242f5167b1d3e09560caba5a7" http://localhost:5000/live_events/371
+> curl -i -H "Accept: application/vnd.otherscreen.com; version=1" -H "HTTP_X_OTHERSCREEN_AUTH_TOKEN: ea71eb59a85972b9edecb4a14cbcde3eef19bd3242f5167b1d3e09560caba5a7" --data "body=Test message" http://localhost:5000/groups/47/messages
 HTTP/1.1 200 OK
 Content-Type: application/json; charset=utf-8
 ETag: "8b21d6b4fa271bd56ca87e2065f2ad5b"
@@ -412,13 +1122,27 @@ X-Runtime: 2.077006
 Connection: close
 Server: thin 1.3.1 codename Triple Espresso
 
-Not yet ready
+{
+ "group_message": {
+  "id": 14962,
+  "user": {
+   "avatar_url": null,
+   "id": 7,
+   "name": "Jim Van Fleet",
+   "level": 1
+  },
+  "body": "Test message",
+  "group": {
+   "id": 47,
+   "name": "OtherScreen Family"
+  }
+ }
+}
+
       </pre>
       <h3>Improvement areas</h3>
-      <ul>
-        <li>Chat should be nested</li>
-      </ul>
-     </div>
+      <p>None planned.</p>
+    </div>
     </div>
 </section>
 
@@ -441,7 +1165,7 @@ Not yet ready
     </div>
     <div class="span4">
       <h3>Status</h3>
-      <p>Complete</p>
+      <p><span class="label label-important">Unsupported</span></p>
       <h3>HTTP Error Codes</h3>
       <dl>
         <dt>400</dt>
@@ -469,15 +1193,7 @@ X-Runtime: 1.513294
 Connection: close
 Server: thin 1.3.1 codename Triple Espresso
 
-{
- "body": "Test message",
- "user_name": "Jim Van Fleet",
- "type": "event",
- "id": 123005,
- "user_id": 7,
- "muted_by_dj": false
-}
-
+Not yet available
       </pre>
       <p><span class="label label-warning">Warning</span> This JSON form is definitely not correct.  Don't use it.</p>
       <h3>Improvement areas:</h3>
@@ -509,10 +1225,12 @@ Server: thin 1.3.1 codename Triple Espresso
           <dd>Name of the group, max 256 characters</dd>
         </dl>
       </div>
+      <h3>Returns</h3>
+      <p>A <a href="../data/group.html#detail">Group detail</a> model</p>
     </div>
     <div class="span4">
       <h3>Status</h3>
-      <p>Planned</p>
+      <p>Complete</p>
       <h3>HTTP Error Codes</h3>
       <dl>
         <dt>400</dt>
@@ -526,9 +1244,46 @@ Server: thin 1.3.1 codename Triple Espresso
     <div class="span12">
       <h3>Example usage</h3>
       <pre>
+> curl -i -H "Accept: application/vnd.otherscreen.com; version=1" -H "HTTP_X_OTHERSCREEN_AUTH_TOKEN: ea71eb59a85972b9edecb4a14cbcde3eef19bd3242f5167b1d3e09560caba5a7" --data "name=Test group" http://localhost:5000/groups
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+ETag: "37569309cef6c16429ce901422dc6e36"
+Cache-Control: max-age=0, private, must-revalidate
+X-UA-Compatible: IE=Edge
+Set-Cookie: _session_id=23c194b2401a11cf61fccc939eae1799; path=/; HttpOnly
+X-Runtime: 1.860190
+Connection: close
+Server: thin 1.3.1 codename Triple Espresso
 
+{
+ "group": {
+  "owner": {
+   "user": {
+    "avatar_url": null,
+    "id": 7,
+    "name": "Jim Van Fleet",
+    "level": 1
+   }
+  },
+  "id": 132,
+  "membership": {
+   "status": "owned",
+   "id": 669,
+   "group": {
+    "id": 132,
+    "name": "Test group"
+   },
+   "user": {
+    "avatar_url": null,
+    "id": 7,
+    "name": "Jim Van Fleet",
+    "level": 1
+   }
+  },
+  "name": "Test group"
+ }
+}
       </pre>
-      <p><span class="label label-warning">Warning</span> This JSON form is definitely not correct.  Don't use it.</p>
     </div>
   </div>
 </section>
@@ -575,9 +1330,25 @@ Server: thin 1.3.1 codename Triple Espresso
     <div class="span12">
       <h3>Example usage</h3>
       <pre>
+> curl -i -H "Accept: application/vnd.otherscreen.com; version=1" -H "HTTP_X_OTHERSCREEN_AUTH_TOKEN: ea71eb59a85972b9edecb4a14cbcde3eef19bd3242f5167b1d3e09560caba5a7" --data "user_id=2" http://localhost:5000/groups/133/memberships
 
+{
+ "membership": {
+  "status": "pending",
+  "id": 672,
+  "group": {
+   "id": 133,
+   "name": "Test group"
+  },
+  "user": {
+   "avatar_url": null,
+   "id": 2,
+   "name": "@chrishalligan",
+   "level": 1
+  }
+ }
+}
       </pre>
-      <p><span class="label label-warning">Warning</span> This JSON form is definitely not correct.  Don't use it.</p>
     </div>
   </div>
 </section>
@@ -614,7 +1385,7 @@ Server: thin 1.3.1 codename Triple Espresso
     <div class="span12">
       <h3>Example usage</h3>
       <pre>
-
+Not yet available.
       </pre>
       <p><span class="label label-warning">Warning</span> This JSON form is definitely not correct.  Don't use it.</p>
     </div>
@@ -643,7 +1414,8 @@ Server: thin 1.3.1 codename Triple Espresso
           <dd>The string literal "put"</dd>
         </dl>
       </div>
-
+      <h3>Returns</h3>
+      <p>A <a href="../data/membership.html">Membership</a> model.</p>
     </div>
     <div class="span4">
       <h3>Status</h3>
@@ -692,7 +1464,6 @@ Server: thin 1.3.1 codename Triple Espresso
  }
 }
       </pre>
-      <p><span class="label label-warning">Warning</span> This JSON form is definitely not correct.  Don't use it.</p>
     </div>
   </div>
 </section>
@@ -719,7 +1490,8 @@ Server: thin 1.3.1 codename Triple Espresso
           <dd>The string literal "put"</dd>
         </dl>
       </div>
-
+      <h3>Returns</h3>
+      <p>A <a href="../data/membership.html">Membership</a> model.</p>
     </div>
     <div class="span4">
       <h3>Status</h3>
@@ -768,8 +1540,6 @@ Server: thin 1.3.1 codename Triple Espresso
  }
 }
       </pre>
-
-      <p><span class="label label-warning">Warning</span> This JSON form is definitely not correct.  Don't use it.</p>
     </div>
   </div>
 </section>
