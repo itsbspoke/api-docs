@@ -10,11 +10,11 @@ layout: default
     <div class="subnav">
       <ul class="nav nav-pills">
         <li><a href="#intro">Introduction</a></li>
-        <li><a href="#main">Weekly game status and leaderboard</a></li>
-        <li><a href="#new-question">Fetching the next question</a></li>
-        <li><a href="#question-expiry">Expiring a question</a></li>
+        <li><a href="#main">Game status</a></li>
+        <li><a href="#new-question">Start play</a></li>
         <li><a href="#answering-a-question">Answering a question</a></li>
-        <li><a href="#push-notification">Responding to a push notification</a></li>
+        <li><a href="#question-expiry">Expiring a question</a></li>
+        <li><a href="#push-notification">Push notifications</a></li>
       </ul>
     </div>
 </header>
@@ -27,13 +27,25 @@ layout: default
   </div>
   <div class="row">
     <div class="span8">
-      <p>At the time of the release of the 1.0 API, our most popular product has been our live game experience, where companion content is provided for a live television broadcast.  This places limits on when you can experience OtherScreen content to only a few hours each week.  The weekly game is intended to allow familiar gameplay to our users at any time during the week.</p>
-      <p>Single questions will be released throughout the week.  At any time, a player may request the status of their weekly game, seeing how many questions they can answer.</p>
-      <p>When they choose to play during a week, push notifications will be sent to their device, notifying them that new questions are available.  This notification will be sent once until they answer more questions.</p>
-      <p>When playing the weekly game, a player will be presented a multiple choice question.  After they are presented with the question, a timer will begin to count down from 20 seconds.  Should the timer reach 0, the player will not have an opportunity to answer the question at all.  If the player answers correctly, with time remaining on the clock, they will be awarded points based on how much time is left. If a player answers incorrectly, they'll be shown the correct answer and will receive no points.</p>
-      <p>If there are more questions to answer after the first in the session, the player may continue via a 'next' button.</p>
+      <p>At the time of the release of the 1.0 API, our most popular product has been our live game 
+      experience, where companion content is provided for a live television broadcast.  This places limits on 
+      when you can experience OtherScreen content to only a few hours each week.  The weekly game is intended 
+      to allow familiar gameplay to our users at any time during the week.</p>
+      <p>Single questions will be released throughout the week.  At any time, a player may request the status
+      of their weekly game, seeing how many questions they can answer.</p>
+      <p>When they choose to play during a week, push notifications will be sent to their device, notifying
+      them that new questions are available.  This notification will be sent once until they answer more questions.</p>
+      <p>When playing the weekly game, a player will be presented a multiple choice question.  After they 
+      are presented with the question, a timer will begin to count down from 20 seconds.  Should the timer reach 0, 
+      the player will not have an opportunity to answer the question at all.  If the player answers correctly before
+     time expires, they will be awarded points based on how much time is left. If a player answers 
+      incorrectly, they'll be shown the correct answer and will receive no points.</p>
+      <p>If there are more questions to answer after the first in the session, the player may continue via a 'next' button.
+      If there are no more, a "done" button should allow the player to see the leaderboard state.</p>
       <p>Players may end their session with a quit button, or the home button at any time.</p>
-      <p>There is a leaderboard for the weekly game with a maximum of 10 entries.  Leaderboard data will include player name, progress (i.e. 3 correct, 4 incorrect, 6 not attempted) and their total score. The leaderboard data may also include a seperate indication of a player's ranking, if they are not in the top 10.</p>
+      <p>There is a leaderboard for the weekly game with a maximum of 10 entries.  Leaderboard data will 
+      include player name, progress (i.e. 3 correct, 4 incorrect, 6 not attempted) and their total score. The
+      leaderboard data may also include a seperate indication of a player's ranking, if they are not in the top 10.</p>
       <ul>
 
       </ul>
@@ -45,42 +57,71 @@ layout: default
 ================================================== -->
 <section id="main">
   <div class="page-header">
-    <h2>Introduction  <small>about the weekly game</small></h2>
+    <h2>Status  <small>leaderboard and other info.</small></h2>
   </div>
   <div class="row">
     <div class="span8">
-
+      <p>To play the daily game, you must <a href="../reference/api/authentication.html">authenticate</a>.  After acquiring the token,
+      issue the <a href="../reference/api/weekly.html">Weekly Game status</a> call.  That will return you all the data you'll need to display
+      the leaderboard and make decisions about the rest of the interface.</p>
+    </div>
   </div><!-- /.row -->
 </section>
 
 <section id="new-question">
   <div class="page-header">
-    <h2>Introduction  <small>about the weekly game</small></h2>
+    <h2>Play  <small>recieve a new question</small></h2>
   </div>
   <div class="row">
     <div class="span8">
+      <p>Issuing a GET request to the play endpoint will indicate a player's desire to participate
+      in the weekly game for this week, as well as fetching the next question that they have
+      the opportunity to answer.  If there is no question available, a 404 will result.</p>
+      <p>This request should be issued both when a user starts a play session, and when a
+      user intends to continue a play session by answering another question (e.g. after
+      answering the previous question.)</p>
+      <p>For more information, see the <a href="../reference/api/weekly-game.html#">full reference</a>.</p>
+    </div>
+  </div><!-- /.row -->
+</section>
+
+<section id="answering-a-question">
+  <div class="page-header">
+    <h2>Answer a question  <small>let us know how they did</small></h2>
+  </div>
+  <div class="row">
+    <div class="span8">
+      <p>Readers of this document are likely familiar with our previous method of submitting answers to questions.
+      There are two primary differences; we'll deal with the first here. Questions in the weekly game are timed.  
+      If they aren't answered in time, they can't be answered at all.  Clients are responsible for indicating 
+      the questions are expired, when they have the ability to do so.  The primary examples of this will be
+      when the user hits a quit or close button while the question is in front of them, or if they simply
+      lose track of time and let the timer expire.</p>
+      <p>Further, clients are responsible for determining how long a question took to answer, and the
+      server will accept their interpretation.  The server will not allow questions to take more than
+      1 minute to answer, and the client side restriction is intended to be 20 seconds on the countdown timer.
+      Other than that, the client is responsible for keeping track of how long the user had the question
+      active, and to say how many points to give them, should their answer be correct.  At this writing, it is
+      unclear if we'll allow scoring to take place client-side, or simply allow them to say how many seconds
+      elapsed.</p>
+    </div><!-- /.span -->
 
   </div><!-- /.row -->
 </section>
 
 <section id="question-expiry">
   <div class="page-header">
-    <h2>API Versioning  <small>our API guarantees</small></h2>
+    <h2>Question expiry <small>timed questions have new wrinkles</small></h2>
   </div>
   <div class="row">
     <div class="span8">
-
-    </div><!-- /.span -->
-
-  </div><!-- /.row -->
-</section>
-
-<section id="answering-a-question">
-  <div class="page-header">
-    <h2>Client Identification  <small>we're not ready for API tokens</small></h2>
-  </div>
-  <div class="row">
-    <div class="span8">
+      <p>When a user lets time run out on a question or hits quit while a question is in front
+      of them, the client is expected to let the server know that the user will not answer
+      the question.</p>
+      <p>There is a time limit on the server-side that will prevent an answer from being
+      registered more than 1 minute later from when the client first requested the question.
+      When the client has specific knowledge, however, that the user cannot answer the question
+      in time, please register that knowledge with the service.</p>
     </div><!-- /.span -->
 
   </div><!-- /.row -->
@@ -88,10 +129,16 @@ layout: default
 
 <section id="push-notification">
   <div class="page-header">
-    <h2>Client Identification  <small>we're not ready for API tokens</small></h2>
+    <h2>Push notifications  <small>let's give this a shot</small></h2>
   </div>
   <div class="row">
     <div class="span8">
+      <p>When
+      new questions are made available, the service has the ability to send
+      push notifications to mobile clients.  Since all weekly gameplay is
+      at a single endpoint, we will determine what form our push notifications
+      must take in order to allow the client device to engage with the weekly
+      gameplay endpoint without further interaction on the part of the user.</p>
     </div><!-- /.span -->
 
   </div><!-- /.row -->

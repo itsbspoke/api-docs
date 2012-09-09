@@ -1,0 +1,96 @@
+---
+layout: default
+section: reference/data
+entry: timed-trivia
+---
+
+<header class="jumbotron subhead" id="overview">
+    <h1>Timed Trivia Model</h1>
+    <p class="lead">Question about the past with a time limit</p>
+</header>
+
+
+<section id="summary">
+  <div class="row">
+    <div class="span8">
+      <h3>JSON</h3>
+<pre class="prettyprint">
+{
+ "question": {
+  "type": "TimedTrivia",
+  "id": 1,
+  "correct": {
+   "answer": "a",
+   "selected": false,
+   "correct": true,
+   "display": "Singular of trivia"
+  },
+  "choices": [
+   {
+    "answer": "a",
+    "selected": false,
+    "correct": true,
+    "display": "Singular of trivia"
+   },
+   {
+    "answer": "b",
+    "selected": false,
+    "correct": false,
+    "display": "Not a word"
+   }
+  ],
+  "body": "Trivium",
+  "client_id": "TimedTrivia_1",
+  "commentary": null,
+  "results": null,
+  "urls": {
+   "answer": "/timed_trivia/1/selections",
+   "expiry": "/timed_trivia/1/expire"
+  },
+  "answer_commentary": null
+ }
+}
+</pre>
+    <h3>Available via</h3>
+    <p><a href="../api/weekly-game.html#play">Weekly Game play</a> API call.</p>
+       
+    <h3>Questions</h3>
+    <p>Should we indicate which the correct answer is at all times?</p>
+    </div>
+
+    <div class="span4">
+      <h3>Summary</h3>
+      <h3>Data Usage</h3>
+      <dl>
+        <dt>id</dt>
+        <dd>Used for unique identification of the timed trivia.  Currently used when answering.</dd>
+        <dt>type</dt>
+        <dd>The literal string "TimedTrivia"</dd>
+        <dt>body</dt>
+        <dd>Body of the question, should receive primary display.</dd>
+        <dt>commentary</dt>
+        <dd>Commentary on the question, can receive italicized or smaller display to taste.</dd>
+        <dt>answer_commentary</dt>
+        <dd>Commentary on the answer, display after the user has answered.</dd>
+      </dl>
+      <h4>Choices</h4>
+      <dl>
+        <dt>submit</dt>
+        <dd>If the user selects this choice, send this answer when <a href="../api/questions.html#multiple-choice">Answering a multiple-choice question</a>.
+        <dt>display</dt>
+        <dd>Use this text to display to the user.</dd>
+      </dl>
+      <h4>URLs</h4>
+      <dl>
+        <dt>answer</dt>
+        <dd>Submit to this path to <a href="../api/questions.html#multiple-choice">answer this question</a>.</dd>
+        <dt>expiry</dt>
+        <dd>Issue a POST request to this path to indicate time expired while waiting for a user answer</dd>
+      </dl>
+      <h3>References</h3>
+      <p>None.</p>
+    </div>
+  </div>
+</section>
+
+

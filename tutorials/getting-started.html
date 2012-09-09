@@ -26,6 +26,7 @@ layout: default
         <li><a href="#domains">Domain name</a></li>
         <li><a href="#versioning">API Versioning</a></li>
         <li><a href="#client-identification">Client Identification</a></li>
+        <li><a href="#authentication">Authentication</a></li>
       </ul>
     </div><!-- /.span -->
     <div class="span4">
@@ -35,6 +36,7 @@ layout: default
         <p>All requests must include an accept header <b>application/vnd.otherscreen.com; version=1</b></p>
         <p>All requests must include a unique user-agent header that indicates client platform, and version number for the client implementation.</p>
         <p>An example User-Agent header would be <b>OtherScreen iOS 1.3.1</b></p>
+        <p>To authenticate a user, acquire an authorization token and set the <b>HTTP_X_OTHERSCREEN_AUTH_TOKEN</b> header to that token value.</p>
       </div>
     </div>
   </div><!-- /.row -->
@@ -100,6 +102,19 @@ layout: default
       <p>Enterprise level API's such as Twitter can require an API token for use.  This allows Twitter to defend itself against malicious or incidental bad behaviors by clients.  Our API does not yet meet that level of need, but we intend to.</p>
       <p>What is vital for us to understand, however, is for us to understand which clients are currently being used by our players-- as well as which are under development and which features are being used by which implementation.</p>
       <p>To that end, you are asked to self-select a unique string that describes the client you are building.  Platform, version, and author may all be related details.  At this time, the only prohibited choice is <b>com.otherscreen.OtherScreen/5</b> which has been taken.</p>
+    </div><!-- /.span -->
+
+  </div><!-- /.row -->
+</section>
+
+<section id="authentication">
+  <div class="page-header">
+    <h2>Authentication  <small>making sure we know who's playing</small></h2>
+  </div>
+  <div class="row">
+    <div class="span8">
+      <p>Much of the OtherScreen API requires a specific user to be signed in to return proper responses.  There are some <a href="../reference/api/authentication.html">choices regarding authentication</a>, all of which result in receiving an authentication token that uniquely identifieds a user.</p>
+      <p>Use that authentication token in an OtherScreen-unique request header <b>HTTP_X_OTHERSCREEN_AUTH_TOKEN</b> which has been taken.</p>
     </div><!-- /.span -->
 
   </div><!-- /.row -->

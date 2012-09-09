@@ -1,0 +1,139 @@
+---
+layout: default
+section: reference/data
+entry: weekly-game
+---
+
+<header class="jumbotron subhead" id="overview">
+    <h1>Weekly Game Model</h1>
+    <p class="lead">Our newest casual game, play all week.</p>
+    <!-- Instrument this in analytics -->
+</header>
+
+<section id="summary">
+  <div class="page-header">
+  <h1>Summary form  <small>basic event information</small></h1>
+  </div>
+  <div class="row">
+    <div class="span8">
+      <h2>JSON</h2>
+<pre class="prettyprint">
+{
+ "weekly_game": {
+  "leaderboard": [
+   {
+    "gamecard": {
+     "rank": 1,
+     "questions_attempted": 0,
+     "score": 0,
+     "questions_unanswered": 0,
+     "questions_correct": 0,
+     "user": {
+      "id": 7,
+      "name": "Jim Van Fleet",
+      "urls": {
+       "profile": "/users/7"
+      },
+      "bio": "I program the Rubies! Husband of @meganv.  CTO of @otherscreen, cofounder of @mocksup.",
+      "avatar": {
+       "nav": "https://d3jpl91pxevbkh.cloudfront.net/otherscreen/image/facebook/c_fill,g_faces,h_50,w_50/578726210.jpg",
+       "thumbnail": "https://d3jpl91pxevbkh.cloudfront.net/otherscreen/image/facebook/c_thumb,g_faces,h_25,w_25/578726210.jpg",
+       "profile": "https://d3jpl91pxevbkh.cloudfront.net/otherscreen/image/facebook/c_fill,g_faces,h_140,w_140/578726210.jpg"
+      },
+      "level": 20
+     }
+    }
+   }
+  ],
+  "id": 1,
+  "questions": {
+   "available": true,
+   "available_count": 1
+  },
+  "caption": "Week of 10 Sept. 2012",
+  "week_number": 36,
+  "year": 2012,
+  "played_this_week": false,
+  "urls": {
+   "play": "/weekly/play"
+  }
+ }
+}
+ </pre>    
+ <h2>Available via</h2>
+ <p><a href="../api/weekly.html#status">Weekly Game status</a> endpoint.</p>
+    <h2>References</h2>
+    <p><a href="#gamecard">Weekly gamecard</a> objects embedded.</p>
+    <h2>Questions</h2>
+    <p>Add yours here?</p>
+    </div>
+    <div class="span4">
+      <h2>Summary</h2>
+      <h2>Data Usage</h2>
+      <dl>
+        <dt>id</dt>
+        <dd>Weekly game id's uniquely identify an event numerically.  This can be used in other API requests.</dd>
+        <dt>caption</dt>
+        <dd>Use this to display the name of the game</dd>
+        <dt>week_number</dt>
+        <dd>Number of the week within the year of this game</dd>
+        <dt>year</dt>
+        <dd>Year of contest</dd>
+        <dt>played_this_week</dt>
+        <dd>Has the authenticated user played yet this week?</dd>
+        <dt>questions[available]</dt>
+        <dd>Are there questions available to answer?</dd>
+        <dt>questions[available_count]</dt>
+        <dd>How many questions are available for me to answer?</dd>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<section id="gamecard">
+  <div class="page-header">
+  <h1>Weekly Gamecard  <small>a user's participation in the weekly game</small></h1>
+  </div>
+  <div class="row">
+    <div class="span8">
+      <h2>JSON</h2>
+<pre class="prettyprint">
+   {
+    "gamecard": {
+     "rank": 1,
+     "id": 1,
+     "questions_attempted": 0,
+     "score": 0,
+     "questions_correct": 0,
+     "questions_unanswered": 0,
+     "user": {
+      "id": 7,
+      "name": "Jim Van Fleet",
+      "urls": {
+       "profile": "/users/7"
+      },
+      "bio": "I program the Rubies! Husband of @meganv.  CTO of @otherscreen, cofounder of @mocksup.",
+      "avatar": {
+       "nav": "https://d3jpl91pxevbkh.cloudfront.net/otherscreen/image/facebook/c_fill,g_faces,h_50,w_50/578726210.jpg",
+       "thumbnail": "https://d3jpl91pxevbkh.cloudfront.net/otherscreen/image/facebook/c_thumb,g_faces,h_25,w_25/578726210.jpg",
+       "profile": "https://d3jpl91pxevbkh.cloudfront.net/otherscreen/image/facebook/c_fill,g_faces,h_140,w_140/578726210.jpg"
+      },
+      "level": 20
+     }
+    }
+</pre>    
+<h2>Available via</h2>
+    <p><a href="#status">Weekly Game status</a> endpoint</p>
+    <h2>References</h2>
+    <p>A <a href="./user.html#summary">User summary</a> object</p>
+    <h2>Questions</h2>
+    <p>Got any?</p>
+    </div>
+    <div class="span4">
+      <h2>Summary</h2>
+      <p>A user's score and rank for a weekly game.</p>
+      <h2>Data Usage</h2>
+      <p>Hopefully self explanatory</p>
+    </div>
+  </div>
+</section>
