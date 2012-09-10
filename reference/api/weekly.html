@@ -119,11 +119,11 @@ Transfer-Encoding: chunked
   <div class="row">
     <div class="span4">
       <h3>Reason for existence</h3>
-      <p>A user must make this call to begin participating in the weekly game, and then periodically as they continue participation in the event in question.</p>
+      <p>A user must make this call to begin participating in the weekly game, and then periodically as they continue participation in that week's game.</p>
     </div>
     <div class="span4">
       <h3>Invocation form</h3>
-      <p>GET /weekly/play</p>
+      <p>GET /weekly/<i>slug</i>/play</p>
       <h3>Returns</h3>
       <p>A <a href="../data/timed-trivia.html">TimedTrivia</a> object</p>
     </div>
@@ -199,3 +199,127 @@ Transfer-Encoding: chunked
   </div>
 </section>
 
+<section id="answer">
+  <div class="page-header">
+    <h1>Answer <small>play and win the weekly</small></h1>
+  </div>
+  <div class="row">
+    <div class="span4">
+      <h3>Reason for existence</h3>
+      <p>You'll never score if you don't answer.</p>
+    </div>
+    <div class="span4">
+      <h3>Invocation form</h3>
+      <p>POST /weekly/<i>slug</i>/timed_trivia_selections</p>
+      <h3>Returns</h3>
+      <p>A <a href="../data/timed-trivia-selection.html">TimedTriviaSelection</a> object</p>
+    </div>
+    <div class="span4">
+      <h3>Status</h3>
+      <p>Complete</p>
+      <h3>HTTP Error Codes</h3>
+      <dl>
+        <dt>401</dt>
+        <dd>You must pass an authentication token.</dd>
+        <dt>404</dt>
+        <dd>If we couldn't find a question to issue you, we'll send a 404.</dd>
+      </dl>
+    </div>
+  </div>
+  <div class="row">
+    <div class="span12">
+      <h3>Example usage</h3>
+      <pre>
+> curl -i -H "Accept: application/vnd.otherscreen.com; version=1" -H "HTTP_X_OTHERSCREEN_AUTH_TOKEN: ea71eb59a85972b9edecb4a14cbcde3eef19bd3242f5167b1d3e09560caba5a7" -d "timed_trivia_id=1&letter=a" http://gotcup-staging.herokuapp.com/weekly_games/main/timed_trivia_selections
+
+Date: Sun, 09 Sep 2012 22:05:17 GMT
+Status: 200 OK
+Connection: close
+Content-Type: application/json; charset=utf-8
+ETag: "8331a4ce9d5f51f1a89b62ce7e4cae97"
+Cache-Control: max-age=0, private, must-revalidate
+X-UA-Compatible: IE=Edge
+Set-Cookie: _session_id=3bcc9b735fb251c9ce29ab4751a39250; path=/; HttpOnly
+X-Runtime: 0.846695
+Transfer-Encoding: chunked
+
+{
+ "selection": {
+  "points_suggested": 0,
+  "id": 2,
+  "correct": false,
+  "client_id": "TimedTrivia_1",
+  "gamecard": {
+   "rank": null,
+   "id": 1,
+   "questions_attempted": 0,
+   "score": 0,
+   "questions_correct": 0,
+   "questions_unanswered": 0,
+   "user": {
+    "id": 7,
+    "name": "Jim Van Fleet",
+    "urls": {
+     "profile": "/users/7"
+    },
+    "bio": "I program the Rubies! Husband of @meganv.  CTO of @otherscreen, cofounder of @mocksup.",
+    "avatar": {
+     "nav": "https://d3jpl91pxevbkh.cloudfront.net/otherscreen/image/facebook/c_fill,g_faces,h_50,w_50/578726210.jpg",
+     "thumbnail": "https://d3jpl91pxevbkh.cloudfront.net/otherscreen/image/facebook/c_thumb,g_faces,h_25,w_25/578726210.jpg",
+     "profile": "https://d3jpl91pxevbkh.cloudfront.net/otherscreen/image/facebook/c_fill,g_faces,h_140,w_140/578726210.jpg"
+    },
+    "level": 20
+   }
+  },
+  "points_awarded": 0,
+  "urls": {},
+  "chosen": {
+   "answer": "a",
+   "selected": true,
+   "correct": true,
+   "display": "Singular of trivia"
+  },
+  "question": {
+   "type": "TimedTrivia",
+   "id": 1,
+   "correct": {
+    "answer": "a",
+    "selected": true,
+    "correct": true,
+    "display": "Singular of trivia"
+   },
+   "choices": [
+    {
+     "answer": "a",
+     "selected": true,
+     "correct": true,
+     "display": "Singular of trivia"
+    },
+    {
+     "answer": "b",
+     "selected": false,
+     "correct": false,
+     "display": "Not a word"
+    }
+   ],
+   "body": "Trivium",
+   "client_id": "TimedTrivia_1",
+   "commentary": null,
+   "results": null,
+   "urls": {
+    "answer": "/timed_trivia_selections",
+    "expiry": "/timed_trivia_selections/expire"
+   },
+   "answer_commentary": "Latin, baby"
+  }
+ }
+}
+
+      </pre>
+      <h3>Improvement areas:</h3>
+      <ul>
+        <li>Error conditions in shaky place.</li>
+      </ul>
+    </div>
+  </div>
+</section>

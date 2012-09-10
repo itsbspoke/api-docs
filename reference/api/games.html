@@ -1,0 +1,161 @@
+---
+layout: default
+section: reference
+---
+
+<header class="jumbotron subhead" id="overview">
+  <h1>Games</h1>
+  <p class="lead">What can I play?</p>
+  <div class="subnav">
+    <ul class="nav nav-pills">
+      <li><a href="#listing">Listing</a></li>
+    </ul>
+  </div>
+</header>
+
+
+
+<!-- Button Groups
+================================================== -->
+<section id="listing">
+  <div class="page-header">
+    <h1>Game Listing</h1>
+  </div>
+  <div class="row">
+    <div class="span4">
+      <h3>Reason for existence</h3>
+      <p>It returns a listing of games that the client will have an opportunity to play, both weekly and live.
+      After authenticating, this should be the first request that clients make.</p>
+    </div>
+    <div class="span4">
+      <h3>Invocation form</h3>
+      <p>GET /events</p>
+      <h3>Returns</h3>
+      <p>An array of <a href="../data/live-event.html#summary">Live Event summary</a> models, and an
+      array of <a href="../data/weekly-game.html#summary">Weekly Game summary</a> models</p>
+    </div>
+    <div class="span4">
+      <h3>Status</h3>
+      <p>Complete</p>
+      <h3>HTTP Error Codes</h3>
+      <dl>
+        <dt>401</dt>
+        <dd>You must pass an authentication token.</dd>
+      </dl>
+    </div>
+  </div>
+  <div class="row">
+    <div class="span12">
+      <h3>Example usage</h3>
+      <pre>
+>  curl -i -H "Accept: application/vnd.otherscreen.com; version=1" -H "HTTP_X_OTHERSCREEN_AUTH_TOKEN: ea71eb59a85972b9edecb4a14cbcde3eef19bd3242f5167b1d3e09560caba5a7" http://localhost:5000/games
+HTTP/1.1 200 OK
+Date: Mon, 10 Sep 2012 13:50:20 GMT
+Status: 200 OK
+Connection: close
+Content-Type: application/json; charset=utf-8
+ETag: "7cbc2d0e412ab155e89f28bfc19ff791"
+Cache-Control: max-age=0, private, must-revalidate
+X-UA-Compatible: IE=Edge
+Set-Cookie: _session_id=1fca399365122bdad4be43dcc2f0ff8b; path=/; HttpOnly
+X-Runtime: 0.992828
+Transfer-Encoding: chunked
+{
+ "live_events": [
+  {
+   "live_event": {
+    "event_date": "2012-09-07 14:30:00",
+    "id": 539,
+    "urls": {
+     "check_in": "/live_events/539"
+    },
+    "in_progress": true,
+    "concluded": false,
+    "name": "Demo Event for FOX Soccer",
+    "tv_info": "",
+    "demo": true
+   }
+  },
+  {
+   "live_event": {
+    "event_date": "2012-09-09 20:15:00",
+    "id": 536,
+    "urls": {
+     "check_in": "/live_events/536"
+    },
+    "in_progress": true,
+    "concluded": false,
+    "name": "NFL: Steelers @ Broncos",
+    "tv_info": "NBC",
+    "demo": false
+   }
+  },
+  {
+   "live_event": {
+    "event_date": "2012-09-10 19:00:00",
+    "id": 537,
+    "urls": {
+     "check_in": "/live_events/537"
+    },
+    "in_progress": false,
+    "concluded": false,
+    "name": "NFL: Bengals @ Ravens",
+    "tv_info": "ESPN",
+    "demo": false
+   }
+  },
+  {
+   "live_event": {
+    "event_date": "2012-09-16 20:15:00",
+    "id": 542,
+    "urls": {
+     "check_in": "/live_events/542"
+    },
+    "in_progress": false,
+    "concluded": false,
+    "name": "NFL: Lions @ 49ers",
+    "tv_info": "NBC",
+    "demo": false
+   }
+  },
+  {
+   "live_event": {
+    "event_date": "2012-09-17 20:30:00",
+    "id": 543,
+    "urls": {
+     "check_in": "/live_events/543"
+    },
+    "in_progress": false,
+    "concluded": false,
+    "name": "NFL: Broncos @ Falcons",
+    "tv_info": "ESPN",
+    "demo": false
+   }
+  }
+ ],
+ "weekly_games": [
+  {
+   "weekly_game": {
+    "caption": "Week of 10 Sept. 2012",
+    "questions": {
+     "available_count": 1
+    },
+    "id": "main",
+    "week_number": 37,
+    "year": 2012,
+    "urls": {
+     "play": "/weekly_games/main/play"
+    }
+   }
+  }
+ ]
+}
+
+      </pre>
+      <h3>Improvement areas:</h3>
+      <ul>
+        <p>?</p>
+      </ul>
+    </div>
+  </div>
+</section>
