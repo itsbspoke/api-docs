@@ -48,7 +48,7 @@ section: reference
     <div class="span12">
       <h3>Example usage</h3>
       <pre>
->  curl -i -H "Accept: application/vnd.otherscreen.com; version=1" -H "HTTP_X_OTHERSCREEN_AUTH_TOKEN: ea71eb59a85972b9edecb4a14cbcde3eef19bd3242f5167b1d3e09560caba5a7" http://localhost:5000/games
+>  curl -i -H "Accept: application/vnd.otherscreen.com; version=1" -H "HTTP_X_OTHERSCREEN_AUTH_TOKEN: ea71eb59a85972b9edecb4a14cbcde3eef19bd3242f5167b1d3e09560caba5a7" https://gotcup-staging.herokuapp.com/games
 HTTP/1.1 200 OK
 Date: Mon, 10 Sep 2012 13:50:20 GMT
 Status: 200 OK
@@ -64,71 +64,57 @@ Transfer-Encoding: chunked
  "live_events": [
   {
    "live_event": {
-    "event_date": "2012-09-07 14:30:00",
-    "id": 539,
+    "event_date": "2012-09-19 12:00:00",
+    "id": 550,
     "urls": {
-     "check_in": "/live_events/539"
+     "check_in": "/live_events/550"
     },
     "in_progress": true,
     "concluded": false,
-    "name": "Demo Event for FOX Soccer",
+    "name": "OtherScreen Daily - Wed. Sept. 19",
+    "tv_info": "OtherScreen",
+    "demo": false
+   }
+  },
+  {
+   "live_event": {
+    "event_date": "2012-09-19 14:01:00",
+    "id": 553,
+    "urls": {
+     "check_in": "/live_events/553"
+    },
+    "in_progress": true,
+    "concluded": false,
+    "name": "Logo time 3",
     "tv_info": "",
     "demo": true
    }
   },
   {
    "live_event": {
-    "event_date": "2012-09-09 20:15:00",
-    "id": 536,
+    "event_date": "2012-09-20 13:45:00",
+    "id": 547,
     "urls": {
-     "check_in": "/live_events/536"
+     "check_in": "/live_events/547"
     },
-    "in_progress": true,
+    "in_progress": false,
     "concluded": false,
-    "name": "NFL: Steelers @ Broncos",
-    "tv_info": "NBC",
-    "demo": false
+    "name": "Leadership Charlotte",
+    "tv_info": "",
+    "demo": true
    }
   },
   {
    "live_event": {
-    "event_date": "2012-09-10 19:00:00",
-    "id": 537,
+    "event_date": "2012-09-23 20:00:00",
+    "id": 548,
     "urls": {
-     "check_in": "/live_events/537"
+     "check_in": "/live_events/548"
     },
     "in_progress": false,
     "concluded": false,
-    "name": "NFL: Bengals @ Ravens",
-    "tv_info": "ESPN",
-    "demo": false
-   }
-  },
-  {
-   "live_event": {
-    "event_date": "2012-09-16 20:15:00",
-    "id": 542,
-    "urls": {
-     "check_in": "/live_events/542"
-    },
-    "in_progress": false,
-    "concluded": false,
-    "name": "NFL: Lions @ 49ers",
-    "tv_info": "NBC",
-    "demo": false
-   }
-  },
-  {
-   "live_event": {
-    "event_date": "2012-09-17 20:30:00",
-    "id": 543,
-    "urls": {
-     "check_in": "/live_events/543"
-    },
-    "in_progress": false,
-    "concluded": false,
-    "name": "NFL: Broncos @ Falcons",
-    "tv_info": "ESPN",
+    "name": "The 64th Primetime Emmy Awards",
+    "tv_info": "ABC",
     "demo": false
    }
   }
@@ -136,20 +122,31 @@ Transfer-Encoding: chunked
  "weekly_games": [
   {
    "weekly_game": {
-    "caption": "Week of 10 Sept. 2012",
-    "questions": {
-     "available_count": 1
-    },
-    "id": "main",
-    "week_number": 37,
+    "id": "sports",
+    "caption": "Sports: Week of Sep 17, 2012",
+    "week_number": 38,
     "year": 2012,
     "urls": {
+     "detail": "/weekly_games/sports",
+     "play": "/weekly_games/sports/play"
+    }
+   }
+  },
+  {
+   "weekly_game": {
+    "id": "main",
+    "caption": "Main: Week of Sep 17, 2012",
+    "week_number": 38,
+    "year": 2012,
+    "urls": {
+     "detail": "/weekly_games/main",
      "play": "/weekly_games/main/play"
     }
    }
   }
  ]
 }
+
 
       </pre>
       <h3>Improvement areas:</h3>

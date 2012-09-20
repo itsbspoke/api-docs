@@ -31,13 +31,14 @@ layout: default
       <p>At the time of the release of the 1.0 API, our most popular product has been our live game 
       experience, where companion content is provided for a live television broadcast.  This places limits on 
       when you can experience OtherScreen content to only a few hours each week.  The weekly game is intended 
-      to allow familiar gameplay to our users at any time during the week.</p>
+      to allow familiar gameplay to our users at any time.</p>
       <p>While we will launch with only a single weekly game, we intend to add the ability to have users
       ask questions in the future, as well as potentially release focused weekly games for (say) 20 weeks.</p>
       <p>Single questions will be released throughout the week (5 per day).  At any time, a player may request the status
       of their weekly game, seeing how many questions they can answer.</p>
-      <p>When they choose to play during a week, push notifications will be sent to their device, notifying
-      them that new questions are available.  A push notification will be sent each time a question is made available.</p>
+      <p>When they choose to play during a week, push notifications will be sent to their device to notify
+      them that new questions are available.  A push notification will be sent each time a question is made available,
+      perhaps only to update the badge count.</p>
       <p>When playing the weekly game, a player will be presented a multiple choice question.  After they 
       are presented with the question, a timer will begin to count down from 20 seconds, this should be represented with a decrementing progress bar preferably located at the bottom of the view.  Should the timer reach 0, 
       the player will not have an opportunity to answer the question at all.  If the player answers correctly before
@@ -66,9 +67,10 @@ layout: default
   </div>
   <div class="row">
     <div class="span8">
-      <p>A  <a href="../reference/api/authentication.html">authenticate</a>.  After acquiring the token,
-      issue the <a href="../reference/api/weekly.html#status">Weekly Game status</a> call.  That will return you all the data you'll need to display
-      the leaderboard and make decisions about the rest of the interface.</p>
+      <p>First, you should <a href="../reference/api/authentication.html">authenticate</a>.  After acquiring the token,
+      issue the <a href="../reference/api/games.html#listing">Game listing</a> call. That returns both weekly games,
+      and upcoming live event information.  This call is designed to be your entryway into briefing the user on
+      what they can play now, and what they could plan on playing in the future.</p>
     </div>
   </div><!-- /.row -->
 </section>
