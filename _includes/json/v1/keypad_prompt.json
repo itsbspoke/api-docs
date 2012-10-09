@@ -1,0 +1,16 @@
+{
+  "question": {
+    "id": 1,
+    "client_id": "KeypadPrompt_1",
+    "body": "When is your birthday?",
+    "commentary": "MMDDYYYY format, please!",
+    "tagline": "Just for fun.",
+    "type": "KeypadPrompt",
+    "results": null,
+    "urls": {
+      "answer": "/keypad_prompts/1/selections"
+    },
+    "scored": false,
+    "correct": null
+  }
+}

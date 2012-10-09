@@ -1,0 +1,90 @@
+{
+  "group": {
+    "id": 135,
+    "name": "Companions",
+    "owner": {
+      "user": {
+        "id": 16,
+        "name": "Companion Cube",
+        "bio": null,
+        "avatar": {
+          "thumbnail": "https://d3jpl91pxevbkh.cloudfront.net/otherscreen/image/upload/c_thumb,g_faces,h_25,w_25/avatar.jpg",
+          "nav": "https://d3jpl91pxevbkh.cloudfront.net/otherscreen/image/upload/c_fill,g_faces,h_50,w_50/avatar.jpg",
+          "profile": "https://d3jpl91pxevbkh.cloudfront.net/otherscreen/image/upload/c_fill,g_faces,h_140,w_140/avatar.jpg"
+        },
+        "urls": {
+          "profile": "/users/16"
+        },
+        "level": 5
+      }
+    },
+    "membership": {
+      "id": 676,
+      "status": "owned",
+      "group": {
+        "id": 135,
+        "name": "Companions"
+      },
+      "user": {
+        "id": 16,
+        "name": "Companion Cube",
+        "bio": null,
+        "avatar": {
+          "thumbnail": "https://d3jpl91pxevbkh.cloudfront.net/otherscreen/image/upload/c_thumb,g_faces,h_25,w_25/avatar.jpg",
+          "nav": "https://d3jpl91pxevbkh.cloudfront.net/otherscreen/image/upload/c_fill,g_faces,h_50,w_50/avatar.jpg",
+          "profile": "https://d3jpl91pxevbkh.cloudfront.net/otherscreen/image/upload/c_fill,g_faces,h_140,w_140/avatar.jpg"
+        },
+        "urls": {
+          "profile": "/users/16"
+        },
+        "level": 5
+      }
+    },
+    "messages": [
+      {
+        "id": 15389,
+        "body": "What's up homies?",
+        "user": {
+          "id": 16,
+          "name": "Companion Cube",
+          "bio": null,
+          "avatar": {
+            "thumbnail": "https://d3jpl91pxevbkh.cloudfront.net/otherscreen/image/upload/c_thumb,g_faces,h_25,w_25/avatar.jpg",
+            "nav": "https://d3jpl91pxevbkh.cloudfront.net/otherscreen/image/upload/c_fill,g_faces,h_50,w_50/avatar.jpg",
+            "profile": "https://d3jpl91pxevbkh.cloudfront.net/otherscreen/image/upload/c_fill,g_faces,h_140,w_140/avatar.jpg"
+          },
+          "urls": {
+            "profile": "/users/16"
+          },
+          "level": 5
+        },
+        "group": {
+          "id": 135,
+          "name": "Companions"
+        }
+      },
+      {
+        "id": 15390,
+        "body": "I can't wait for this launch event!",
+        "user": {
+          "id": 16,
+          "name": "Companion Cube",
+          "bio": null,
+          "avatar": {
+            "thumbnail": "https://d3jpl91pxevbkh.cloudfront.net/otherscreen/image/upload/c_thumb,g_faces,h_25,w_25/avatar.jpg",
+            "nav": "https://d3jpl91pxevbkh.cloudfront.net/otherscreen/image/upload/c_fill,g_faces,h_50,w_50/avatar.jpg",
+            "profile": "https://d3jpl91pxevbkh.cloudfront.net/otherscreen/image/upload/c_fill,g_faces,h_140,w_140/avatar.jpg"
+          },
+          "urls": {
+            "profile": "/users/16"
+          },
+          "level": 5
+        },
+        "group": {
+          "id": 135,
+          "name": "Companions"
+        }
+      }
+    ]
+  }
+}

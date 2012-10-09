@@ -1,0 +1,14 @@
+{
+  "live_event": {
+    "id": 594,
+    "concluded": false,
+    "in_progress": true,
+    "demo": false,
+    "tv_info": null,
+    "name": "Portal 3 Launch",
+    "event_date": "2012-10-09 13:30:10",
+    "urls": {
+      "check_in": "/live_events/594"
+    }
+  }
+}

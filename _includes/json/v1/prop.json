@@ -1,0 +1,37 @@
+{
+  "question": {
+    "id": 56597,
+    "client_id": "Prop_56597",
+    "body": "Will Wheatley make an appearance?",
+    "commentary": "He was temporarily GlaDOS in Portal 2",
+    "tagline": "Correct answer worth 10 points.",
+    "type": "Prop",
+    "results": null,
+    "urls": {
+      "answer": "/props/56597/selections",
+      "results": "/props/56597"
+    },
+    "choices": [
+      {
+        "answer": "a",
+        "display": "Yes",
+        "correct": false,
+        "selected": false
+      },
+      {
+        "answer": "b",
+        "display": "No",
+        "correct": false,
+        "selected": false
+      }
+    ],
+    "scored": false,
+    "correct": null,
+    "dj": {
+      "name": "Aperture Labratories",
+      "avatar": {
+        "thumbnail": "https://d3jpl91pxevbkh.cloudfront.net/otherscreen/image/upload/c_fill,h_25,w_25/djavatar.png"
+      }
+    }
+  }
+}

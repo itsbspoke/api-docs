@@ -1,0 +1,57 @@
+{
+  "selection": {
+    "id": 182328,
+    "client_id": "Prop_24731",
+    "scored": true,
+    "correct": true,
+    "urls": {
+      "check": "/selections/182328"
+    },
+    "chosen": {
+      "answer": "b",
+      "display": "Carolina",
+      "correct": true,
+      "selected": true
+    },
+    "question": {
+      "id": 24731,
+      "client_id": "Prop_24731",
+      "body": "Which team scores first?",
+      "commentary": "",
+      "tagline": "Correct answer worth 10 points.",
+      "type": "Prop",
+      "results": null,
+      "urls": {
+        "answer": "/props/24731/selections",
+        "results": "/props/24731"
+      },
+      "choices": [
+        {
+          "answer": "a",
+          "display": "Duke",
+          "correct": false,
+          "selected": false
+        },
+        {
+          "answer": "b",
+          "display": "Carolina",
+          "correct": true,
+          "selected": true
+        }
+      ],
+      "scored": true,
+      "correct": {
+        "answer": "b",
+        "display": "Carolina",
+        "correct": true,
+        "selected": true
+      },
+      "dj": {
+        "name": "OtherScreen",
+        "avatar": {
+          "thumbnail": "https://d3jpl91pxevbkh.cloudfront.net/otherscreen/image/upload/c_fill,h_25,w_25/djavatar.png"
+        }
+      }
+    }
+  }
+}

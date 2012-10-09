@@ -1,0 +1,16 @@
+{
+  "notification": {
+    "type": "EndPeriodNotification",
+    "announcement": {
+      "id": 18968,
+      "body": "Chell has won the period",
+      "commentary": "Period Leaderboards will reset when the next question is scored",
+      "dj": {
+        "name": "Aperture Labratories",
+        "avatar": {
+          "thumbnail": "https://d3jpl91pxevbkh.cloudfront.net/otherscreen/image/upload/c_fill,h_25,w_25/djavatar.png"
+        }
+      }
+    }
+  }
+}

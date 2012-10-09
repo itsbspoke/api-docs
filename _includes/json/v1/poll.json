@@ -1,0 +1,66 @@
+{
+  "question": {
+    "id": 6580,
+    "client_id": "Poll_6580",
+    "body": "Have you played previous Portal games?",
+    "commentary": null,
+    "tagline": "Just for fun.",
+    "results": [
+      {
+        "choice": {
+          "answer": "a",
+          "display": "Yes",
+          "correct": false,
+          "selected": false
+        },
+        "response_count": 0,
+        "percent": {
+          "raw": 0,
+          "adjusted": 0.0,
+          "formatted": "0.0%"
+        }
+      },
+      {
+        "choice": {
+          "answer": "b",
+          "display": "No",
+          "correct": false,
+          "selected": false
+        },
+        "response_count": 0,
+        "percent": {
+          "raw": 0,
+          "adjusted": 0.0,
+          "formatted": "0.0%"
+        }
+      }
+    ],
+    "type": "Poll",
+    "urls": {
+      "answer": "/polls/6580/selections",
+      "results": "/polls/6580"
+    },
+    "choices": [
+      {
+        "answer": "a",
+        "display": "Yes",
+        "correct": false,
+        "selected": false
+      },
+      {
+        "answer": "b",
+        "display": "No",
+        "correct": false,
+        "selected": false
+      }
+    ],
+    "scored": false,
+    "correct": null,
+    "dj": {
+      "name": "Aperture Labratories",
+      "avatar": {
+        "thumbnail": "https://d3jpl91pxevbkh.cloudfront.net/otherscreen/image/upload/c_fill,h_25,w_25/djavatar.png"
+      }
+    }
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "question": {
+    "id": 11487,
+    "client_id": "Trivia_11487",
+    "body": "Which of these phrases is NOT said by Aperture Science Sentry Turrets?",
+    "commentary": null,
+    "tagline": "Correct answer worth 10 points.",
+    "type": "Trivia",
+    "results": null,
+    "urls": {
+      "answer": "/trivia/11487/selections",
+      "results": "/trivia/11487"
+    },
+    "choices": [
+      {
+        "answer": "a",
+        "display": "Are you still there?",
+        "correct": false,
+        "selected": false
+      },
+      {
+        "answer": "b",
+        "display": "I don't blame you",
+        "correct": false,
+        "selected": false
+      },
+      {
+        "answer": "c",
+        "display": "Die!",
+        "correct": true,
+        "selected": false
+      },
+      {
+        "answer": "d",
+        "display": "No hard feelings",
+        "correct": false,
+        "selected": false
+      }
+    ],
+    "scored": false,
+    "correct": null,
+    "answer_commentary": null,
+    "dj": {
+      "name": "Aperture Labratories",
+      "avatar": {
+        "thumbnail": "https://d3jpl91pxevbkh.cloudfront.net/otherscreen/image/upload/c_fill,h_25,w_25/djavatar.png"
+      }
+    }
+  }
+}

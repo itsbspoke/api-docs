@@ -1,0 +1,74 @@
+{
+  "notification": {
+    "type": "RescoredNotification",
+    "question": {
+      "id": 55783,
+      "client_id": "Prop_55783",
+      "body": "First play of the drive will be a...",
+      "commentary": "Sacks are runs.",
+      "tagline": "Correct answer worth 10 points.",
+      "type": "Prop",
+      "results": [
+        {
+          "choice": {
+            "answer": "a",
+            "display": "running play.",
+            "correct": false,
+            "selected": false
+          },
+          "response_count": 7,
+          "percent": {
+            "raw": 0.7,
+            "adjusted": 70.0,
+            "formatted": "70.0%"
+          }
+        },
+        {
+          "choice": {
+            "answer": "b",
+            "display": "pass attempt.",
+            "correct": true,
+            "selected": false
+          },
+          "response_count": 3,
+          "percent": {
+            "raw": 0.3,
+            "adjusted": 30.0,
+            "formatted": "30.0%"
+          }
+        }
+      ],
+      "urls": {
+        "answer": "/props/55783/selections",
+        "results": "/props/55783"
+      },
+      "choices": [
+        {
+          "answer": "a",
+          "display": "running play.",
+          "correct": false,
+          "selected": false
+        },
+        {
+          "answer": "b",
+          "display": "pass attempt.",
+          "correct": true,
+          "selected": false
+        }
+      ],
+      "scored": true,
+      "correct": {
+        "answer": "b",
+        "display": "pass attempt.",
+        "correct": true,
+        "selected": false
+      },
+      "dj": {
+        "name": "OtherScreen",
+        "avatar": {
+          "thumbnail": "https://d3jpl91pxevbkh.cloudfront.net/otherscreen/image/upload/c_fill,h_25,w_25/djavatar.png"
+        }
+      }
+    }
+  }
+}

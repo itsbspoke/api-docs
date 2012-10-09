@@ -1,0 +1,21 @@
+{
+  "question": {
+    "id": 1,
+    "client_id": "RangePrompt_1",
+    "body": "How many people are in your household?",
+    "commentary": null,
+    "tagline": "Just for fun.",
+    "type": "RangePrompt",
+    "results": null,
+    "min_point": 1,
+    "max_point": 30,
+    "initial": 0,
+    "step": 1,
+    "urls": {
+      "info": "/range_prompts/1",
+      "answer": "/range_prompts/1/selections"
+    },
+    "scored": false,
+    "correct": null
+  }
+}

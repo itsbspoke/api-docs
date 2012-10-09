@@ -1,0 +1,50 @@
+{
+  "question": {
+    "id": 301,
+    "client_id": "TimedTrivia_301",
+    "body": "How many dates are there on Carrie Underwood's tour this year?",
+    "commentary": "Her tour begins this Saturday in Nashville, TN and ends in Fort Lauderdale, FL on December 22nd!",
+    "type": "TimedTrivia",
+    "results": null,
+    "urls": {
+      "answer": "/timed_trivia_selections",
+      "expiry": "/timed_trivia_selections/expire"
+    },
+    "choices": [
+      {
+        "answer": "a",
+        "display": "25",
+        "correct": false,
+        "selected": false
+      },
+      {
+        "answer": "b",
+        "display": "45",
+        "correct": false,
+        "selected": false
+      },
+      {
+        "answer": "c",
+        "display": "60",
+        "correct": true,
+        "selected": false
+      },
+      {
+        "answer": "d",
+        "display": "75",
+        "correct": false,
+        "selected": false
+      }
+    ],
+    "possible_points": 20,
+    "decrement_by": 1,
+    "seconds_allotted": 20,
+    "correct": {
+      "answer": "c",
+      "display": "60",
+      "correct": true,
+      "selected": false
+    },
+    "answer_commentary": "Carrie Underwood comes to Time Warner Cable Arena in Charlotte on November 3rd. Tickets go on sale this Friday. "
+  }
+}

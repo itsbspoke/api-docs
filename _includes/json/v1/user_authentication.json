@@ -1,0 +1,7 @@
+{
+  "user": {
+    "id": 15,
+    "authentication_token": "1234567890",
+    "email": "chell@example.com"
+  }
+}

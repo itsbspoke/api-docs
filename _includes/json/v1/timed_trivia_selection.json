@@ -1,0 +1,87 @@
+{
+  "selection": {
+    "id": 3,
+    "client_id": "TimedTrivia_301",
+    "correct": true,
+    "points_suggested": 17,
+    "points_awarded": 17,
+    "urls": {
+    },
+    "chosen": {
+      "answer": "c",
+      "display": "60",
+      "correct": true,
+      "selected": true
+    },
+    "question": {
+      "id": 301,
+      "client_id": "TimedTrivia_301",
+      "body": "How many dates are there on Carrie Underwood's tour this year?",
+      "commentary": "Her tour begins this Saturday in Nashville, TN and ends in Fort Lauderdale, FL on December 22nd!",
+      "type": "TimedTrivia",
+      "results": null,
+      "urls": {
+        "answer": "/timed_trivia_selections",
+        "expiry": "/timed_trivia_selections/expire"
+      },
+      "choices": [
+        {
+          "answer": "a",
+          "display": "25",
+          "correct": false,
+          "selected": false
+        },
+        {
+          "answer": "b",
+          "display": "45",
+          "correct": false,
+          "selected": false
+        },
+        {
+          "answer": "c",
+          "display": "60",
+          "correct": true,
+          "selected": true
+        },
+        {
+          "answer": "d",
+          "display": "75",
+          "correct": false,
+          "selected": false
+        }
+      ],
+      "possible_points": 20,
+      "decrement_by": 1,
+      "seconds_allotted": 20,
+      "correct": {
+        "answer": "c",
+        "display": "60",
+        "correct": true,
+        "selected": true
+      },
+      "answer_commentary": "Carrie Underwood comes to Time Warner Cable Arena in Charlotte on November 3rd. Tickets go on sale this Friday. "
+    },
+    "gamecard": {
+      "id": 3,
+      "rank": null,
+      "score": 17,
+      "questions_attempted": 1,
+      "questions_correct": 1,
+      "questions_unanswered": 10,
+      "user": {
+        "id": 15,
+        "name": "testuser",
+        "bio": null,
+        "avatar": {
+          "thumbnail": "https://d3jpl91pxevbkh.cloudfront.net/otherscreen/image/upload/c_thumb,g_faces,h_25,w_25/avatar.jpg",
+          "nav": "https://d3jpl91pxevbkh.cloudfront.net/otherscreen/image/upload/c_fill,g_faces,h_50,w_50/avatar.jpg",
+          "profile": "https://d3jpl91pxevbkh.cloudfront.net/otherscreen/image/upload/c_fill,g_faces,h_140,w_140/avatar.jpg"
+        },
+        "urls": {
+          "profile": "/users/15"
+        },
+        "level": 50
+      }
+    }
+  }
+}

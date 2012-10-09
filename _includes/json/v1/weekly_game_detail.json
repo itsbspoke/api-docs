@@ -1,0 +1,42 @@
+{
+  "weekly_game": {
+    "id": "main",
+    "week_number": 41,
+    "year": 2012,
+    "caption": "Main: Week of Oct 8, 2012",
+    "leaderboard": [
+      {
+        "gamecard": {
+          "id": 3,
+          "rank": 1,
+          "score": 17,
+          "questions_attempted": 1,
+          "questions_correct": 1,
+          "questions_unanswered": 10,
+          "user": {
+            "id": 15,
+            "name": "testuser",
+            "bio": null,
+            "avatar": {
+              "thumbnail": "https://d3jpl91pxevbkh.cloudfront.net/otherscreen/image/upload/c_thumb,g_faces,h_25,w_25/avatar.jpg",
+              "nav": "https://d3jpl91pxevbkh.cloudfront.net/otherscreen/image/upload/c_fill,g_faces,h_50,w_50/avatar.jpg",
+              "profile": "https://d3jpl91pxevbkh.cloudfront.net/otherscreen/image/upload/c_fill,g_faces,h_140,w_140/avatar.jpg"
+            },
+            "urls": {
+              "profile": "/users/15"
+            },
+            "level": 50
+          }
+        }
+      }
+    ],
+    "played_this_week": true,
+    "questions": {
+      "available": true,
+      "available_count": 10
+    },
+    "urls": {
+      "play": "/weekly_games/main/play"
+    }
+  }
+}

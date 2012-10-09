@@ -1,0 +1,28 @@
+{
+  "question": {
+    "id": 1,
+    "client_id": "ListPrompt_1",
+    "body": "How old are you?",
+    "commentary": null,
+    "tagline": "Just for fun.",
+    "type": "ListPrompt",
+    "results": null,
+    "urls": {
+      "answer": "/list_prompts/1/selections"
+    },
+    "choices": [
+      "13 or younger",
+      "14-17",
+      "18-20",
+      "21-24",
+      "25-29",
+      "30-34",
+      "35-44",
+      "45-54",
+      "55-63",
+      "64+"
+    ],
+    "scored": false,
+    "correct": null
+  }
+}

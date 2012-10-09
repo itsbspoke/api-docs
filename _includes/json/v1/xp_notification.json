@@ -1,0 +1,12 @@
+{
+  "notification": {
+    "type": "XpNotification",
+    "xp_awarded": 60,
+    "awards": [
+      {
+        "points": 60,
+        "message": "You invited testuser to Companions"
+      }
+    ]
+  }
+}

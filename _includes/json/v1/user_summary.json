@@ -1,0 +1,16 @@
+{
+  "user": {
+    "id": 15,
+    "name": "testuser",
+    "bio": null,
+    "avatar": {
+      "thumbnail": "https://d3jpl91pxevbkh.cloudfront.net/otherscreen/image/upload/c_thumb,g_faces,h_25,w_25/avatar.jpg",
+      "nav": "https://d3jpl91pxevbkh.cloudfront.net/otherscreen/image/upload/c_fill,g_faces,h_50,w_50/avatar.jpg",
+      "profile": "https://d3jpl91pxevbkh.cloudfront.net/otherscreen/image/upload/c_fill,g_faces,h_140,w_140/avatar.jpg"
+    },
+    "urls": {
+      "profile": "/users/15"
+    },
+    "level": 50
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "notification": {
+    "type": "ScoredNotification",
+    "question": {
+      "id": 56593,
+      "client_id": "Prop_56593",
+      "body": "Will Houston's punter pin New York inside the 15 yard line?",
+      "commentary": "",
+      "tagline": "Correct answer worth 10 points.",
+      "type": "Prop",
+      "results": [
+        {
+          "choice": {
+            "answer": "a",
+            "display": "Yes",
+            "correct": true,
+            "selected": false
+          },
+          "response_count": 4,
+          "percent": {
+            "raw": 0.6666666666666666,
+            "adjusted": 66.66666666666666,
+            "formatted": "66.7%"
+          }
+        },
+        {
+          "choice": {
+            "answer": "b",
+            "display": "No",
+            "correct": false,
+            "selected": false
+          },
+          "response_count": 2,
+          "percent": {
+            "raw": 0.3333333333333333,
+            "adjusted": 33.33333333333333,
+            "formatted": "33.3%"
+          }
+        }
+      ],
+      "urls": {
+        "answer": "/props/56593/selections",
+        "results": "/props/56593"
+      },
+      "choices": [
+        {
+          "answer": "a",
+          "display": "Yes",
+          "correct": true,
+          "selected": false
+        },
+        {
+          "answer": "b",
+          "display": "No",
+          "correct": false,
+          "selected": false
+        }
+      ],
+      "scored": true,
+      "correct": {
+        "answer": "a",
+        "display": "Yes",
+        "correct": true,
+        "selected": false
+      },
+      "dj": {
+        "name": "OtherScreen",
+        "avatar": {
+          "thumbnail": "https://d3jpl91pxevbkh.cloudfront.net/otherscreen/image/upload/c_fill,h_25,w_25/djavatar.png"
+        }
+      }
+    }
+  }
+}

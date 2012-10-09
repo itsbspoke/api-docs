@@ -1,0 +1,26 @@
+{
+  "question": {
+    "id": 2,
+    "client_id": "MultipleChoicePrompt_2",
+    "body": "Which best describes you?",
+    "commentary": null,
+    "tagline": "Just for fun.",
+    "type": "MultipleChoicePrompt",
+    "results": null,
+    "urls": {
+      "answer": "/multiple_choice_prompts/2/selections"
+    },
+    "choices": [
+      {
+        "submit": "a",
+        "display": "Married"
+      },
+      {
+        "submit": "b",
+        "display": "Single"
+      }
+    ],
+    "scored": false,
+    "correct": null
+  }
+}

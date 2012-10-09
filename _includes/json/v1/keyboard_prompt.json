@@ -1,0 +1,16 @@
+{
+  "question": {
+    "id": 1,
+    "client_id": "KeyboardPrompt_1",
+    "body": "How do you feel about OtherScreen?",
+    "commentary": null,
+    "tagline": "Just for fun.",
+    "type": "KeyboardPrompt",
+    "results": null,
+    "urls": {
+      "answer": "/keyboard_prompts/1/selections"
+    },
+    "scored": false,
+    "correct": null
+  }
+}
