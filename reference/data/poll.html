@@ -14,33 +14,7 @@ entry: poll
   <div class="row">
     <div class="span8">
       <h3>JSON</h3>
-<pre class="prettyprint">
-  {
-   "question": {
-    "type": "Poll",
-    "id": 1,
-    "tagline": "Just for fun.",
-    "commentary": "",
-    "choices": [
-     {
-      "submit": "a",
-      "display": "Yes"
-     },
-     {
-      "submit": "b",
-      "display": "No way"
-     }
-    ],
-    "body": "Will we see a stranger force out than that today?",
-    "urls": [
-     {
-      "answer": "/polls/1/selections",
-      "results": "/polls/1"
-     }
-    ]
-   }
-  }
-</pre>
+      <pre class="prettyprint">{% include json/v1/poll.json %}</pre>
     <h3>Available via</h3>
     <p><a href="../api/live-events.html#check-in">Live Event check-in</a> API calls in the preroll array.
        <a href="../../websockets.html#multiple-choice-prompt">Multiple Choice Prompt</a> WebSockets event.</p>
@@ -54,9 +28,9 @@ entry: poll
       <h3>Data Usage</h3>
       <dl>
         <dt>id</dt>
-        <dd>Used for unique identification of the chat message.  Currently not be used.</dd>
+        <dd>Used for unique identification of the poll.</dd>
         <dt>type</dt>
-        <dd>The literal string "Poll"-- this indicates you should expect <a href="./poll-result.html">Poll results</a>.
+        <dd>The literal string "Poll"-- this indicates you should expect <a href="./poll-result.html">Poll results</a> when you answer.
         <dt>body</dt>
         <dd>Body of the question, should receive primary display.</dd>
         <dt>commentary</dt>
