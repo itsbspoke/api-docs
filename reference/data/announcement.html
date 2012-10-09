@@ -13,15 +13,7 @@ entry: announcement
   <div class="row">
     <div class="span8">
       <h3>JSON</h3>
-<pre class="prettyprint">
-  {
-   "announcement": {
-    "id": 1314,
-    "commentary": "",
-    "body": "Today's starting pitchers are both old!"
-   }
-  }
-</pre>    
+      <pre class="prettyprint">{% include json/v1/announcement.json %}</pre>
     <h3>Available via</h3>
     <p><a href="../api/live-events.html#check-in">Live Event check-in</a> API calls in the preroll array.
        <a href="../../websockets.html#announcement">Announcement</a> WebSockets event.</p>
