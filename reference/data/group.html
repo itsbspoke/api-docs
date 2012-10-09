@@ -23,14 +23,7 @@ entry: group
   <div class="row">
     <div class="span8">
       <h3>JSON</h3>
-<pre class="prettyprint">
-{
-"group": {
-   "id": 131,
-   "name": "Test Group"
-  }
-}
-</pre>
+      <pre class="prettyprint">{% include json/v1/group_summary.json %}</pre>
     <h3>Available via</h3>
     <p>Referenced primarily by the  <a href="./membership.html">Membership</a> model.</p>
     <h3>Questions</h3>
@@ -42,7 +35,7 @@ entry: group
       <h3>Data Usage</h3>
       <dl>
         <dt>id</dt>
-        <dd>Used for unique identification of the group.  May not be used.</dd>
+        <dd>Used for unique identification of the group.</dd>
         <dt>name</dt>
         <dd>How the group should appear in the display.</dd>
       </dl>
@@ -53,47 +46,17 @@ entry: group
 </section>
 
 <section id="detail">
-<section id="summary">
   <div class="page-header">
   <h2>Detail form  <small>all the information we'll give you.</small></h2>
   </div>
   <div class="row">
     <div class="span8">
       <h3>JSON</h3>
-<pre class="prettyprint">
-{
-"group": {
-   "owner": {
-    "user": {
-     "avatar_url": null,
-     "id": 7,
-     "name": "Jim Van Fleet",
-     "level": 1
-    }
-   },
-   "id": 131,
-   "membership": {
-    "status": "owned",
-    "id": 666,
-    "group": {
-     "id": 131,
-     "name": "Test Group"
-    },
-    "user": {
-     "avatar_url": null,
-     "id": 7,
-     "name": "Jim Van Fleet",
-     "level": 1
-    }
-   },
-   "name": "Test Group"
-  }
-}
-</pre>
+      <pre class="prettyprint">{% include json/v1/group_detail.json %}</pre>
     <h3>Available via</h3>
     <p><a href="../api/groups.html#listing">Group listing</a> API.</p>
     <h3>Questions</h3>
-    <p>None.</p>
+    <p>Not yet sure whether group messages are actually embedded here or not.</p>
     </div>
 
     <div class="span4">
@@ -103,4 +66,5 @@ entry: group
       <h3>References</h3>
       <p><a href="./user.html#summary">User summary</a> and <a href="./membership.html">Membership</a> models are referenced here.</p>
     </div>
-  </div></section>
+</div>
+</section>
