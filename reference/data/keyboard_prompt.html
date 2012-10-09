@@ -5,8 +5,8 @@ entry: multiple-choice-prompt
 ---
 
 <header class="jumbotron subhead" id="overview">
-    <h1>Multiple Choice Prompt Model</h1>
-    <p class="lead">Multiple choice question not bound to a specific event</p>
+    <h1>Keyboard Prompt Model</h1>
+    <p class="lead">Short answer question not bound to a specific event</p>
 </header>
 
 
@@ -14,35 +14,9 @@ entry: multiple-choice-prompt
   <div class="row">
     <div class="span8">
       <h3>JSON</h3>
-<pre class="prettyprint">
-  {
-   "question": {
-    "type": "multiple_choice_prompt",
-    "id": 2,
-    "tagline": "Just for fun.",
-    "commentary": null,
-    "choices": [
-     {
-      "submit": "a",
-      "display": "Married"
-     },
-     {
-      "submit": "b",
-      "display": "Single"
-     }
-    ],
-    "body": "Which best describes you?",
-    "urls": [
-     {
-      "answer": "/multiple_choice_prompts/2/selections"
-     }
-    ]
-   }
-  }</pre>
+      <pre class="prettyprint">{% include json/v1/keyboard_prompt.json %}</pre>
     <h3>Available via</h3>
-    <p><a href="../api/live-events.html#check-in">Live Event check-in</a> API calls in the preroll array.
-       <a href="../../websockets.html#multiple-choice-prompt">Multiple Choice Prompt</a> WebSockets event.</p>
-       
+    <p><a href="../api/live-events.html#check-in">Live Event check-in</a> API calls in the preroll array.</p>
     <h3>Questions</h3>
     <p>None.</p>
     </div>
@@ -52,9 +26,9 @@ entry: multiple-choice-prompt
       <h3>Data Usage</h3>
       <dl>
         <dt>id</dt>
-        <dd>Used for unique identification of the chat message.  Currently not be used.</dd>
+        <dd>Used for unique identification of the prompt.</dd>
         <dt>type</dt>
-        <dd>The literal string "Poll"-- this indicates you should expect <a href="./poll-result.html">Poll results</a>.
+        <dd>The literal string "KeyboardPrompt"-- this indicates you should indicate to the user they should type into a field.</dd>
         <dt>body</dt>
         <dd>Body of the question, should receive primary display.</dd>
         <dt>commentary</dt>
@@ -62,22 +36,13 @@ entry: multiple-choice-prompt
         <dt>tagline</dt>
         <dd>Description of question type, usually indicates whether question will be scored.</dd>
       </dl>
-      <h4>Choices</h4>
-      <dl>
-        <dt>submit</dt>
-        <dd>If the user selects this choice, send this answer when <a href="../api/questions.html#multiple-choice">Answering a multiple-choice question</a>.
-        <dt>display</dt>
-        <dd>Use this text to display to the user.</dd>
-      </dl>
       <h4>URLs</h4>
       <dl>
         <dt>answer</dt>
-        <dd>Submit to this path to <a href="../api/questions.html#multiple-choice">answer this question</a>.</dd>
-        <dt>results</dt>
-        <dd>Issue a GET request to this path to get an answer breakdown</dd>
+        <dd>Submit to this path to <a href="../api/questions.html#keyboard">answer this question</a>.</dd>
       </dl>
       <h3>References</h3>
-      <p>See also the <a href="./poll.html">Poll</a>, <a href="./prop.html">Prop</a>, and <a href="./trivia.html">Trivia</a> models which have a near-identical form.  Each should be handled slightly differently, and more information is available on those pages.</p>
+      <p>Partner is the <a href="./keypad_prompt.html">Keypad Prompt</a>.</p>
     </div>
   </div>
 </section>
