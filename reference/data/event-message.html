@@ -13,20 +13,7 @@ entry: event-message
   <div class="row">
     <div class="span8">
       <h3>JSON</h3>
-<pre class="prettyprint">
- {
-  "event_message": {
-   "id": 118600,
-   "user": {
-    "avatar_url": null,
-    "id": 1,
-    "name": "@gertig",
-    "level": 1
-   },
-   "body": "What's up"
-  }
- }
-</pre>
+      <pre class="prettyprint">>{% include json/v1/event_message.json %}</pre>
     <h3>Available via</h3>
     <p>The <a href="../api/event-messages.html#listing">Event chat history</a> and <a href="../api/event-messages.html#write-message">Send a chat</a> API endpoints.
     The <a href="../../websockets.html#event-message">Chat message</a> WebSocket event will be the primary source.</p>
@@ -40,13 +27,13 @@ entry: event-message
       <h3>Data Usage</h3>
       <dl>
         <dt>id</dt>
-        <dd>Used for unique identification of the chat message.  Currently not be used.</dd>
+        <dd>Used for unique identification of the chat message.  Currently not used.</dd>
         <dt>body</dt>
         <dd>Body of the chat message, should receive primary display.</dd>
       </dl>
       </p>
       <h3>References</h3>
-      <p>The <a href="./user.html#summary">User summary</a> form are contained within this model.</p>
+      <p>The <a href="./user.html#summary">User summary</a> form is contained within this model.</p>
     </div>
   </div>
 </section>
