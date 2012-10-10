@@ -1,0 +1,127 @@
+---
+layout: default
+---
+<!-- Masthead
+================================================== -->
+<header class="jumbotron subhead" id="overview">
+  <h1>Integration Testing</h1>
+  <p class="lead">Calibrating your API requests</p>
+  <!-- Instrument this in analytics -->
+    <div class="subnav">
+      <ul class="nav nav-pills">
+        <li><a href="#intro">Introduction</a></li>
+        <li><a href="#users">Users</a></li>
+        <li><a href="#weekly">Weekly games</a></li>
+        <li><a href="#live-events">Live Events</a></li>
+        <li><a href="#new-questions">New Question Types</a></li>
+        <li><a href="#groups">Groups</a></li>
+      </ul>
+    </div>
+</header>
+
+<!-- API Tutorial
+================================================== -->
+<section id="intro">
+  <div class="page-header">
+    <h2>Introduction  <small>about the weekly game</small></h2>
+  </div>
+  <div class="row">
+    <div class="span8">
+      <p>After reviewing the basics of how to make an API request to OtherScreen in the
+      <a href="./getting-started.html">Getting Started</a> tutorial, you'll want to walk
+      through making some requests to real endpoints to make sure you get how they work.</p>
+      <p>Rather than having you junk up your own account, or request permissions that you
+      may not need otherwise, we're providing some defined resources on our staging environment
+      that have desirable properties for you to get around to all the places that you'll need
+      to arrive at an implementation of an OtherScreen client.</p>
+      <p>If you've ever played Portal, these names and references may be familiar to you.
+      We're going to explore interacting with OtherScreen world from the context of a specific
+      small set of users.</p>
+    </div><!-- /.span -->
+  </div><!-- /.row -->
+</section>
+
+<section id="users">
+  <div class="page-header">
+    <h2>Users  <small>our cast of characters</small></h2>
+  </div>
+  <div class="row">
+    <div class="span8">
+      <p>These users do not exist on production.  They will be created on staging after every data transfer.</p>
+      <dl>
+        <dt>Chell</dt>
+        <dd>The test subject, and our main character for integration testing.  She has an ID of <b>15</b>, a password of <b>letmeout</b>,
+        and an authorization token of <b>1234567890</b>.</dd>
+        <dt>Companion Cube</dt>
+        <dd>User ID of 16, password of <b>weighted</b></dd>
+        <dt>Cave Johnson</dt>
+        <dd>CEO of Aperature Labs, and has some limited admin powers within the staging environment.  
+        If you log in with email <b>cavejohnson@example.com</b> and password <b>caroline</b> 
+        you'll have the ability to create test events to toy with.</dd>
+      </dl>
+    </div><!-- /.span -->
+  </div><!-- /.row -->
+</section>
+
+<section id="weekly">
+  <div class="page-header">
+    <h2>Weekly games  <small>our 24x7 game</small></h2>
+  </div>
+  <div class="row">
+    <div class="span8">
+      <p>These games will regenerate upon transfer.  Our top ten most popular trivia questions will always be used to generate the games
+      on staging.</p>
+      <p>Hitting the <a href="../reference/api/games.html#listing">Games Listing</a> endpoint will always show a <b>main</b> game provisioned,
+      which should have ten questions available to answer.  If you run through all of them with Chell, 
+      you can always <a href="..reference/api/authentication.html#create">Create an Account</a> to receive more auth tokens 
+      and continue playing.</p>
+    </div><!-- /.span -->
+  </div><!-- /.row -->
+</section>
+
+<section id="live-events">
+  <div class="page-header">
+    <h2>Live event  <small>the centerpiece</small></h2>
+  </div>
+  <div class="row">
+    <div class="span8">
+      <p>There may be a variety of live events available, but the regenerating one here will be named <b>
+        Portal 3 Launch</b>.  This event will have a preroll containing an <a href="../reference/data/announcement.html">Announcement</a>,
+      <a href="../reference/data/prop.html">Prop</a>,  <a href="../reference/data/poll.html"> Poll</a>, and
+      <a href="../reference/data/trivia.html">Trivia</a>.  That's intended to place all the richness a preroll can offer in a single event.
+      See the <a href="./preroll.html">Preroll</a> tutorial for more information.</p>
+      <p>The live event will have a couple of chat messages in it, and a small leaderboard.  It should be a good starting place
+      for your live event modelling.</p>
+    </div><!-- /.span -->
+  </div><!-- /.row -->
+</section>
+
+<section id="new-questions">
+  <div class="page-header">
+    <h2>New questions  <small>coming soon</small></h2>
+  </div>
+  <div class="row">
+    <div class="span8">
+      <p>The web client has the ability to answer <a href="../reference/data/keyboard_prompt.html">Keyboard Prompts</a>,
+      <a href="../reference/data/keypad_prompt.html">Keypad prompts</a>, <a href="../reference/data/list_prompt.html">List Prompts</a>,
+      <a href="../reference/data/range_prompt.html">Range Prompts</a> as well as <a href="../reference/data/multiple_choice_prompt.html">Multiple Choice Prompts</a>.</p>
+      <p>If you cannot implement answering these question types, you are encouraged to simply pass them over as a part of preroll.  At this time, preroll is the only place they can occur.</p>
+    </div><!-- /.span -->
+  </div><!-- /.row -->
+</section>
+
+<section id="new-questions">
+  <div class="page-header">
+    <h2>Groups  <small>temporarily shelved</small></h2>
+  </div>
+  <div class="row">
+    <div class="span8">
+      <p>For a variety of reasons, our group implementation never took off the way we'd imagined.  We currently
+      have groups as a part of the web client only for administrators, so no group implementation work is currently
+      needed on the part of any client.</p>
+      <p>That said, if you'd like to implement groups, the Chell user has been invited to two different groups,
+      (one from Cube, and one from Cave).
+      In turn, she can create and invite Cube and Cave to groups as needed.</p>
+    </div><!-- /.span -->
+  </div><!-- /.row -->
+</section>
