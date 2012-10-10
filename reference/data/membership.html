@@ -13,28 +13,9 @@ entry: membership
   <div class="row">
     <div class="span8">
       <h3>JSON</h3>
-<pre class="prettyprint">
-{
- "membership": {
-  "status": "pending",
-  "id": 668,
-  "group": {
-   "id": 131,
-   "name": "Test Group"
-  },
-  "user": {
-   "avatar_url": null,
-   "id": 2,
-   "name": "@chrishalligan",
-   "level": 1
-  }
- }
-}
-</pre>    
+<pre class="prettyprint">{% include json/v1/membership.json %}</pre>
     <h3>Available via</h3>
-    <p><a href="../api/groups.html#invite">Invite member to group</a>, <a href="../api/groups.html#listing">Group Listing</a> API calls.
-       <a href="../../websockets.html#user-notification">User notification</a> WebSockets event.</p>
-       
+    <p><a href="../api/groups.html#invite">Invite member to group</a>, <a href="../api/groups.html#listing">Group Listing</a> API calls.</p>
     <h3>Questions</h3>
     <p>None.</p>
     </div>
@@ -47,8 +28,8 @@ entry: membership
         <dd>Used for unique identification of the membership.  
         Required to <a href="../api/groups.html#accept-invite">accept</a> or <a href="../api/groups.html#ignore-invite">ignore</a> an invitation.</dd>
         <dt>status</dt>
-        <dd>Literal strings: accepted, owned, ignored, pending.  Ignored invitations should not be displayed.  
-        Pending invitations should be presented for action.  Active and owned memberships should be reflected in gameplay.</dd>
+        <dd>Literal strings: accepted, owned, ignored, pending.  Ignored invitations should not be displayed</dd>
+        <dd>Pending invitations should be presented for action.  Active and owned memberships should be reflected in gameplay.</dd>
       </dl>
       </p>
       <h3>References</h3>
