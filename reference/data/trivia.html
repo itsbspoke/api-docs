@@ -14,38 +14,7 @@ entry: trivia
   <div class="row">
     <div class="span8">
       <h3>JSON</h3>
-<pre class="prettyprint">
-{
-   "question": {
-    "type": "trivia",
-    "id": 1,
-    "tagline": "Correct answer worth 10 points.",
-    "commentary": "13 SEC Titles, too.",
-    "choices": [
-     {
-      "submit": "a",
-      "display": "The University of Alabama"
-     },
-     {
-      "submit": "b",
-      "display": "Texas A&M University"
-     },
-     {
-      "submit": "c",
-      "display": "University of Kentucky"
-     }
-    ],
-    "body": "At which school did Paul 'Bear' Bryant rack up 232 wins and 6 National Titles?",
-    "urls": [
-     {
-      "answer": "/trivias/1/selections",
-      "results": "/trivias/1"
-     }
-    ],
-    "scored": false
-   }
-  }
-</pre>
+<pre class="prettyprint">{% include json/v1/trivia.json %}</pre>
     <h3>Available via</h3>
     <p><a href="../api/live-events.html#check-in">Live Event check-in</a> API calls in the preroll array.
        <a href="../../websockets.html#multiple-choice-prompt">Multiple Choice Prompt</a> WebSockets event.</p>
@@ -59,9 +28,9 @@ entry: trivia
       <h3>Data Usage</h3>
       <dl>
         <dt>id</dt>
-        <dd>Used for unique identification of the chat message.  Currently not be used.</dd>
+        <dd>Used for unique identification of the trivia question.</dd>
         <dt>type</dt>
-        <dd>The literal string "Trivia"-- this indicates you should expect <a href="./trivia-result.html">trivia results</a>.
+        <dd>The literal string "Trivia"-- your should display Trivia like any other mulitple choice prompt</a>.
         <dt>body</dt>
         <dd>Body of the question, should receive primary display.</dd>
         <dt>commentary</dt>
