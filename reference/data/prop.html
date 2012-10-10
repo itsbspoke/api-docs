@@ -14,39 +14,13 @@ entry: prop
   <div class="row">
     <div class="span8">
       <h3>JSON</h3>
-<pre class="prettyprint">
-  {
-   "question": {
-    "type": "prop",
-    "id": 3,
-    "tagline": "Correct answer worth 10 points.",
-    "commentary": "",
-    "choices": [
-     {
-      "submit": "a",
-      "display": "Please"
-     },
-     {
-      "submit": "b",
-      "display": "Okay"
-     }
-    ],
-    "body": "Do it",
-    "urls": [
-     {
-      "answer": "/props/3/selections",
-      "results": "/props/3"
-     }
-    ]
-   }
-  }
-</pre>
+      <pre class="prettyprint">{% include json/v1/prop.json %}</pre>
     <h3>Available via</h3>
     <p><a href="../api/live-events.html#check-in">Live Event check-in</a> API calls in the preroll array.
        <a href="../../websockets.html#multiple-choice-prompt">Multiple Choice Prompt</a> WebSockets event.</p>
        
     <h3>Questions</h3>
-    <p>How could/should we indicate which answer is correct?  In the choices array, higher up, or somewhere else?</p>
+    <p></p>
     </div>
 
     <div class="span4">
@@ -54,9 +28,9 @@ entry: prop
       <h3>Data Usage</h3>
       <dl>
         <dt>id</dt>
-        <dd>Used for unique identification of the chat message.  Currently not be used.</dd>
+        <dd>Used for unique identification of the prop.</dd>
         <dt>type</dt>
-        <dd>The literal string "prop"-- this indicates you should expect <a href="./prop-result.html">prop results</a>.
+        <dd>The literal string "Prop".  This should be displayed like other multiple choice questions.</dd>
         <dt>body</dt>
         <dd>Body of the question, should receive primary display.</dd>
         <dt>commentary</dt>
@@ -74,7 +48,7 @@ entry: prop
       <h4>URLs</h4>
       <dl>
         <dt>answer</dt>
-        <dd>Submit to this path to <a href="../api/questions.html#multiple-choice">answer this question</a>.</dd>
+        <dd>Submit to this path to <a href="../api/questions.html#prop">answer this question</a>.</dd>
         <dt>results</dt>
         <dd>Issue a GET request to this path to get an answer breakdown</dd>
       </dl>

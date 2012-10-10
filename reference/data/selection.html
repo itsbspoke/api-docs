@@ -14,108 +14,13 @@ entry: selection
   <div class="row">
     <div class="span8">
       <h3>JSON</h3>
-<pre class="prettyprint">
-{
- "selection": {
-  "id": 145477,
-  "chosen": {
-   "answer": "b",
-   "selected": true,
-   "correct": false,
-   "display": "OK"
-  },
-  "urls": [
-   {
-    "check": "/selections/145477"
-   }
-  ],
-  "correct": false,
-  "question": {
-   "id": 2050,
-   "tagline": "Just for fun.",
-   "commentary": "",
-   "choices": [
-    {
-     "answer": "a",
-     "selected": false,
-     "correct": false,
-     "display": "Great"
-    },
-    {
-     "answer": "b",
-     "selected": true,
-     "correct": false,
-     "display": "OK"
-    },
-    {
-     "answer": "c",
-     "selected": false,
-     "correct": false,
-     "display": "Terrible"
-    }
-   ],
-   "body": "How have the ads been so far this game?",
-   "results": [
-    {
-     "percent": {
-      "raw": 0.13636363636363635,
-      "adjusted": 13.636363636363635,
-      "formated": "13.6%"
-     },
-     "choice": {
-      "answer": "a",
-      "selected": false,
-      "correct": false,
-      "display": "Great"
-     },
-     "response_count": 12
-    },
-    {
-     "percent": {
-      "raw": 0.76136363636363635,
-      "adjusted": 76.13636363636364,
-      "formated": "76.1%"
-     },
-     "choice": {
-      "answer": "b",
-      "selected": true,
-      "correct": false,
-      "display": "OK"
-     },
-     "response_count": 67
-    },
-    {
-     "percent": {
-      "raw": 0.10227272727272728,
-      "adjusted": 10.227272727272728,
-      "formated": "10.2%"
-     },
-     "choice": {
-      "answer": "c",
-      "selected": false,
-      "correct": false,
-      "display": "Terrible"
-     },
-     "response_count": 9
-    }
-   ],
-   "type": "Poll",
-   "urls": [
-    {
-     "answer": "/polls/2050/selections",
-     "results": "/polls/2050"
-    }
-   ]
-  }
- }
-}
-</pre>
+      <pre class="prettyprint">{% include json/v1/selection.json %}</pre>
     <h3>Available via</h3>
     <p><a href="../api/live-events.html#check-in">Live Event check-in</a> API calls in the preroll array- in this case, the results of poll should be displayed.</p>
     <p>Returned from all <a href="../api/questions.html#multiple-choice">Answer a multiple choice question</a> endpoints.</p>
        
     <h3>Questions</h3>
-    <p>Currently figuring out whether list, range, etc. selections should share this type.</p>
+    <p></p>
     </div>
 
     <div class="span4">
@@ -139,5 +44,3 @@ entry: selection
     </div>
   </div>
 </section>
-
-
