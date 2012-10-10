@@ -1,0 +1,31 @@
+---
+layout: default
+section: reference/data
+entry: weekly-game
+---
+
+<header class="jumbotron subhead" id="overview">
+  <h1>Weekly Gamecard  <small>a user's participation in the weekly game</small></h1>
+    <p class="lead">Our newest casual game, play all week.</p>
+</header>
+
+<section id="gamecard">
+  <div class="row">
+    <div class="span8">
+      <h2>JSON</h2>
+<pre class="prettyprint">{% include json/v1/weekly_gamecard.json %}</pre>
+<h2>Available via</h2>
+    <p><a href="#status">Weekly Game status</a> endpoint</p>
+    <h2>References</h2>
+    <p>A <a href="./user.html#summary">User summary</a> object</p>
+    <h2>Questions</h2>
+    <p>Rank won't be null.</p>
+    </div>
+    <div class="span4">
+      <h2>Summary</h2>
+      <p>A user's score and rank for a weekly game.</p>
+      <h2>Data Usage</h2>
+      <p>Hopefully self explanatory</p>
+    </div>
+  </div>
+</section>
