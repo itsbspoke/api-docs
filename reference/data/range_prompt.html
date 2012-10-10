@@ -1,12 +1,12 @@
 ---
 layout: default
 section: reference/data
-entry: list
+entry: range
 ---
 
 <header class="jumbotron subhead" id="overview">
-    <h1>List Prompt Model</h1>
-    <p class="lead">select your answer from a list</p>
+    <h1>Range Prompt Model</h1>
+    <p class="lead">select your answer from a bounded numeric range</p>
 </header>
 
 
@@ -14,7 +14,7 @@ entry: list
   <div class="row">
     <div class="span8">
       <h3>JSON</h3>
-         <pre class="prettyprint">{% include json/v1/list_prompt.json %}</pre>
+         <pre class="prettyprint">{% include json/v1/range_prompt.json %}</pre>
     <h3>Available via</h3>
     <p><a href="../api/live-events.html#check-in">Live Event check-in</a> API calls in the preroll array.</p>
     <h3>Questions</h3>
@@ -28,20 +28,26 @@ entry: list
         <dt>id</dt>
         <dd>Used for unique identification of the prompt.</dd>
         <dt>type</dt>
-        <dd>The literal string "ListPrompt"-- this indicates you should ask the user to select from a list of options.</dd>
+        <dd>The literal string "RangePrompt"-- this indicates you should show the user a slider, dial, or other rangefinder.</dd>
         <dt>body</dt>
         <dd>Body of the question, should receive primary display.</dd>
         <dt>commentary</dt>
         <dd>Commentary on the question, can receive italicized or smaller display to taste.</dd>
         <dt>tagline</dt>
         <dd>Description of question type, usually indicates whether question will be scored.</dd>
+        <dt>min_point</dt>
+        <dd>The lowest value acceptable as an answer</dd>
+        <dt>max_point</dt>
+        <dd>The highest value acceptable as an answer</dd>
+        <dt>initial</dt>
+        <dd>The value the user should submit without moving the slider or rotating the dial.</dd>
+        <dt>step</dt>
+        <dd>How much each increment on the slider or notch on the dial should increment or decrement submitted value.</dd>
       </dl>
-      <h4>Choices</h4>
-      <p>Submit one of these values to the answer endpoint below.</p>
       <h4>URLs</h4>
       <dl>
         <dt>answer</dt>
-        <dd>Submit to this path to <a href="../api/questions.html#list">answer this question</a>.</dd>
+        <dd>Submit to this path to <a href="../api/questions.html#range">answer this question</a>.</dd>
       </dl>
       <h3>References</h3>
       <p>None at this time.</p>
