@@ -53,7 +53,8 @@ section: websockets
       <h3>Reason for existence</h3>
       <p>Pusher requires authentication to ensure that we are sending events to persons who are authorized to receive them.</p>
       <p>You'll be required to send this message once per channel that you'd like to subscribe to.</p>
-      <p><span class="label label-info">Related</span> See <a href="#subscriptions">Channel subscriptions</a> to help determine the list of channels to which you should subscribe.</p>
+      <p><span class="label label-info">Related</span> See <a href="#subscriptions">Channel subscriptions</a> to help 
+      determine the list of channels to which you should subscribe.</p>
     </div>
     <div class="span4">
       <h3>Invocation form</h3>
@@ -63,7 +64,7 @@ section: websockets
           <dt>socket_id</dt>
           <dd>You receive this from a connection_established callback from the Pusher service.
           <dt>channel_name</dt>
-          <dd>the name of the channel you'd like to subscribe to <br/> (e.g. v1-presence-production-live-event-89)</dd>
+          <dd>the name of the channel you'd like to subscribe to <br/> (e.g. private-staging-live-event-89-v1)</dd>
         </dl>
       </div>
     </div>
@@ -118,10 +119,14 @@ Server: thin 1.3.1 codename Triple Espresso
   <div class="row">
     <div class="span12">
       <h3>How to subscribe</h3>
-      <p>Use the techniques below to create a channel name.  Use the channel name in the above call to subscribe to the channel.  The response you get back represents Step 6 in the <a href="http://pusher.com/docs/authenticating_users#authentication_process">Pusher documentation</a>.  Using the information that you get from auth, you'll have the ability to complete your channel subscription.</p>
+      <p>Use the techniques below to create a channel name.  Use the channel name in the above call to subscribe to the channel.  
+      The response you get back represents Step 6 in 
+      the <a href="http://pusher.com/docs/authenticating_users#authentication_process">Pusher documentation</a>.  
+      Using the information that you get from auth, you'll have the ability to complete your channel subscription.</p>
       <h3>Channel naming preamble and postlude</h3>
       <p>All channel name schemes below begin and end with the same preamble and postlude and will not vary throughout your implementation.</p>
-      <p>The preamble is formed by concatenating "private-" with the environment your implementation targets.  Unless you are instructed otherwise by OtherScreen staff, that value will be "production".  So all channel names below will begin with "presence-production-".</p>
+      <p>The preamble is formed by concatenating "private-" with the environment your implementation targets.  
+      During <a href="tutorials/integration-testing.html">integration testing</a>, that value will be "staging", but otherwise that value will be "production".</p>
       <p>The postlude indicates which version of the API you are using.  At this time, that's "v1", so all channel names will end with "-v1" </p>
       <h3>Receiving events</h3>
       <p>After successfully subscribing to the channels described in this section, you will want to bind them to various event types from the bottom sections.  We'll enumerate them within the sections they may appear.</p>
