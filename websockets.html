@@ -18,6 +18,7 @@ section: websockets
       <ul class="dropdown-menu">
         <li><a href="#announcement">Announcement</a></li>
         <li><a href="#multiple-choice">Multiple Choice prompts</a></li>
+        <li><a href="#poll-result">Poll Results</a></li>
         <li><a href="#keyboard">Keyboard prompts</a></li>
         <li><a href="#keypad">Keypad prompts</a></li>
         <li><a href="#list">List prompts</a></li>
@@ -268,6 +269,29 @@ Server: thin 1.3.1 codename Triple Espresso
 
       </div>
     </div>
+  </div>
+
+</div>
+</section>
+
+<section id="poll-result">
+<div class="page-header">
+  <h1>Poll results <small>aggregate responses from the audience.</small></h1>
+</div>
+<div class="row">
+  <div class="span4">
+    <h3>Message type</h3>
+    <p>PollResult<p>
+    <h3>Channel</h3>
+    <p>Messages of this type will come from the live event channel in the future.<p>
+    <h3>Expectations</h3>
+    <p>The form of the message is identical to Poll objects.  The only difference 
+    is that the message type will be of PollResult.  That indicates you should 
+    only show results to users, not present (or re-present) them with the poll.</p>
+  </div>
+  <div class="span8">
+    <h3>JSON form</h3>
+    <pre>{% include json/v1/poll.json %}<</pre>
   </div>
 
 </div>
