@@ -13,25 +13,33 @@ section: websockets
       <li><a href="#management">Subscription Management</a></li>
       <li class="dropdown">
         <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-          Interactive Events <b class="caret"></b>
+          Live Events <b class="caret"></b>
         </a>
         <ul class="dropdown-menu">
+          <li><a href="#announcement">Announcement</a></li>
           <li><a href="#multiple-choice">Multiple Choice prompts</a></li>
           <li><a href="#keyboard">Keyboard prompts</a></li>
           <li><a href="#keypad">Keypad prompts</a></li>
           <li><a href="#list">List prompts</a></li>
           <li><a href="#range">Range prompts</a></li>
         </ul>
-      </li>
+        </li>
       <li class="dropdown">
         <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-          Informational Events <b class="caret"></b>
+          Chats <b class="caret"></b>
+        </a>
+        <ul class="dropdown-menu">
+          <li><a href="#event-message">Chat message</a></li>
+          <li><a href="#group-message">Group chat message</a></li>
+        </ul>
+      </li>
+
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+          Notifications <b class="caret"></b>
         </a>
         <ul class="dropdown-menu">
           <li><a href="#scored">Question scored</a></li>
-          <li><a href="#event-message">Chat message</a></li>
-          <li><a href="#group-message">Group chat message</a></li>
-          <li><a href="#announcement">Announcement</a></li>
           <li><a href="#user-notification">User Notification</a></li>
         </ul>
       </li>
@@ -187,6 +195,29 @@ Server: thin 1.3.1 codename Triple Espresso
   </div>
 </section>
 
+<section id="announcement">
+  <div class="page-header">
+    <h1>Announcement <small>messages addressing entire event audience</small></h1>
+  </div>
+  <div class="row">
+    <div class="span4">
+      <h3>Message type</h3>
+      <p>Announcement<p>
+      <h3>Channel</h3>
+      <p>Messages of this type will come from the live event channel.<p>
+      <h3>Expectations</h3>
+      <p>An announcement should be visible for 30 seconds, or until dismissed by the user. It should not replace any outstanding poll or prop from being presented in the client UI.  Announcements should queue to become visible if, for any reason, they are not visible during gameplay interactions like exploring other users or answering questions.</p>
+      <p>Announcements may be included in preroll.</p>
+    </div>
+    <div class="span8">
+      <h3>JSON form</h3>
+      <pre>{% include json/v1/announcement.json %}</pre>
+    </div>
+
+  </div>
+</section>
+
+
 <section id="multiple-choice">
   <div class="page-header">
     <h1>Multiple choice questions</h1>
@@ -334,29 +365,6 @@ Server: thin 1.3.1 codename Triple Espresso
   </div>
 </section>
 
-<section id="scored">
-  <div class="page-header">
-    <h1>Question scored <small>scoring notification</small></h1>
-  </div>
-  <div class="row">
-    <div class="span4">
-      <h3>Message type</h3>
-      <p>Scored<p>
-      <h3>Channel</h3>
-      <p>Messages of this type will come from the live event channel.<p>
-      <h3>Expectations</h3>
-      <p>After receiving this message, you should issue the <a href="../reference/live-events/index.html#check-in">Event Check-in API</a> call to update your score, statistics, and leaderboard.</p>
-      <p>If appropriate, the display of the user's answer to the question should change appearance to indicate whether they answered the question correctly.</p>
-      <p>If desired, you can show the overall distribution of answers, but please only do so when total response count is over 15.</p>
-    </div>
-    <div class="span8">
-      <h3>JSON form</h3>
-      <pre>{% include json/v1/scored_notification.json %}<</pre>
-    </div>
-
-  </div>
-</section>
-
 <section id="event-message">
   <div class="page-header">
     <h1>Chat message <small>users talking to each other</small></h1>
@@ -402,23 +410,24 @@ Server: thin 1.3.1 codename Triple Espresso
   </div>
 </section>
 
-<section id="announcement">
+<section id="scored">
   <div class="page-header">
-    <h1>Announcement <small>messages addressing entire event audience</small></h1>
+    <h1>Question scored <small>scoring notification</small></h1>
   </div>
   <div class="row">
     <div class="span4">
       <h3>Message type</h3>
-      <p>Announcement<p>
+      <p>Scored<p>
       <h3>Channel</h3>
       <p>Messages of this type will come from the live event channel.<p>
       <h3>Expectations</h3>
-      <p>An announcement should be visible for 30 seconds, or until dismissed by the user. It should not replace any outstanding poll or prop from being presented in the client UI.  Announcements should queue to become visible if, for any reason, they are not visible during gameplay interactions like exploring other users or answering questions.</p>
-      <p>Announcements may be included in preroll.</p>
+      <p>After receiving this message, you should issue the <a href="../reference/live-events/index.html#check-in">Event Check-in API</a> call to update your score, statistics, and leaderboard.</p>
+      <p>If appropriate, the display of the user's answer to the question should change appearance to indicate whether they answered the question correctly.</p>
+      <p>If desired, you can show the overall distribution of answers, but please only do so when total response count is over 15.</p>
     </div>
     <div class="span8">
       <h3>JSON form</h3>
-      <pre>{% include json/v1/announcement.json %}</pre>
+      <pre>{% include json/v1/scored_notification.json %}<</pre>
     </div>
 
   </div>
