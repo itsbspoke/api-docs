@@ -1,9 +1,9 @@
 {
   "weekly_game": {
     "id": "main",
-    "week_number": 41,
+    "week_number": 42,
     "year": 2012,
-    "caption": "Main: Week of Oct 8, 2012",
+    "caption": "Main: Week of Oct 15, 2012",
     "urls": {
       "detail": "/weekly_games/main",
       "play": "/weekly_games/main/play"

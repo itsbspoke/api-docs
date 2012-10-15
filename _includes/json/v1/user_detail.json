@@ -1,10 +1,10 @@
 {
   "user": {
     "id": 15,
-    "name": "testuser",
-    "level": 50,
-    "xp": 1,
-    "xp_for_next_level": 1607186399.0,
+    "name": "Andrea Snyder",
+    "level": 0,
+    "xp": 0,
+    "xp_for_next_level": 100.0,
     "avatar": {
       "thumbnail": "https://d3jpl91pxevbkh.cloudfront.net/otherscreen/image/upload/c_thumb,g_faces,h_25,w_25/avatar.jpg",
       "nav": "https://d3jpl91pxevbkh.cloudfront.net/otherscreen/image/upload/c_fill,g_faces,h_50,w_50/avatar.jpg",
@@ -13,22 +13,22 @@
     "badges": [
       {
         "achievement": {
-          "id": 28714,
+          "id": 28740,
           "message": "talkie",
           "name": "talkie",
           "type": "Talkie",
-          "level": 2,
+          "level": 1,
           "art": {
           },
           "special": false,
           "hint": false,
           "earned": true,
-          "awarded_date": "2012-10-09 11:50:48"
+          "awarded_date": "2012-10-15T14:37:20Z"
         }
       },
       {
         "achievement": {
-          "id": 28717,
+          "id": 28743,
           "message": "player",
           "name": "player",
           "type": "Player",
@@ -38,7 +38,7 @@
           "special": false,
           "hint": false,
           "earned": true,
-          "awarded_date": "2012-10-09 12:49:39"
+          "awarded_date": "2012-10-15T14:39:33Z"
         }
       }
     ],

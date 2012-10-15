@@ -2,64 +2,64 @@
   "notification": {
     "type": "RescoredNotification",
     "question": {
-      "id": 55783,
-      "client_id": "Prop_55783",
-      "body": "First play of the drive will be a...",
-      "commentary": "Sacks are runs.",
+      "id": 56917,
+      "client_id": "Prop_56917",
+      "body": "Any strikeouts this inning?",
+      "commentary": "",
       "tagline": "Correct answer worth 10 points.",
       "type": "Prop",
       "results": [
         {
           "choice": {
             "answer": "a",
-            "display": "running play.",
-            "correct": false,
+            "display": "Yes",
+            "correct": true,
             "selected": false
           },
-          "response_count": 7,
+          "response_count": 6,
           "percent": {
-            "raw": 0.7,
-            "adjusted": 70.0,
-            "formatted": "70.0%"
+            "raw": 0.6666666666666666,
+            "adjusted": 66.66666666666666,
+            "formatted": "66.7%"
           }
         },
         {
           "choice": {
             "answer": "b",
-            "display": "pass attempt.",
-            "correct": true,
+            "display": "No",
+            "correct": false,
             "selected": false
           },
           "response_count": 3,
           "percent": {
-            "raw": 0.3,
-            "adjusted": 30.0,
-            "formatted": "30.0%"
+            "raw": 0.3333333333333333,
+            "adjusted": 33.33333333333333,
+            "formatted": "33.3%"
           }
         }
       ],
       "urls": {
-        "answer": "/props/55783/selections",
-        "results": "/props/55783"
+        "answer": "/props/56917/selections",
+        "results": "/props/56917"
       },
       "choices": [
         {
           "answer": "a",
-          "display": "running play.",
-          "correct": false,
+          "display": "Yes",
+          "correct": true,
           "selected": false
         },
         {
           "answer": "b",
-          "display": "pass attempt.",
-          "correct": true,
+          "display": "No",
+          "correct": false,
           "selected": false
         }
       ],
       "scored": true,
       "correct": {
-        "answer": "b",
-        "display": "pass attempt.",
+        "answer": "a",
+        "display": "Yes",
         "correct": true,
         "selected": false
       },

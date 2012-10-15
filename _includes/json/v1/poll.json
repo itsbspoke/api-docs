@@ -1,7 +1,7 @@
 {
   "question": {
-    "id": 6580,
-    "client_id": "Poll_6580",
+    "id": 6612,
+    "client_id": "Poll_6612",
     "body": "Have you played previous Portal games?",
     "commentary": null,
     "tagline": "Just for fun.",
@@ -37,8 +37,8 @@
     ],
     "type": "Poll",
     "urls": {
-      "answer": "/polls/6580/selections",
-      "results": "/polls/6580"
+      "answer": "/polls/6612/selections",
+      "results": "/polls/6612"
     },
     "choices": [
       {

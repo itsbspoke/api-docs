@@ -1,15 +1,15 @@
 {
   "question": {
-    "id": 11487,
-    "client_id": "Trivia_11487",
+    "id": 11529,
+    "client_id": "Trivia_11529",
     "body": "Which of these phrases is NOT said by Aperture Science Sentry Turrets?",
     "commentary": null,
     "tagline": "Correct answer worth 10 points.",
     "type": "Trivia",
     "results": null,
     "urls": {
-      "answer": "/trivia/11487/selections",
-      "results": "/trivia/11487"
+      "answer": "/trivia/11529/selections",
+      "results": "/trivia/11529"
     },
     "choices": [
       {

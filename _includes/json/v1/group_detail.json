@@ -1,6 +1,6 @@
 {
   "group": {
-    "id": 135,
+    "id": 132,
     "name": "Companions",
     "owner": {
       "user": {
@@ -15,14 +15,14 @@
         "urls": {
           "profile": "/users/16"
         },
-        "level": 5
+        "level": 2
       }
     },
     "membership": {
-      "id": 676,
+      "id": 671,
       "status": "owned",
       "group": {
-        "id": 135,
+        "id": 132,
         "name": "Companions"
       },
       "user": {
@@ -37,7 +37,7 @@
         "urls": {
           "profile": "/users/16"
         },
-        "level": 5
+        "level": 2
       }
     },
     "messages": [
@@ -56,10 +56,10 @@
           "urls": {
             "profile": "/users/16"
           },
-          "level": 5
+          "level": 2
         },
         "group": {
-          "id": 135,
+          "id": 132,
           "name": "Companions"
         }
       },
@@ -78,10 +78,10 @@
           "urls": {
             "profile": "/users/16"
           },
-          "level": 5
+          "level": 2
         },
         "group": {
-          "id": 135,
+          "id": 132,
           "name": "Companions"
         }
       }

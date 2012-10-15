@@ -2,7 +2,7 @@
   "notification": {
     "type": "EndPeriodNotification",
     "announcement": {
-      "id": 18968,
+      "id": 18987,
       "body": "Chell has won the period",
       "commentary": "Period Leaderboards will reset when the next question is scored",
       "dj": {

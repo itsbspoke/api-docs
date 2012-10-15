@@ -1,7 +1,7 @@
 {
   "user": {
     "id": 15,
-    "name": "testuser",
+    "name": "Andrea Snyder",
     "bio": null,
     "avatar": {
       "thumbnail": "https://d3jpl91pxevbkh.cloudfront.net/otherscreen/image/upload/c_thumb,g_faces,h_25,w_25/avatar.jpg",
@@ -11,6 +11,6 @@
     "urls": {
       "profile": "/users/15"
     },
-    "level": 50
+    "level": 0
   }
 }

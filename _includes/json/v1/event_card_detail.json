@@ -1,6 +1,6 @@
 {
   "event_card": {
-    "id": 15648,
+    "id": 15716,
     "rookie": true,
     "selections": {
       "pending": [
@@ -24,13 +24,13 @@
       "questions_answered": 0
     },
     "presence": {
-      "status": "away",
-      "active": false,
-      "away": true
+      "status": "active",
+      "active": true,
+      "away": false
     },
     "user": {
       "id": 15,
-      "name": "testuser",
+      "name": "Andrea Snyder",
       "bio": null,
       "avatar": {
         "thumbnail": "https://d3jpl91pxevbkh.cloudfront.net/otherscreen/image/upload/c_thumb,g_faces,h_25,w_25/avatar.jpg",
@@ -40,18 +40,18 @@
       "urls": {
         "profile": "/users/15"
       },
-      "level": 50
+      "level": 0
     },
     "live_event": {
-      "id": 594,
+      "id": 595,
       "concluded": false,
       "in_progress": true,
       "demo": false,
       "tv_info": null,
       "name": "Portal 3 Launch",
-      "event_date": "2012-10-09 13:30:10",
+      "event_date": "2012-10-15T14:39:32Z",
       "urls": {
-        "check_in": "/live_events/594"
+        "check_in": "/live_events/595"
       }
     }
   }

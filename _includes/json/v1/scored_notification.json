@@ -2,9 +2,9 @@
   "notification": {
     "type": "ScoredNotification",
     "question": {
-      "id": 56593,
-      "client_id": "Prop_56593",
-      "body": "Will Houston's punter pin New York inside the 15 yard line?",
+      "id": 56941,
+      "client_id": "Prop_56941",
+      "body": "Does this game end with a double play?",
       "commentary": "",
       "tagline": "Correct answer worth 10 points.",
       "type": "Prop",
@@ -16,11 +16,11 @@
             "correct": true,
             "selected": false
           },
-          "response_count": 4,
+          "response_count": 0,
           "percent": {
-            "raw": 0.6666666666666666,
-            "adjusted": 66.66666666666666,
-            "formatted": "66.7%"
+            "raw": 0,
+            "adjusted": 0.0,
+            "formatted": "0.0%"
           }
         },
         {
@@ -30,17 +30,17 @@
             "correct": false,
             "selected": false
           },
-          "response_count": 2,
+          "response_count": 6,
           "percent": {
-            "raw": 0.3333333333333333,
-            "adjusted": 33.33333333333333,
-            "formatted": "33.3%"
+            "raw": 1.0,
+            "adjusted": 100.0,
+            "formatted": "100.0%"
           }
         }
       ],
       "urls": {
-        "answer": "/props/56593/selections",
-        "results": "/props/56593"
+        "answer": "/props/56941/selections",
+        "results": "/props/56941"
       },
       "choices": [
         {
