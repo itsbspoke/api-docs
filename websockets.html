@@ -32,7 +32,6 @@ section: websockets
           <li><a href="#event-message">Chat message</a></li>
           <li><a href="#group-message">Group chat message</a></li>
           <li><a href="#announcement">Announcement</a></li>
-          <li><a href="#reset-selections">Reset Selections</a></li>
           <li><a href="#user-notification">User Notification</a></li>
         </ul>
       </li>
@@ -201,13 +200,43 @@ Server: thin 1.3.1 codename Triple Espresso
       <h3>Expectations</h3>
       <p>The choices should be presented in a way so that a mouse-click or tap should register which of the answers should be selected.  No more than four choices will be presented.</p>
       <p>All questions should be displayed until the user has answered it.</p>
+      <h3>Notes</h3>
+      <dl>
+        <dt>MultipleChoicePrompt</dt>
+        <dd><span class="label label-info">Planned</span> These messages are not yet transmitted over WebSockets.  When they are, they should be treated like props that will never be scored.</dd>
+        <dt>Poll</dt>
+        <dd>Polls are opinion questions, and won't be scored.  Poll results may be pushed over the socket connection at a later time.</dd>
+        <dt>Props</dt>
+        <dd>After answering a prop, the selection should be stored somewhere for the user to review.</dd>
+        <dt>Trivia</dt>
+        <dd>Trivia questions will be scored approximately 25 seconds after being placed in front of the user.  You can dismiss pushed trivia questions at that time if you wish.</dd>
+      </dl>
     </div>
     <div class="span8">
       <h3>JSON form</h3>
-      <pre>
-{"type":"MultipleChoicePrompt","data":{"id":2,"body":"Which of these best describes you?","demographic":false,"answers":[{"letter":"a","body":"Single"},{"letter":"b","body":"Married"}],"urls":{"path":"/multiple_choice_prompts/2","selections":"/multiple_choice_prompts/2/selections"},"info":"Just for fun.","type":"MultipleChoicePrompt"}}
-      </pre>
-      <p><span class="label label-warning">Warning</span> This JSON form is definitely not correct.  Don't use it.</p>
+            <div class="tabbable"> <!-- Only required for left/right tabs -->
+              <ul class="nav nav-tabs">
+                <li class="active"><a href="#multiple-choice-tab1" data-toggle="tab">Multiple Choice Prompt</a></li>
+                <li><a href="#multiple-choice-tab2" data-toggle="tab">Poll</a></li>
+                <li><a href="#multiple-choice-tab3" data-toggle="tab">Prop</a></li>
+                <li><a href="#multiple-choice-tab4" data-toggle="tab">Trivia</a></li>
+              </ul>
+              <div class="tab-content">
+                <div class="tab-pane active" id="multiple-choice-tab1">
+                  <pre>{% include json/v1/multiple_choice_prompt.json %}</pre>
+                </div>
+                <div class="tab-pane" id="multiple-choice-tab2">
+                  <pre>{% include json/v1/poll.json %}</pre>
+                </div>
+                <div class="tab-pane" id="multiple-choice-tab3">
+                  <pre>{% include json/v1/prop.json %}</pre>
+                </div>
+                <div class="tab-pane" id="multiple-choice-tab4">
+                  <pre>{% include json/v1/trivia.json %}</pre>
+                </div>
+
+              </div>
+            </div>
     </div>
 
   </div>
@@ -230,10 +259,7 @@ Server: thin 1.3.1 codename Triple Espresso
     </div>
     <div class="span8">
       <h3>JSON form</h3>
-      <pre>
-{"type":"KeyboardPrompt","data":{"id":1,"body":"What are your first impressions of OtherScreen?","demographic":false,"urls":{"path":"/keyboard_prompts/1","selections":"/keyboard_prompts/1/selections"},"info":"Just for fun.","type":"KeyboardPrompt"}}
-      </pre>
-      <p><span class="label label-warning">Warning</span> This JSON form is definitely not correct.  Don't use it.</p>
+      <pre>{% include json/v1/keyboard_prompt.json %}<</pre>
     </div>
 
   </div>
@@ -256,10 +282,7 @@ Server: thin 1.3.1 codename Triple Espresso
     </div>
     <div class="span8">
       <h3>JSON form</h3>
-      <pre>
-{"type":"KeypadPrompt","data":{"id":1,"body":"How many people are in your household?","demographic":false,"urls":{"path":"/keypad_prompts/1","selections":"/keypad_prompts/1/selections"},"info":"Just for fun.","type":"KeypadPrompt"}}
-      </pre>
-      <p><span class="label label-warning">Warning</span> This JSON form is definitely not correct.  Don't use it.</p>
+      <pre>{% include json/v1/keypad_prompt.json %}</pre>
     </div>
 
   </div>
@@ -282,10 +305,7 @@ Server: thin 1.3.1 codename Triple Espresso
     </div>
     <div class="span8">
       <h3>JSON form</h3>
-      <pre>
-{"type":"ListPrompt","data":{"id":1,"body":"How old are you?","answers":["14-17","18-20","21-24","25-29","30-34","35-44","45-54","55-63","64+"],"demographic":false,"urls":{"path":"/list_prompts/1","selections":"/list_prompts/1/selections"},"info":"Just for fun.","type":"ListPrompt"}}
-      </pre>
-      <p><span class="label label-warning">Warning</span> This JSON form is definitely not correct.  Don't use it.</p>
+      <pre>{% include json/v1/list_prompt.json %}</pre>
     </div>
 
   </div>
@@ -308,10 +328,7 @@ Server: thin 1.3.1 codename Triple Espresso
     </div>
     <div class="span8">
       <h3>JSON form</h3>
-      <pre>
-{"type":"ListPrompt","data":{"id":1,"body":"How old are you?","answers":["14-17","18-20","21-24","25-29","30-34","35-44","45-54","55-63","64+"],"demographic":false,"urls":{"path":"/list_prompts/1","selections":"/list_prompts/1/selections"},"info":"Just for fun.","type":"ListPrompt"}}
-      </pre>
-      <p><span class="label label-warning">Warning</span> This JSON form is definitely not correct.  Don't use it.</p>
+      <pre>{% include json/v1/range_prompt.json %}</pre>
     </div>
 
   </div>
@@ -330,13 +347,11 @@ Server: thin 1.3.1 codename Triple Espresso
       <h3>Expectations</h3>
       <p>After receiving this message, you should issue the <a href="../reference/live-events/index.html#check-in">Event Check-in API</a> call to update your score, statistics, and leaderboard.</p>
       <p>If appropriate, the display of the user's answer to the question should change appearance to indicate whether they answered the question correctly.</p>
+      <p>If desired, you can show the overall distribution of answers, but please only do so when total response count is over 15.</p>
     </div>
     <div class="span8">
       <h3>JSON form</h3>
-      <pre>
-{type: “prop”, id: 12649, correct: “a”, notification: “Body of proposition”, answer: “Text of correct answer”, commentary: “Also display this” }
-      </pre>
-      <p><span class="label label-warning">Warning</span> This JSON form is definitely not correct.  Don't use it.</p>
+      <pre>{% include json/v1/scored_notification.json %}<</pre>
     </div>
 
   </div>
@@ -359,10 +374,7 @@ Server: thin 1.3.1 codename Triple Espresso
     </div>
     <div class="span8">
       <h3>JSON form</h3>
-      <pre>
-{"user_name":"Jim Van Fleet","body":"thin","user_id":7,"id":22105}
-      </pre>
-      <p><span class="label label-warning">Warning</span> This JSON form is definitely not correct.  Don't use it.</p>
+      <pre>{% include json/v1/event_message.json %}</pre>
     </div>
 
   </div>
@@ -384,10 +396,7 @@ Server: thin 1.3.1 codename Triple Espresso
     </div>
     <div class="span8">
       <h3>JSON form</h3>
-      <pre>
-{user_name:boorad, body:wat, user_id:423, group_id:23, id:1170}
-      </pre>
-      <p><span class="label label-warning">Warning</span> This JSON form is definitely not correct.  Don't use it.</p>
+      <pre>{% include json/v1/group_message.json %}</pre>
     </div>
 
   </div>
@@ -409,10 +418,7 @@ Server: thin 1.3.1 codename Triple Espresso
     </div>
     <div class="span8">
       <h3>JSON form</h3>
-      <pre>
-{id: 5317, body: “Another announcement”, commentary: “with commentary”}
-      </pre>
-      <p><span class="label label-warning">Warning</span> This JSON form is definitely not correct.  Don't use it.</p>
+      <pre>{% include json/v1/announcement.json %}</pre>
     </div>
 
   </div>
@@ -426,20 +432,65 @@ Server: thin 1.3.1 codename Triple Espresso
     <div class="span4">
       <h3>Message type</h3>
       <p>Notification<p>
-      <h3>Subtypes</h3>
-      <ul>
-        <li>Award</li>
-        <li>Group Invitation</li>
       <h3>Channel</h3>
       <p>Messages of this type will come from the user channel.<p>
-      <h3>Expectations</h3>
+      <h3>Notes</h3>
+      <dl>
+        <dt>Badge</dt>
+        <dd><span class="label label-info">Planned</span> Notifications of this type are sent across sockets, but at this time, they can be ignored.</dd>
+        <dt>End Period</dt>
+        <dd>These messages will be sent at the end of a period.  They contain an 
+        announcement to be displayed, and you should reload the game and period 
+        leaderboards.</dd>
+        <dt>Level Up</dt>
+        <dd><span class="label label-info">Planned</span> Notifications of this type are sent across sockets, but at this time, they can be ignored.</dd>
+        <dt>Rescored</dt>
+        <dd>These messages will be sent when a question is scored erroneously.  This represents the correction that is sent.  Treat it like a scored notification with a user statistics and leaderboard refresh.  In addition, if you maintain a list of user selections within your client, make sure to update the user's perception of their answer to this question, if one exists.</dd>
+        <dt>Unscorable</dt>
+        <dd>These messages will be sent when a question cannot be scored.  You need not update leaderboards, but if you maintain a list of user selections, you should remove this selection from the list.</dd>
+        <dt>Check-In</dt>
+        <dd>You'll receive this notification when a user checks-in to a live event.  If you receive these notifications, you can display them if you wish.</dd>
+        <dt>XP</dt>
+        <dd><span class="label label-info">Planned</span> Notifications of this type are sent across sockets, but at this time, they can be ignored.</dd>
+      </dl>
     </div>
     <div class="span8">
       <h3>JSON form</h3>
-      <pre>
-TBD
-      </pre>
-      <p><span class="label label-warning">Warning</span> This JSON form is definitely not correct.  Don't use it.</p>
+            <div class="tabbable"> <!-- Only required for left/right tabs -->
+              <ul class="nav nav-tabs">
+                <li class="active"><a href="#notification-tab1" data-toggle="tab">Badge</a></li>
+                <li><a href="#notification-tab2" data-toggle="tab">End Period</a></li>
+                <li><a href="#notification-tab3" data-toggle="tab">Level Up</a></li>
+                <li><a href="#notification-tab4" data-toggle="tab">Rescored</a></li>
+                <li><a href="#notification-tab5" data-toggle="tab">Unscorable</a></li>
+                <li><a href="#notification-tab6" data-toggle="tab">Check-In</a></li>
+                <li><a href="#notification-tab7" data-toggle="tab">XP</a></li>
+              </ul>
+              <div class="tab-content">
+                <div class="tab-pane active" id="notification-tab1">
+                  <pre>{% include json/v1/badge_notification.json %}</pre>
+                </div>
+                <div class="tab-pane" id="notification-tab2">
+                  <pre>{% include json/v1/end_period_notification.json %}</pre>
+                </div>
+                <div class="tab-pane" id="notification-tab3">
+                  <pre>{% include json/v1/level_up_notification.json %}</pre>
+                </div>
+                <div class="tab-pane" id="notification-tab4">
+                  <pre>{% include json/v1/rescored_notification.json %}</pre>
+                </div>
+                <div class="tab-pane" id="notification-tab5">
+                  <pre>{% include json/v1/unscorable_notification.json %}</pre>
+                </div>
+                <div class="tab-pane" id="notification-tab6">
+                  <pre>{% include json/v1/user_check_in_notification.json %}</pre>
+                </div>
+                <div class="tab-pane" id="notification-tab7">
+                  <pre>{% include json/v1/xp_notification.json %}</pre>
+                </div>
+
+              </div>
+            </div>
     </div>
 
   </div>
