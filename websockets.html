@@ -12,36 +12,36 @@ section: websockets
       <li><a href="#subscriptions">Channel Subscriptions</a></li>
       <li><a href="#management">Subscription Management</a></li>
       <li class="dropdown">
-        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-          Live Events <b class="caret"></b>
-        </a>
-        <ul class="dropdown-menu">
-          <li><a href="#announcement">Announcement</a></li>
-          <li><a href="#multiple-choice">Multiple Choice prompts</a></li>
-          <li><a href="#keyboard">Keyboard prompts</a></li>
-          <li><a href="#keypad">Keypad prompts</a></li>
-          <li><a href="#list">List prompts</a></li>
-          <li><a href="#range">Range prompts</a></li>
-        </ul>
-        </li>
+      <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+        Live Events <b class="caret"></b>
+      </a>
+      <ul class="dropdown-menu">
+        <li><a href="#announcement">Announcement</a></li>
+        <li><a href="#multiple-choice">Multiple Choice prompts</a></li>
+        <li><a href="#keyboard">Keyboard prompts</a></li>
+        <li><a href="#keypad">Keypad prompts</a></li>
+        <li><a href="#list">List prompts</a></li>
+        <li><a href="#range">Range prompts</a></li>
+      </ul>
+      </li>
       <li class="dropdown">
-        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-          Chats <b class="caret"></b>
-        </a>
-        <ul class="dropdown-menu">
-          <li><a href="#event-message">Chat message</a></li>
-          <li><a href="#group-message">Group chat message</a></li>
-        </ul>
+      <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+        Chats <b class="caret"></b>
+      </a>
+      <ul class="dropdown-menu">
+        <li><a href="#event-message">Chat message</a></li>
+        <li><a href="#group-message">Group chat message</a></li>
+      </ul>
       </li>
 
       <li class="dropdown">
-        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-          Notifications <b class="caret"></b>
-        </a>
-        <ul class="dropdown-menu">
-          <li><a href="#scored">Question scored</a></li>
-          <li><a href="#user-notification">User Notification</a></li>
-        </ul>
+      <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+        Notifications <b class="caret"></b>
+      </a>
+      <ul class="dropdown-menu">
+        <li><a href="#event-notification">Event-wide</a></li>
+        <li><a href="#user-notification">User-specific</a></li>
+      </ul>
       </li>
     </ul>
   </div>
@@ -88,19 +88,19 @@ section: websockets
         <dd>You must supply a channel name.</dd>
         <dt>404</dt>
         <dd>You attempted to subscribe to a channel that doesn't exist.
-          <p><span class="label label-info">Planned</span> We will support this error code at or before v2.  Until then, make sure you have the right channel.</p>
+        <p><span class="label label-info">Planned</span> We will support this error code at or before v2.  Until then, make sure you have the right channel.</p>
         </dd>
         <dt>403</dt>
-          <dd>You cannot subscribe to this channel.
-          <p><span class="label label-info">Planned</span> We will support this error code at or before v2.  Until then, you can subscribe to any channel.</span></p>
-        </dd>
-      </dl>
-    </div>
+        <dd>You cannot subscribe to this channel.
+        <p><span class="label label-info">Planned</span> We will support this error code at or before v2.  Until then, you can subscribe to any channel.</span></p>
+      </dd>
+    </dl>
   </div>
-  <div class="row">
-    <div class="span12">
-      <h3>Example usage</h3>
-      <pre>
+</div>
+<div class="row">
+  <div class="span12">
+    <h3>Example usage</h3>
+    <pre>
 > curl -i -H "Accept: application/vnd.otherscreen.com; version=1" -H "HTTP_X_OTHERSCREEN_AUTH_TOKEN: ea71eb59a85972b9edecb4a14cbcde3eef19bd3242f5167b1d3e09560caba5a7" --data "channel_name=presence-development-live-event-89-v1&socket_id=2089.90137" http://localhost:5000/authentications/pusher
 HTTP/1.1 200 OK
 Content-Type: application/json; charset=utf-8
@@ -113,394 +113,406 @@ Connection: close
 Server: thin 1.3.1 codename Triple Espresso
 
 {"auth":"a549e4de9612e12ed0ff:83d49d4a0028b9800edb8bca2866c9f4554e021f81b9e67bcef145c1e0ae1933","channel_data":"{\"user_id\":7,\"user_info\":{\"handle\":\"Jim Van Fleet\",\"user_name\":\"Jim Van Fleet\"}}"}
-      </pre>
-    </div>
+    </pre>
   </div>
+</div>
 </section>
 
 
 <section id="subscriptions">
-  <div class="page-header">
-    <h1>Channel subscriptions <small>subscribing to the right channels</small></h1>
+<div class="page-header">
+  <h1>Channel subscriptions <small>subscribing to the right channels</small></h1>
+</div>
+<div class="row">
+  <div class="span12">
+    <h3>How to subscribe</h3>
+    <p>Use the techniques below to create a channel name.  Use the channel name in the above call to subscribe to the channel.  
+    The response you get back represents Step 6 in 
+    the <a href="http://pusher.com/docs/authenticating_users#authentication_process">Pusher documentation</a>.  
+    Using the information that you get from auth, you'll have the ability to complete your channel subscription.</p>
+    <h3>Channel naming preamble and postlude</h3>
+    <p>All channel name schemes below begin and end with the same preamble and postlude and will not vary throughout your implementation.</p>
+    <p>The preamble is formed by concatenating "private-" with the environment your implementation targets.  
+    During <a href="tutorials/integration-testing.html">integration testing</a>, that value will be "staging", but otherwise that value will be "production".</p>
+    <p>The postlude indicates which version of the API you are using.  At this time, that's "v1", so all channel names will end with "-v1" </p>
+    <h3>Receiving events</h3>
+    <p>After successfully subscribing to the channels described in this section, you will want to bind them to various event types from the bottom sections.  We'll enumerate them within the sections they may appear.</p>
   </div>
-  <div class="row">
-    <div class="span12">
-      <h3>How to subscribe</h3>
-      <p>Use the techniques below to create a channel name.  Use the channel name in the above call to subscribe to the channel.  
-      The response you get back represents Step 6 in 
-      the <a href="http://pusher.com/docs/authenticating_users#authentication_process">Pusher documentation</a>.  
-      Using the information that you get from auth, you'll have the ability to complete your channel subscription.</p>
-      <h3>Channel naming preamble and postlude</h3>
-      <p>All channel name schemes below begin and end with the same preamble and postlude and will not vary throughout your implementation.</p>
-      <p>The preamble is formed by concatenating "private-" with the environment your implementation targets.  
-      During <a href="tutorials/integration-testing.html">integration testing</a>, that value will be "staging", but otherwise that value will be "production".</p>
-      <p>The postlude indicates which version of the API you are using.  At this time, that's "v1", so all channel names will end with "-v1" </p>
-      <h3>Receiving events</h3>
-      <p>After successfully subscribing to the channels described in this section, you will want to bind them to various event types from the bottom sections.  We'll enumerate them within the sections they may appear.</p>
-    </div>
+</div>
+<div class="row">
+  <div class="span4">
+    <h3>Live Event Channel</h3>
+    <p><span class="label label-info">Related</span> 
+    You should only subscribe to a single event channel at a time, after you 
+    <a href="./reference/api/live-events.html#check-in">check into a live event</a> successfully.
+    <span class="label label-info">Related</span> 
+    If you find the live event has mandatory preroll, you may not wish to subscribe to the WebSocket channel immediately.
+    See the <a href="./tutorials/preroll.html">Completing Preroll</a> tutorial for more information.
+    </p>
+    <h3>Channel name</h3>
+    <pre>live-event-#{eventID}</pre>
+    <p>So after including the preamble and postlude, an example would be:</p>
+    <pre>private-production-live-event-421-v1</pre>
   </div>
-  <div class="row">
-    <div class="span4">
-      <h3>Live Event Channel</h3>
-      <p><span class="label label-info">Related</span> 
-        You should only subscribe to a single event channel at a time, after you 
-        <a href="./reference/api/live-events.html#check-in">check into a live event</a> successfully.
-        <span class="label label-info">Related</span> 
-        If you find the live event has mandatory preroll, you may not wish to subscribe to the WebSocket channel immediately.
-        See the <a href="./tutorials/preroll.html">Completing Preroll</a> tutorial for more information.
-      </p>
-      <h3>Channel name</h3>
-      <pre>live-event-#{eventID}</pre>
-      <p>So after including the preamble and postlude, an example would be:</p>
-      <pre>private-production-live-event-421-v1</pre>
-    </div>
-    <div class="span4">
-      <h3>User Channel</h3>
-      <p><span class="label label-info">Related</span> 
-        You will need both the authentication token and your user ID from your <a href="./reference/api/authentication.html">Authentication API</a> 
-        of choice will supply a needed value to complete this subscription 
-      </p>
-      <h3>Channel name</h3>
-      <pre>user-#{userID}</pre>
-      <p>So after including the preamble and postlude, an example would be:</p>
-      <pre>private-production-user-7001-v1</pre>
-    </div>
-    <div class="span4">
-      <h3>Group Channels</h3>
-      <p></p>
-      <p><span class="label label-info">Related</span> 
-        You should complete an authentication request once for each group returned by the <a href="./reference/api/groups.html#listing">Group Listing API</a>
-      </p>
-      <h3>Channel name</h3>
-      <p>The appropriate channel name has three components:</p>
-      <p>The elements are combined in this scheme:</p>
-      <pre>group-#{groupID}</pre>
-      <p>So after including the preamble and postlude, an example would be:</p>
-      <pre>private-production-group-72-v1</pre>
-    </div>
+  <div class="span4">
+    <h3>User Channel</h3>
+    <p><span class="label label-info">Related</span> 
+    You will need both the authentication token and your user ID from your <a href="./reference/api/authentication.html">Authentication API</a> 
+    of choice will supply a needed value to complete this subscription 
+    </p>
+    <h3>Channel name</h3>
+    <pre>user-#{userID}</pre>
+    <p>So after including the preamble and postlude, an example would be:</p>
+    <pre>private-production-user-7001-v1</pre>
   </div>
+  <div class="span4">
+    <h3>Group Channels</h3>
+    <p></p>
+    <p><span class="label label-info">Related</span> 
+    You should complete an authentication request once for each group returned by the <a href="./reference/api/groups.html#listing">Group Listing API</a>
+    </p>
+    <h3>Channel name</h3>
+    <p>The appropriate channel name has three components:</p>
+    <p>The elements are combined in this scheme:</p>
+    <pre>group-#{groupID}</pre>
+    <p>So after including the preamble and postlude, an example would be:</p>
+    <pre>private-production-group-72-v1</pre>
+  </div>
+</div>
 </section>
 
 <section id="management">
-  <div class="page-header">
-    <h1>Subscription Management <small>A note on staying subscribed.</small></h1>
+<div class="page-header">
+  <h1>Subscription Management <small>A note on staying subscribed.</small></h1>
+</div>
+<div class="row">
+  <div class="span4">
+    <h3>Mobile connections need special care.</h3>
+    <p>Please be aware that mobile connections can be quite fragile, and anything that ends or degrades the WebSocket connection will require re-connection to Pusher and reauthorization on all channels.</p>
+    <p>As a client implementor, you are encouraged to gain as much insight into the behavior on client devices as you can, whether that is through logging or allowing upload of connection logs to a location of your choice.</p>
+    <p>We also encourage you to create a "Reconnect" button that performs the reconnection and reauthorization process manually, while you work to ensure that it is never needed.</p>
   </div>
-  <div class="row">
-    <div class="span4">
-      <h3>Mobile connections need special care.</h3>
-      <p>Please be aware that mobile connections can be quite fragile, and anything that ends or degrades the WebSocket connection will require re-connection to Pusher and reauthorization on all channels.</p>
-      <p>As a client implementor, you are encouraged to gain as much insight into the behavior on client devices as you can, whether that is through logging or allowing upload of connection logs to a location of your choice.</p>
-      <p>We also encourage you to create a "Reconnect" button that performs the reconnection and reauthorization process manually, while you work to ensure that it is never needed.</p>
-    </div>
-  </div>
+</div>
 </section>
 
 <section id="announcement">
-  <div class="page-header">
-    <h1>Announcement <small>messages addressing entire event audience</small></h1>
+<div class="page-header">
+  <h1>Announcement <small>messages addressing entire event audience</small></h1>
+</div>
+<div class="row">
+  <div class="span4">
+    <h3>Message type</h3>
+    <p>Announcement<p>
+    <h3>Channel</h3>
+    <p>Messages of this type will come from the live event channel.<p>
+    <h3>Expectations</h3>
+    <p>An announcement should be visible for 30 seconds, or until dismissed by the user. It should not replace any outstanding poll or prop from being presented in the client UI.  Announcements should queue to become visible if, for any reason, they are not visible during gameplay interactions like exploring other users or answering questions.</p>
+    <p>Announcements may be included in preroll.</p>
   </div>
-  <div class="row">
-    <div class="span4">
-      <h3>Message type</h3>
-      <p>Announcement<p>
-      <h3>Channel</h3>
-      <p>Messages of this type will come from the live event channel.<p>
-      <h3>Expectations</h3>
-      <p>An announcement should be visible for 30 seconds, or until dismissed by the user. It should not replace any outstanding poll or prop from being presented in the client UI.  Announcements should queue to become visible if, for any reason, they are not visible during gameplay interactions like exploring other users or answering questions.</p>
-      <p>Announcements may be included in preroll.</p>
-    </div>
-    <div class="span8">
-      <h3>JSON form</h3>
-      <pre>{% include json/v1/announcement.json %}</pre>
-    </div>
+  <div class="span8">
+    <h3>JSON form</h3>
+    <pre>{% include json/v1/announcement.json %}</pre>
+  </div>
 
-  </div>
+</div>
 </section>
 
 
 <section id="multiple-choice">
-  <div class="page-header">
-    <h1>Multiple choice questions</h1>
+<div class="page-header">
+  <h1>Multiple choice questions</h1>
+</div>
+<div class="row">
+  <div class="span4">
+    <h3>Message type</h3>
+    <p>MultipleChoice<p>
+    <h3>Channel</h3>
+    <p>Messages of this type will come from the live event channel.<p>
+    <h3>Expectations</h3>
+    <p>The choices should be presented in a way so that a mouse-click or tap should register which of the answers should be selected.  No more than four choices will be presented.</p>
+    <p>All questions should be displayed until the user has answered it.</p>
+    <h3>Notes</h3>
+    <dl>
+      <dt>MultipleChoicePrompt</dt>
+      <dd><span class="label label-info">Planned</span> These messages are not yet transmitted over WebSockets.  When they are, they should be treated like props that will never be scored.</dd>
+      <dt>Poll</dt>
+      <dd>Polls are opinion questions, and won't be scored.  Poll results may be pushed over the socket connection at a later time.</dd>
+      <dt>Props</dt>
+      <dd>After answering a prop, the selection should be stored somewhere for the user to review.</dd>
+      <dt>Trivia</dt>
+      <dd>Trivia questions will be scored approximately 25 seconds after being placed in front of the user.  You can dismiss pushed trivia questions at that time if you wish.</dd>
+    </dl>
   </div>
-  <div class="row">
-    <div class="span4">
-      <h3>Message type</h3>
-      <p>MultipleChoice<p>
-      <h3>Channel</h3>
-      <p>Messages of this type will come from the live event channel.<p>
-      <h3>Expectations</h3>
-      <p>The choices should be presented in a way so that a mouse-click or tap should register which of the answers should be selected.  No more than four choices will be presented.</p>
-      <p>All questions should be displayed until the user has answered it.</p>
-      <h3>Notes</h3>
-      <dl>
-        <dt>MultipleChoicePrompt</dt>
-        <dd><span class="label label-info">Planned</span> These messages are not yet transmitted over WebSockets.  When they are, they should be treated like props that will never be scored.</dd>
-        <dt>Poll</dt>
-        <dd>Polls are opinion questions, and won't be scored.  Poll results may be pushed over the socket connection at a later time.</dd>
-        <dt>Props</dt>
-        <dd>After answering a prop, the selection should be stored somewhere for the user to review.</dd>
-        <dt>Trivia</dt>
-        <dd>Trivia questions will be scored approximately 25 seconds after being placed in front of the user.  You can dismiss pushed trivia questions at that time if you wish.</dd>
-      </dl>
-    </div>
-    <div class="span8">
-      <h3>JSON form</h3>
-            <div class="tabbable"> <!-- Only required for left/right tabs -->
-              <ul class="nav nav-tabs">
-                <li class="active"><a href="#multiple-choice-tab1" data-toggle="tab">Multiple Choice Prompt</a></li>
-                <li><a href="#multiple-choice-tab2" data-toggle="tab">Poll</a></li>
-                <li><a href="#multiple-choice-tab3" data-toggle="tab">Prop</a></li>
-                <li><a href="#multiple-choice-tab4" data-toggle="tab">Trivia</a></li>
-              </ul>
-              <div class="tab-content">
-                <div class="tab-pane active" id="multiple-choice-tab1">
-                  <pre>{% include json/v1/multiple_choice_prompt.json %}</pre>
-                </div>
-                <div class="tab-pane" id="multiple-choice-tab2">
-                  <pre>{% include json/v1/poll.json %}</pre>
-                </div>
-                <div class="tab-pane" id="multiple-choice-tab3">
-                  <pre>{% include json/v1/prop.json %}</pre>
-                </div>
-                <div class="tab-pane" id="multiple-choice-tab4">
-                  <pre>{% include json/v1/trivia.json %}</pre>
-                </div>
+  <div class="span8">
+    <h3>JSON form</h3>
+    <div class="tabbable"> <!-- Only required for left/right tabs -->
+      <ul class="nav nav-tabs">
+        <li class="active"><a href="#multiple-choice-tab1" data-toggle="tab">Multiple Choice Prompt</a></li>
+        <li><a href="#multiple-choice-tab2" data-toggle="tab">Poll</a></li>
+        <li><a href="#multiple-choice-tab3" data-toggle="tab">Prop</a></li>
+        <li><a href="#multiple-choice-tab4" data-toggle="tab">Trivia</a></li>
+      </ul>
+      <div class="tab-content">
+        <div class="tab-pane active" id="multiple-choice-tab1">
+          <pre>{% include json/v1/multiple_choice_prompt.json %}</pre>
+        </div>
+        <div class="tab-pane" id="multiple-choice-tab2">
+          <pre>{% include json/v1/poll.json %}</pre>
+        </div>
+        <div class="tab-pane" id="multiple-choice-tab3">
+          <pre>{% include json/v1/prop.json %}</pre>
+        </div>
+        <div class="tab-pane" id="multiple-choice-tab4">
+          <pre>{% include json/v1/trivia.json %}</pre>
+        </div>
 
-              </div>
-            </div>
+      </div>
     </div>
-
   </div>
+
+</div>
 </section>
 
 <section id="keyboard">
-  <div class="page-header">
-    <h1>Keyboard questions <small>free-form short answer responses</small></h1>
+<div class="page-header">
+  <h1>Keyboard questions <small>free-form short answer responses</small></h1>
+</div>
+<div class="row">
+  <div class="span4">
+    <h3>Message type</h3>
+    <p>Keyboard<p>
+    <h3>Channel</h3>
+    <p><span class="label label-info">Planned</span> Messages of this type will come from the live event channel in the future.<p>
+    <h3>Expectations</h3>
+    <p>You should indicate to the user that keyboard entry is expected.  Provide a text area in which to type and prompt the user with a keyboard interface, if appropriate.</p>
+    <p>This type of question will only be present in preroll while our API is at 1.0.</p>
+    <p>All questions should be displayed until the user has answered it.</p>
   </div>
-  <div class="row">
-    <div class="span4">
-      <h3>Message type</h3>
-      <p>Keyboard<p>
-      <h3>Channel</h3>
-      <p><span class="label label-info">Planned</span> Messages of this type will come from the live event channel in the future.<p>
-      <h3>Expectations</h3>
-      <p>You should indicate to the user that keyboard entry is expected.  Provide a text area in which to type and prompt the user with a keyboard interface, if appropriate.</p>
-      <p>This type of question will only be present in preroll while our API is at 1.0.</p>
-      <p>All questions should be displayed until the user has answered it.</p>
-    </div>
-    <div class="span8">
-      <h3>JSON form</h3>
-      <pre>{% include json/v1/keyboard_prompt.json %}<</pre>
-    </div>
+  <div class="span8">
+    <h3>JSON form</h3>
+    <pre>{% include json/v1/keyboard_prompt.json %}<</pre>
+  </div>
 
-  </div>
+</div>
 </section>
 
 <section id="keypad">
-  <div class="page-header">
-    <h1>Keypad questions <small>numeric responses</small></h1>
+<div class="page-header">
+  <h1>Keypad questions <small>numeric responses</small></h1>
+</div>
+<div class="row">
+  <div class="span4">
+    <h3>Message type</h3>
+    <p>Keypad<p>
+    <h3>Channel</h3>
+    <p><span class="label label-info">Planned</span> Messages of this type will come from the live event channel in the future.<p>
+    <h3>Expectations</h3>
+    <p>You should indicate to the user that numeric entry is expected.  Provide a text field in which to type and prompt the user with a phone keypad interface, if appropriate.</p>
+    <p>This type of question will only be present in preroll while our API is at 1.0.</p>
+    <p>All questions should be displayed until the user has answered it.</p>
   </div>
-  <div class="row">
-    <div class="span4">
-      <h3>Message type</h3>
-      <p>Keypad<p>
-      <h3>Channel</h3>
-      <p><span class="label label-info">Planned</span> Messages of this type will come from the live event channel in the future.<p>
-      <h3>Expectations</h3>
-      <p>You should indicate to the user that numeric entry is expected.  Provide a text field in which to type and prompt the user with a phone keypad interface, if appropriate.</p>
-      <p>This type of question will only be present in preroll while our API is at 1.0.</p>
-      <p>All questions should be displayed until the user has answered it.</p>
-    </div>
-    <div class="span8">
-      <h3>JSON form</h3>
-      <pre>{% include json/v1/keypad_prompt.json %}</pre>
-    </div>
+  <div class="span8">
+    <h3>JSON form</h3>
+    <pre>{% include json/v1/keypad_prompt.json %}</pre>
+  </div>
 
-  </div>
+</div>
 </section>
 
 <section id="list">
-  <div class="page-header">
-    <h1>List questions <small>select from many responses</small></h1>
+<div class="page-header">
+  <h1>List questions <small>select from many responses</small></h1>
+</div>
+<div class="row">
+  <div class="span4">
+    <h3>Message type</h3>
+    <p>List<p>
+    <h3>Channel</h3>
+    <p><span class="label label-info">Planned</span> Messages of this type will come from the live event channel in the future.<p>
+    <h3>Expectations</h3>
+    <p>You should indicate to the user a selection from a list is expected, providing the expected interface for such a selection for your platform. If the user makes no selection, allow them to skip the question without sending a selection request to the service.</p>
+    <p>This type of question will only be present in preroll while our API is at 1.0.</p>
+    <p>All questions should be displayed until the user has answered it.</p>
   </div>
-  <div class="row">
-    <div class="span4">
-      <h3>Message type</h3>
-      <p>List<p>
-      <h3>Channel</h3>
-      <p><span class="label label-info">Planned</span> Messages of this type will come from the live event channel in the future.<p>
-      <h3>Expectations</h3>
-      <p>You should indicate to the user a selection from a list is expected, providing the expected interface for such a selection for your platform. If the user makes no selection, allow them to skip the question without sending a selection request to the service.</p>
-      <p>This type of question will only be present in preroll while our API is at 1.0.</p>
-      <p>All questions should be displayed until the user has answered it.</p>
-    </div>
-    <div class="span8">
-      <h3>JSON form</h3>
-      <pre>{% include json/v1/list_prompt.json %}</pre>
-    </div>
+  <div class="span8">
+    <h3>JSON form</h3>
+    <pre>{% include json/v1/list_prompt.json %}</pre>
+  </div>
 
-  </div>
+</div>
 </section>
 
 <section id="range">
-  <div class="page-header">
-    <h1>Range questions <small>make a guided selection between two endpoints</small></h1>
+<div class="page-header">
+  <h1>Range questions <small>make a guided selection between two endpoints</small></h1>
+</div>
+<div class="row">
+  <div class="span4">
+    <h3>Message type</h3>
+    <p>Range<p>
+    <h3>Channel</h3>
+    <p><span class="label label-info">Planned</span> Messages of this type will come from the live event channel in the future.<p>
+    <h3>Expectations</h3>
+    <p>You should indicate to the user a selection between two endpoints is expected. A slider or dial may be a useful visual metaphor.</p>
+    <p>This type of question will only be present in preroll while our API is at 1.0.</p>
+    <p>All questions should be displayed until the user has answered it.</p>
   </div>
-  <div class="row">
-    <div class="span4">
-      <h3>Message type</h3>
-      <p>Range<p>
-      <h3>Channel</h3>
-      <p><span class="label label-info">Planned</span> Messages of this type will come from the live event channel in the future.<p>
-      <h3>Expectations</h3>
-      <p>You should indicate to the user a selection between two endpoints is expected. A slider or dial may be a useful visual metaphor.</p>
-      <p>This type of question will only be present in preroll while our API is at 1.0.</p>
-      <p>All questions should be displayed until the user has answered it.</p>
-    </div>
-    <div class="span8">
-      <h3>JSON form</h3>
-      <pre>{% include json/v1/range_prompt.json %}</pre>
-    </div>
+  <div class="span8">
+    <h3>JSON form</h3>
+    <pre>{% include json/v1/range_prompt.json %}</pre>
+  </div>
 
-  </div>
+</div>
 </section>
 
 <section id="event-message">
-  <div class="page-header">
-    <h1>Chat message <small>users talking to each other</small></h1>
+<div class="page-header">
+  <h1>Chat message <small>users talking to each other</small></h1>
+</div>
+<div class="row">
+  <div class="span4">
+    <h3>Message type</h3>
+    <p>Message<p>
+    <h3>Channel</h3>
+    <p>Messages of this type will come from the live event channel.<p>
+    <h3>Expectations</h3>
+    <p>Upon first checking into an event, the client should issue the <a href="../reference/live-events/index.html#messages">Event Messages history API</a> call.  These messages should be appended to the results of that call.</p>
+    <p>Implementer can choose a functional maximum of messages to display..  New messages should be preferred to older messages in this scheme.</p>
+    <p>User chat should be displayed prominently, with special attention drawn to the user's own chats.  User chat should be displayed prominently without any user interaction upon event entry or completion of preroll as appropriate.</p>
   </div>
-  <div class="row">
-    <div class="span4">
-      <h3>Message type</h3>
-      <p>Message<p>
-      <h3>Channel</h3>
-      <p>Messages of this type will come from the live event channel.<p>
-      <h3>Expectations</h3>
-      <p>Upon first checking into an event, the client should issue the <a href="../reference/live-events/index.html#messages">Event Messages history API</a> call.  These messages should be appended to the results of that call.</p>
-      <p>Implementer can choose a functional maximum of messages to display..  New messages should be preferred to older messages in this scheme.</p>
-      <p>User chat should be displayed prominently, with special attention drawn to the user's own chats.  User chat should be displayed prominently without any user interaction upon event entry or completion of preroll as appropriate.</p>
-    </div>
-    <div class="span8">
-      <h3>JSON form</h3>
-      <pre>{% include json/v1/event_message.json %}</pre>
-    </div>
+  <div class="span8">
+    <h3>JSON form</h3>
+    <pre>{% include json/v1/event_message.json %}</pre>
+  </div>
 
-  </div>
+</div>
 </section>
 
 <section id="group-message">
-  <div class="page-header">
-    <h1>Group chat message <small>private user chat</small></h1>
+<div class="page-header">
+  <h1>Group chat message <small>private user chat</small></h1>
+</div>
+<div class="row">
+  <div class="span4">
+    <h3>Message type</h3>
+    <p>GroupMessage<p>
+    <h3>Channel</h3>
+    <p>Messages of this type will come from a group event channel.<p>
+    <h3>Expectations</h3>
+    <p>Upon completing the  <a href="../reference/groups/index.html#messages">Group listing API</a> call, the client should issue the <a href="../reference/groups/index.html#messages">Group Messages history API</a> call for each group in the list.  These messages should be appended to the results of those calls as appropriate.</p>
+    <p>Implementer should attempt to show user when new messages arrive for one of their groups, as group chat is expected to be secondary for most users.</p>
   </div>
-  <div class="row">
-    <div class="span4">
-      <h3>Message type</h3>
-      <p>GroupMessage<p>
-      <h3>Channel</h3>
-      <p>Messages of this type will come from a group event channel.<p>
-      <h3>Expectations</h3>
-      <p>Upon completing the  <a href="../reference/groups/index.html#messages">Group listing API</a> call, the client should issue the <a href="../reference/groups/index.html#messages">Group Messages history API</a> call for each group in the list.  These messages should be appended to the results of those calls as appropriate.</p>
-      <p>Implementer should attempt to show user when new messages arrive for one of their groups, as group chat is expected to be secondary for most users.</p>
-    </div>
-    <div class="span8">
-      <h3>JSON form</h3>
-      <pre>{% include json/v1/group_message.json %}</pre>
-    </div>
+  <div class="span8">
+    <h3>JSON form</h3>
+    <pre>{% include json/v1/group_message.json %}</pre>
+  </div>
 
-  </div>
+</div>
 </section>
 
-<section id="scored">
-  <div class="page-header">
-    <h1>Question scored <small>scoring notification</small></h1>
-  </div>
-  <div class="row">
-    <div class="span4">
-      <h3>Message type</h3>
-      <p>Scored<p>
-      <h3>Channel</h3>
-      <p>Messages of this type will come from the live event channel.<p>
-      <h3>Expectations</h3>
-      <p>After receiving this message, you should issue the <a href="../reference/live-events/index.html#check-in">Event Check-in API</a> call to update your score, statistics, and leaderboard.</p>
-      <p>If appropriate, the display of the user's answer to the question should change appearance to indicate whether they answered the question correctly.</p>
-      <p>If desired, you can show the overall distribution of answers, but please only do so when total response count is over 15.</p>
-    </div>
-    <div class="span8">
-      <h3>JSON form</h3>
-      <pre>{% include json/v1/scored_notification.json %}<</pre>
-    </div>
+<section id="event-notification">
+<div class="page-header">
+  <h1>Event wide notifications <small>scoring notification</small></h1>
+</div>
+<div class="row">
+  <div class="span4">
+    <h3>Channel</h3>
+    <p>Messages of these types will come from the live event channel.<p>
+    <h3>Notes</h3>
+    <dl>
+      <dt>Scored</dt>
+      <dd>After receiving this message, you should issue the <a href="../reference/live-events/index.html#check-in">Event Check-in API</a> call to update your score, statistics, and leaderboard.</dd>
+      <dd>If appropriate, the display of the user's answer to the question should change appearance to indicate whether they answered the question correctly.</dd>
+      <dd>If desired, you can show the overall distribution of answers, but please only do so when total response count is over 15.</dd>
+
+      <dt>Rescored</dt>
+      <dd>These messages will be sent when a question is scored erroneously.  This represents the correction that is sent.  Treat it like a scored notification with a user statistics and leaderboard refresh.  In addition, if you maintain a list of user selections within your client, make sure to update the user's perception of their answer to this question, if one exists.</dd>
+      <dt>Unscorable</dt>
+      <dd>These messages will be sent when a question cannot be scored.  You need not update leaderboards, but if you maintain a list of user selections, you should remove this selection from the list.</dd>
+      <dt>End Period</dt>
+      <dd>These messages will be sent at the end of a period.  They contain an 
+      announcement to be displayed, and you should reload the game and period 
+      leaderboards.</dd>
+
+    </dl>
 
   </div>
+  <div class="span8">
+    <h3>JSON form</h3>
+    <div class="tabbable"> <!-- Only required for left/right tabs -->
+      <ul class="nav nav-tabs">
+        <li class="active"><a href="#event-notification-tab1" data-toggle="tab">Scored</a></li>
+        <li><a href="#event-notification-tab2" data-toggle="tab">Rescored</a></li>
+        <li><a href="#event-notification-tab3" data-toggle="tab">Unscorable</a></li>
+        <li><a href="#event-notification-tab4" data-toggle="tab">End Period</a></li>
+
+      </ul>
+      <div class="tab-content">
+        <div class="tab-pane active" id="event-notification-tab1">
+          <pre>{% include json/v1/scored_notification.json %}</pre>
+        </div>
+        <div class="tab-pane" id="event-notification-tab2">
+          <pre>{% include json/v1/rescored_notification.json %}</pre>
+        </div>
+        <div class="tab-pane" id="event-notification-tab3">
+          <pre>{% include json/v1/unscorable_notification.json %}</pre>
+        </div>
+        <div class="tab-pane" id="event-notification-tab4">
+          <pre>{% include json/v1/end_period_notification.json %}</pre>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
 </section>
 
 <section id="user-notification">
-  <div class="page-header">
-    <h1>User notifications <small>meaningful messages to application and user alike</small></h1>
+<div class="page-header">
+  <h1>User notifications <small>meaningful messages to application and user alike</small></h1>
+</div>
+<div class="row">
+  <div class="span4">
+    <h3>Channel</h3>
+    <p>Messages of these types will come from the user channel.<p>
+    <h3>Notes</h3>
+    <dl>
+      <dt>Badge</dt>
+      <dd><span class="label label-info">Planned</span> Notifications of this type are sent across sockets, but at this time, they can be ignored.</dd>
+      <dt>Level Up</dt>
+      <dd><span class="label label-info">Planned</span> Notifications of this type are sent across sockets, but at this time, they can be ignored.</dd>
+      <dt>Check-In</dt>
+      <dd>You'll receive this notification when a user checks-in to a live event.  If you receive these notifications, you can display them if you wish.</dd>
+      <dt>XP</dt>
+      <dd><span class="label label-info">Planned</span> Notifications of this type are sent across sockets, but at this time, they can be ignored.</dd>
+    </dl>
   </div>
-  <div class="row">
-    <div class="span4">
-      <h3>Message type</h3>
-      <p>Notification<p>
-      <h3>Channel</h3>
-      <p>Messages of this type will come from the user channel.<p>
-      <h3>Notes</h3>
-      <dl>
-        <dt>Badge</dt>
-        <dd><span class="label label-info">Planned</span> Notifications of this type are sent across sockets, but at this time, they can be ignored.</dd>
-        <dt>End Period</dt>
-        <dd>These messages will be sent at the end of a period.  They contain an 
-        announcement to be displayed, and you should reload the game and period 
-        leaderboards.</dd>
-        <dt>Level Up</dt>
-        <dd><span class="label label-info">Planned</span> Notifications of this type are sent across sockets, but at this time, they can be ignored.</dd>
-        <dt>Rescored</dt>
-        <dd>These messages will be sent when a question is scored erroneously.  This represents the correction that is sent.  Treat it like a scored notification with a user statistics and leaderboard refresh.  In addition, if you maintain a list of user selections within your client, make sure to update the user's perception of their answer to this question, if one exists.</dd>
-        <dt>Unscorable</dt>
-        <dd>These messages will be sent when a question cannot be scored.  You need not update leaderboards, but if you maintain a list of user selections, you should remove this selection from the list.</dd>
-        <dt>Check-In</dt>
-        <dd>You'll receive this notification when a user checks-in to a live event.  If you receive these notifications, you can display them if you wish.</dd>
-        <dt>XP</dt>
-        <dd><span class="label label-info">Planned</span> Notifications of this type are sent across sockets, but at this time, they can be ignored.</dd>
-      </dl>
-    </div>
-    <div class="span8">
-      <h3>JSON form</h3>
-            <div class="tabbable"> <!-- Only required for left/right tabs -->
-              <ul class="nav nav-tabs">
-                <li class="active"><a href="#notification-tab1" data-toggle="tab">Badge</a></li>
-                <li><a href="#notification-tab2" data-toggle="tab">End Period</a></li>
-                <li><a href="#notification-tab3" data-toggle="tab">Level Up</a></li>
-                <li><a href="#notification-tab4" data-toggle="tab">Rescored</a></li>
-                <li><a href="#notification-tab5" data-toggle="tab">Unscorable</a></li>
-                <li><a href="#notification-tab6" data-toggle="tab">Check-In</a></li>
-                <li><a href="#notification-tab7" data-toggle="tab">XP</a></li>
-              </ul>
-              <div class="tab-content">
-                <div class="tab-pane active" id="notification-tab1">
-                  <pre>{% include json/v1/badge_notification.json %}</pre>
-                </div>
-                <div class="tab-pane" id="notification-tab2">
-                  <pre>{% include json/v1/end_period_notification.json %}</pre>
-                </div>
-                <div class="tab-pane" id="notification-tab3">
-                  <pre>{% include json/v1/level_up_notification.json %}</pre>
-                </div>
-                <div class="tab-pane" id="notification-tab4">
-                  <pre>{% include json/v1/rescored_notification.json %}</pre>
-                </div>
-                <div class="tab-pane" id="notification-tab5">
-                  <pre>{% include json/v1/unscorable_notification.json %}</pre>
-                </div>
-                <div class="tab-pane" id="notification-tab6">
-                  <pre>{% include json/v1/user_check_in_notification.json %}</pre>
-                </div>
-                <div class="tab-pane" id="notification-tab7">
-                  <pre>{% include json/v1/xp_notification.json %}</pre>
-                </div>
+  <div class="span8">
+    <h3>JSON form</h3>
+    <div class="tabbable"> <!-- Only required for left/right tabs -->
+      <ul class="nav nav-tabs">
+        <li class="active"><a href="#user-notification-tab1" data-toggle="tab">Badge</a></li>
+        <li><a href="#user-notification-tab2" data-toggle="tab">Level Up</a></li>
+        <li><a href="#user-notification-tab3" data-toggle="tab">Check-In</a></li>
+        <li><a href="#user-notification-tab4" data-toggle="tab">XP</a></li>
+      </ul>
+      <div class="tab-content">
+        <div class="tab-pane active" id="user-notification-tab1">
+          <pre>{% include json/v1/badge_notification.json %}</pre>
+        </div>
+        <div class="tab-pane" id="user-notification-tab2">
+          <pre>{% include json/v1/level_up_notification.json %}</pre>
+        </div>
+        <div class="tab-pane" id="user-notification-tab3">
+          <pre>{% include json/v1/user_check_in_notification.json %}</pre>
+        </div>
+        <div class="tab-pane" id="user-notification-tab4">
+          <pre>{% include json/v1/xp_notification.json %}</pre>
+        </div>
 
-              </div>
-            </div>
+      </div>
     </div>
-
   </div>
+
+</div>
 </section>
